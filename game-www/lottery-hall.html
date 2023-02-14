@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/page/lottery-hall.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="assets/js/init0.js"></script>
+    <script type="text/javascript" src="assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="global-slot">
+        <div class="page-container">
+            <div class="page-content">
+                <div class="inner">
+                    <div class="lottery-category">
+                        <img src="assets/images/lotteryHall/title.png">
+                    </div>
+                    <div class="lottery-open-list"></div>
+                </div>
+                
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = globalSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="assets/js/utils.js"></script>
+    <script type="text/javascript" src="assets/js/service.js"></script>
+    <script type="text/javascript" src="assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var lotteryHallBuilder = function () {
+                // 資料來源
+                const categories = lotteryCategories();
+                const allLotteryList = buildLotteryList();
+
+                // 影響目標
+                const targetDom = $('.lottery-category');
+                const targetLists = $('.lottery-open-list');
+
+                /** 單一類別按鈕Tpl */
+                function categoryBtnTpl(c) {
+                    return $(`<a class="item" data-index="${c.id}">
+                            <!--<img src="/game/lottery/images/lottery_${c.id}.png" />-->
+                            <div class="name">${c.name}</div>
+                        </a>`);
+                }
+                /** 單一彩種開獎Tpl */
+                function lotteryOpenTpl(v) {
+                    return $(`<div class="item" data-sort="${v.sort}">
+                            <div class="flex-column">
+                                <img class="open-img" src="/game/lottery/images/${v.lottery}.png" onerror="this.src='/game/lottery/images/lottery_${v.type}.png'" />
+                                <div class="open-name">${v.name}</div>
+                            </div>
+                            <div class="flex-column m-l-5">
+                                <div class="open-code"></div>
+                                <div class="flex-row flex-spbt w-100">
+                                    <div class="open-issue">第<span>${v.issue}</span>期</div>
+                                    <a class="hall-play-btn" href="game/lottery/play.html?${v.lottery}">立即投注</a>
+                                </div>
+                            </div>
+                        </div>`);
+                }
+
+                /** 彩種類別按鈕點擊事件 */
+                function categoryBtnEvent(category, $btnDom) {
+                    if (category.code !== undefined) {
+                        $btnDom.click(function () {
+                            $(this).addClass('active').siblings().removeClass('active');
+                            targetLists.find(`[data-list="${category.id}"]`).fadeIn().siblings().hide();
+                        });
+                    } else {
+                        $btnDom.click(function () {
+                            AlertUtils.alert({
+                                icon: 'error',
+                                content: '工程师正在努力研发中......'
+                            });
+                        });
+                    }
+                }
+                /** 視需求加入額外資料 */
+                function otherLotteryData() {
+                    // 加入熱門彩種
+                    // categories.push({ id: '9', name: '热门彩种', code: 'hot', status: -1 });
+                    // allLotteryList.push(store.get("PUBLIC:GameLotteryConfig").sysLotteryRecomand
+                    //     .map(x => { return { name: x.name, keyword: x.lottery, type: 9, status: "", sort: 0 }; }));
+
+                    // 加入VR彩種
+                    // categories.push({ id: '10', name: 'VR彩', code: undefined, status: -1 });
+                    // todo: VR彩的資料轉為指定格式
+                }
+                /** 主流程 */
+                function start() {
+                    otherLotteryData();
+
+                    for (let i = 0; i < categories.length; i++) {
+                        let currentCategory = categories[i];
+                        let currentDataList = allLotteryList[i];
+                        let $newBtn = categoryBtnTpl(currentCategory); // 類別按鈕
+                        let $newList = $(`<div class="list" data-list="${currentCategory.id}"></div>`); // 類別內容清單
+
+                        if (currentDataList != undefined) {
+                            buildLotteryOpenInfo({
+                                lotteryList: currentDataList,
+                                targetDom: $newList,
+                                tpl: lotteryOpenTpl,
+                                forceReload: i == 0 ? true : false
+                            });
+                        }
+                        categoryBtnEvent(currentCategory, $newBtn);
+
+                        // 類別清單分隔線
+                        // if (i > 0) targetDom.append(`<div class="divider"></div>`);
+                        targetDom.append($newBtn); // 左邊新增按鈕
+                        targetLists.append($newList); // 右邊新增list
+                    }
+                    targetDom.find('.item').eq(0).trigger("click");
+                }
+
+                start();
+            }();
+        });
+    </script>
+
+</body>
+
+</html>

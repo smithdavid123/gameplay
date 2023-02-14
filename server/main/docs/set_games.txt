@@ -1,0 +1,34 @@
+
+update game_config set floatBonus = -10 where type=1;
+
+update game_config set floatBonus = -40 where lottery="t1s90";
+update game_config set floatBonus = -40 where lottery="t1s30";
+update game_config set floatBonus = -40 where lottery="t1s60";
+update game_config set floatBonus = -40 where lottery="t1s90d";
+update game_config set floatBonus = -40 where lottery="sgssc";
+update game_config set floatBonus = -40 where lottery="t1s90a";
+update game_config set floatBonus = -40 where lottery="t1s90b";
+update game_config set floatBonus = -40 where lottery="t1s90c";
+update game_config set floatBonus = -40 where lottery="t1s180";
+
+
+update game_config set floatBonus = -100 where lottery="xjssc";
+update game_config set floatBonus = -100 where lottery="bjssc";
+update game_config set floatBonus = -100 where lottery="tjssc";
+update game_config set floatBonus = -100 where lottery="twssc";
+
+
+update game_config set floatBonus = -70 where type=2;
+
+
+update game_config set floatBonus = -70 where type=3;
+
+
+update game_config set floatBonus = -70 where type=4;
+update game_config set floatBonus = -70 where type=6;
+
+
+update game_config set floatBonus = -10 where lottery="bjpk10";
+update game_config set floatBonus = -100 where lottery="bjssc";
+update game_config set floatBonus = -100 where lottery="tjssc";
+update game_config set floatBonus = -100 where lottery="twssc";

@@ -1,0 +1,13 @@
+/****一些变量****/
+
+// theme
+$primary: #009688;
+// 正负中
+$is_positive: #58B948;
+$is_negative: #E25C52;
+$is_neutral: #FCC00E;
+@mixin flex-base($align) {
+    display: flex;
+    justify-content: $align;
+    align-items: center;
+}

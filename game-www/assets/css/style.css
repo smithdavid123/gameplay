@@ -1,0 +1,371 @@
+﻿@import url(partial/header.css);
+@import url(partial/modal.css);
+@import url(partial/jBox.css);
+@import url(partial/utility.css);
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/*页面样式*/
+
+.page-container {
+  width: 100%;
+  background-size: auto;
+  min-height: calc(100vh - 162px - 36px);
+}
+
+.page-content {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow-y: hidden;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:link {
+  outline: none;
+  text-decoration: none;
+}
+
+a.static-link {
+  cursor: pointer;
+}
+
+/*按鈕共用樣式*/
+
+.btn {
+  border-radius: 20px;
+  padding: 4px 18px;
+  background: #fff;
+  color: #505050;
+  font-size: 15px;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn.large {
+  padding: 8px 40px;
+  font-size: 14px;
+}
+.btn-mini {
+  padding: 2px 9px;
+  font-size: 10px;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active:hover {
+  color: #fff;
+  background: #33586f;
+  border: 0;
+}
+
+.btn-success,
+.btn-success:hover,
+.btn-success:active:hover {
+  color: #fff;
+  background: #703c03;
+  /*background: -moz-linear-gradient(
+    -45deg,
+    rgba(44, 145, 142, 1) 0%,
+    rgba(47, 156, 139, 1) 50%,
+    rgba(51, 168, 136, 1) 65%,
+    rgba(57, 190, 130, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(44, 145, 142, 1) 0%,
+    rgba(47, 156, 139, 1) 50%,
+    rgba(51, 168, 136, 1) 65%,
+    rgba(57, 190, 130, 1) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(44, 145, 142, 1) 0%,
+    rgba(47, 156, 139, 1) 50%,
+    rgba(51, 168, 136, 1) 65%,
+    rgba(57, 190, 130, 1) 100%
+  );*/
+  border: 0;
+}
+
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:active:hover {
+  color: #fff;
+  background: #eb5800;
+  border: 0;
+}
+
+.btn-back,
+.btn-back:hover,
+.btn-back:active:hover {
+  color: #fff;
+  background: #b9b9b9;
+}
+
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:active:hover {
+  color: #fff;
+  background: linear-gradient(#e24f42, #da2f22);
+  border: none;
+}
+
+.btn-cancel,
+.btn-cancel:hover,
+.btn-cancel:active:hover {
+  color: #333;
+  background: #eee;
+  border: none;
+}
+
+.btn-radius-5 {
+  border-radius: 5px !important;
+}
+
+select {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../images/common/collapse.png") !important;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+/*重写Bootstrap样式*/
+
+label {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+/*加载插件*/
+
+.ajax-loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url("../images/common/input_spinner_white.svg") no-repeat center;
+  z-index: 1;
+  cursor: wait;
+}
+
+/*重写日期插件*/
+
+.datepicker {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/*重写表格样式*/
+
+.table-condensed td.active,
+.table-condensed span.active {
+  background: #2d5c87 !important;
+}
+
+.table-condensed > tbody > tr > td,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > td,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > thead > tr > th {
+  padding: 3px 5px;
+  color: #333;
+}
+
+/*輸入欄位相關*/
+
+input[type="text"].input-half {
+  width: 40%;
+  display: inline;
+}
+
+.form-control,
+form.form-horizontal .form-control {
+  box-shadow: none;
+  height: 37px;
+  border-radius: 0px;
+  color: #333;
+}
+
+.form-control:focus {
+  border-color: #cccccc;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/*驗證欄位*/
+
+.has-success .help-block,
+.has-success .control-label,
+.has-success .radio,
+.has-success .checkbox,
+.has-success .radio-inline,
+.has-success .checkbox-inline,
+.has-success.radio label,
+.has-success.checkbox label,
+.has-success.radio-inline label,
+.has-success.checkbox-inline label {
+  color: #f5770c;
+}
+
+.has-success .control-label {
+  color: inherit;
+}
+
+.has-success .form-control {
+  border-color: #f5770c;
+}
+
+.has-success .form-control:focus {
+  border-color: #f5770c;
+}
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: #0b5351;
+}
+
+.has-error .control-label {
+  color: inherit;
+}
+
+.has-error .form-control {
+  border-color: #ff7825;
+}
+
+.has-error .form-control:focus {
+  border-color: #ff7825;
+}
+
+/*輸入框內的icon*/
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon > i {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.input-icon > i.icon-text {
+  text-align: center;
+  color: #787878;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.input-icon.icon-left > i {
+  top: 8px;
+  left: 8px;
+}
+
+.input-icon.icon-left > input {
+  text-indent: 20px;
+}
+
+.input-icon.icon-right > i {
+  top: 8px;
+  right: 8px;
+}
+
+.input-icon.icon-out-right > i {
+  top: 8px;
+  right: -4px;
+}
+
+/* 全局样式 */
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Microsoft YaHei", arial;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-size: 12px;
+  color: #636461;
+}
+
+div,
+form,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/*動畫效果*/
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}

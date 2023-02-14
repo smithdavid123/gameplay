@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/swiper-master/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/page/index.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="assets/js/init0.js"></script>
+    <script type="text/javascript" src="assets/js/init2.js"></script>
+    <script type="text/javascript">
+        var isShowContractAlert = true;
+    </script>
+</head>
+
+<body>
+    <template id="global-slot">
+        <div class="page-container">
+            <div class="page-content">
+                <div class="inner">
+
+                    <div class="top-container flex-row flex-align-start">
+                        <div class="lottery-list">
+                            <div class="lottery-content"></div>
+                        </div>
+
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <a href="game/lottery/play.html" target="_blank"><img
+                                    src="assets/images/index/banner3.png" alt="Third slide"></a>
+                                </div>
+                                <div class="item">
+                                    <a href="view/activity/index.html"><img src="assets/images/index/banner2.png"
+                                            alt="Second slide"></a>
+                                </div>
+                                <div class="item ">
+                                    <a href="javascript:;"><img src="assets/images/index/banner1.png"
+                                    alt="First slide"></a>
+                                </div>
+                               
+                               
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                            </ol>
+                            <!-- <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                                <img src="/assets/images/index/left.png" alt="">
+                            </a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                                <img src="/assets/images/index/right.png" alt="">
+                            </a> -->
+                        </div>
+
+
+                        <div class="download">
+                            <div class="qrcode-switch-box"></div>
+                            <div class="qrcode-display">
+                                <div id="header-code" class="code"></div>
+                                <div id="header-code2" class="code"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="main-box">
+                        <div class="baccarat-box">
+                            <img src="assets/images/index/baccarat_title.png">
+                            <div class="baccarat-wallets"></div>
+                        </div>
+
+                        <div class="notice-box">
+                            <div class="notice-box-content">
+                                <div class="list"></div>
+                            </div>
+                            <a href="member/notice.html" class="notice-more">
+                                <img src="assets/images/index/notice_more.png">
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = globalSharedTpl();
+    </script>
+
+    <div class="sys-notice-alert">
+        <div class="notice-content">
+            <!-- <div class="w-close">×</div> -->
+            <div class="w-close"></div>
+            <div class="w-icon"></div>
+            <div class="w-title"></div>
+            <div class="title-list"></div>
+            <div class="content-list">
+                <div class="title"></div>
+                <div class="time"></div>
+                <div class="content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="assets/js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/wow/wow.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/swiper-master/js/swiper.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="assets/js/utils.js"></script>
+    <script type="text/javascript" src="assets/js/service.js"></script>
+    <script type="text/javascript" src="assets/js/global.js"></script>
+    <script type="text/javascript" src="https://pv.sohu.com/cityjson"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            /** 獲取公告彈窗內容 **/
+            SystemCtrl.request('LIST_NOTICE', {
+                data: { content: true },
+                success: function (res) {
+                    buildNoticeAlert(res);
+                    buildNoticeList(res);
+                }
+            });
+            /** 建立公告彈窗 */
+            var buildNoticeAlert = function (data) {
+                // 判斷參數
+                var param = location.href.split("?")[1];
+                if (param == "nn") return; // 不顯示公告
+
+                var target = $('.sys-notice-alert');
+                var titleList = target.find('.title-list');
+                var title = target.find('.title');
+                var time = target.find('.time');
+                var content = target.find('.content');
+                $.each(data, function (i, v) {
+                    //if (i < 8) {
+                        var $thisItem = $(
+                            `<div class="item hover">
+                                <div class="text">
+                                    <div class="textAuto">${v.title}</div>
+                                    <!--<div class="textTime">${v.time}</div>-->
+                                </div>
+                            </div>`
+                        );
+                        $thisItem.click(function () {
+                            $(this).addClass('active').siblings().removeClass('active');
+                            title.html(v.title);
+                            time.html(`<div class="time">${v.time}</div>`);
+                            content.html(v.content);
+                        });
+                        titleList.append($thisItem);
+                   // }
+                });
+                // 查看更多
+                //if( data.length>8 ){
+                    var $moreItem = $(`<div class="more"><div class="text"><div class="textAuto">查看更多</div></div></div>`);
+                    $moreItem.click(() => {
+                        window.location = '/member/notice.html';
+                    });                    
+                //}
+
+                titleList.after($moreItem);
+
+                target.addClass('notice-show');
+
+                //titleList.perfectScrollbar();
+                content.perfectScrollbar();
+                target.find('.w-close').click(function () {
+                    target.removeClass('notice-show');
+                });
+                titleList.find('.item').eq(0).trigger('click');
+            };
+            /** 建立公告條列 */
+            var buildNoticeList = function (data) {
+                var target = $('.notice-box-content .list');
+                $.each(data, function (i, v) {
+                    var $thisItem = $(
+                        `<a class="item" href="member/notice.html@${i}">
+                            <div class="title">
+                                <img src="assets/images/index/notice_title_icon.png" />
+                                ${v.title}
+                            </div>
+                            <div class="time">${v.time}</div>
+                        </a>`
+                    );
+                    // $thisItem.click(() => {
+                    //     window.location.href = "/member/notice.html?" + i;
+                    // });
+                    target.append($thisItem);
+                });
+            }
+
+            // 熱門彩種
+            // buildHotLotteryList({
+            //     targetDom: $('.hot-lottery-box'),
+            //     tpl: function (v) {
+            //         return `<a class="item" href="game/lottery/play.html?${v.lottery}">
+            //             <img class="game-logo" src="/game/lottery/images/${v.lottery}.png" />
+            //             <div class="flex-row flex-align-start m-t-20">
+            //                 <img src="/assets/images/index/hot_lottery_go.png" />
+            //                 <div class="hot-lottery-name">${v.name}</div>
+            //             </div>
+            //         </a>`;
+            //     },
+            //     limitNum: 5
+            // });
+
+            /** 百家樂列表 */
+            buildBaccaratList({
+                targetDom: $('.inner .baccarat-wallets'),
+                activeTpl: function (v) {
+                    return $(`<div class="item" data-id="${v.id}" data-name="${v.name}">
+                            <img class="icon" src="/assets/images/index/item_${v.code}.png" onerror="this.src = '/assets/images/index/item_default.png'" alt="">
+                            <div class="item-name-box">
+                                <!--${v.name}-->
+                                <!--<a class="open-btn hover" target="_blank" href="#" data-href="link">前往游戏</a>-->
+                                <a class="open-btn hover" target="_blank" href="home.html#" data-href="link"></a>
+                            </div>
+                        </div>`);
+                },
+                notActiveTpl: function (v) {
+                    return $(`<div class="item" data-id="${v.id}" data-name="${v.name}">
+                            <img class="icon" src="/assets/images/index/item_${v.code}.png" onerror="this.src = '/assets/images/index/item_default.png'" alt="">
+                            <div class="item-name-box">
+                                <!--${v.name}-->
+                                <!--<a class="open-btn hover" data-result="open">开通游戏</a>-->
+                                <a class="open-btn hover" data-result="open"></a>
+                            </div>
+                        </div>`);
+                },
+                noGameTpl: function () {
+                    return $(`<div class="item">
+                            <img class="icon" src="assets/images/index/item_default.png" alt="">
+                            <div class="item-name-box">敬请期待</div>
+                        </div>`);
+                }
+            });
+
+            /** 安全等級 */
+            // buildSafetyInfo({
+            //     targetDom: $('.safety-info')
+            // });
+
+            /** 彩票選單 */
+            (function lotteryHTML() {
+                /** 取得彩票資料 */
+                const categories = lotteryCategories();
+                const game = buildLotteryList();
+
+                // var keyword = '';
+                // if (location.href.indexOf("play.html") > 0) {
+                //     var keyword = location.href.split("?")[1] || 'cqssc';
+                // }
+
+                /** 建立一種遊戲的連結 */
+                var buildOneLink = function (item) {
+                    var $newItem = $(`
+                            <div class="link-item">
+                                <a class="item" href="game/lottery/play.html?${item.keyword}">
+                                    ${item.name}
+                                </a>
+                            </div>`);
+
+                    return $newItem;
+                }
+
+                /** 建立一組遊戲清單 */
+                var buildOneList = function (category, list) {
+                    let $newList = $(`<div class="lottery-category">
+                        <div class="category-name"><img src="/assets/images/index/lottery_${category.id}_title.png" /></div>
+                        <div class="list"></div>
+                    </div>`);
+
+                    list.forEach(item => {
+                        $newList.find('.list').append(buildOneLink(item));
+                    });
+                    return $newList[0].outerHTML;
+                }
+
+                var html = '';
+                for (let i = 0; i < categories.length; i++) {
+                    html += buildOneList(categories[i], game[i]);
+                }
+
+                $(".lottery-list .lottery-content").html(html);
+            })();
+        });
+    </script>
+</body>
+
+</html>

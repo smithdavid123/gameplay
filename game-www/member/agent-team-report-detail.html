@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="member-slot">
+        <div class="main-container">
+            <div class="form-inline form-search">
+                <form role="form">
+                    <div class="">
+                        <div class="form-group input-icon icon-right">
+                            <label>用户名：</label>
+                            <input name="username" type="text" placeholder="用户名" class="form-control input-small">
+                            <!-- <i class="fa fa-user"></i> -->
+                        </div>
+                        <div class="form-group input-icon icon-right">
+                            <label>选择日期：</label>
+                            <input data-init="date-picker" name="sDate" type="text" placeholder="开始日期"
+                                class="form-control input-small">
+                            <i class="fa fa-calendar"></i>
+                            <label>至</label>
+                            <input data-init="date-picker" name="eDate" type="text" placeholder="结束日期"
+                                class="form-control input-small">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <a data-command="search" class="btn btn-primary">搜索</a>
+                    </div>
+                </form>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-data">
+                    <thead>
+                        <tr>
+                            <td width="10%" class="text-center">彩种</td>
+                            <td width="10%" class="text-center">消费</td>
+                            <td width="10%" class="text-center">派奖</td>
+                            <td width="10%" class="text-center">返点</td>
+                            <td width="10%" class="text-center">盈利</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="easy-page"></div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = memberSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/agent-team-report-detail.js"></script>
+
+</body>
+
+</html>

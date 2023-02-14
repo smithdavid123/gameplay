@@ -1,0 +1,57 @@
+// 登录模块样式
+.module-login {
+    width: 100%;
+    height: 100%;
+    background: #2d3a4b url(../assets/image/bg.jpg) no-repeat 100% /cover;
+    .form-wrap {
+        width: 370px;
+        padding: 30px 35px 0;
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .3);
+        box-sizing: border-box;
+        box-shadow: 0px 0px 20px 3px #0d957a2e;
+        .form-header {
+            width: 100%;
+            .logo-text {
+                font-size: 26px;
+                font-weight: bold;
+                color: $primary;
+            }
+            .logo-des {
+                font-size: 18px;
+                font-weight: bold;
+                color: $primary;
+                margin-bottom: 10px;
+            }
+        }
+        .form-code {
+            @include flex-base(left);
+            &-input {
+                flex-grow: 1;
+            }
+            &-img {
+                width: 186px;
+                height: 44px;
+                margin-left: 10px;
+                background-color: #e6e6e6;
+                cursor: pointer;
+                img {
+                    height: 100%;
+                }
+            }
+        }
+        .form-submit {
+            width: 100%;
+            color: #fff;
+            height: 44px;
+            border: none;
+            font-size: 16px;
+            border-radius: 0;
+        }
+        .form-ip {
+            color: $primary;
+            line-height: 40px;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>系统公告</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body class="announcement">
+    <template id="global-slot">
+        <div class="page-container">
+            <div class="page-content-single">
+                <!-- <div class="single-content notice">
+                                    <div class="main-container">
+                                        <div class="box">
+                                            <div class="notice-container"></div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                <div class="single-content">
+                    <!-- <div class="title-row">
+                        <div class="single-btns">
+                            <a href="/member/notice.html" class="btn-notice active">[ 官方公告 ]</a>
+                            <a href="/member/about-us.html" class="btn-about">[ 关于我们 ]</a>
+                            <a href="/member/help-center.html" class="btn-help">[ 帮助中心 ]</a>
+                        </div>
+                    </div> -->
+                    <div class="main-container pad-0">
+                        <div class="page-title">
+                            <img src="images/notice_title.png">
+                        </div>
+                        <!-- <div class="page-content"> -->
+                        <div class="notice-content">
+                            <div class="title-list"></div>
+                            <div class="title-row-notice">
+                                <div class="title"></div>
+                                <div class="time"></div>
+                            </div>
+                            <div class="content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = globalSingleSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/notice.js"></script>
+
+</body>
+
+</html>

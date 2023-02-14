@@ -1,0 +1,26 @@
+
+supervisord -c /etc/supervisord.conf
+
+ps aux | grep supervisord
+
+supervisorctl shutdown
+
+
+# 开启所有
+supervisorctl start all
+# 开启单个(配置文件里你起得进程名字-->[program:myProgram])
+supervisorctl start myProgram
+# 查看Supervisor 服务状态
+supervisorctl status 
+
+
+2.修改了Supervisor ini文件或者conf文件配置后，需要更新服务
+supervisorctl update # 更新supervisor的配置
+supervisorctl reload # 重新加载项目到内存中
+3.重启supervisor服务
+supervisorctl restart # 不管当前是已经关闭还是正在运行
+4.日志路径
+tail -f /var/log/supervisor/supervisord.log
+5.关闭supervisor的服务
+supervisorctl stop all # 关闭所有
+supervisorctl stop example # 关掉其中一个

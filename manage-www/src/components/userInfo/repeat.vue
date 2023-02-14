@@ -1,0 +1,186 @@
+<template>
+  <div>
+    <div class="module-query">
+      <MapQuery
+        :query="listQuery"
+        :columns="queryColumns"
+      />
+      <SearchBtn :query.sync="listQuery" />
+    </div>
+    <div class="module-handle">
+      <div />
+      <ColumnBtn :columns.sync="tableColumns" />
+    </div>
+    <div class="container-wrap">
+      <table-page
+        ref="paraentTable"
+        v-loading.lock="loading"
+        :data="data"
+        :columns="tableColumns"
+        :total="total"
+        height="calc(60vh)"
+        :page.sync="listQuery.page"
+        @pagination="getList"
+      >
+        <template
+          slot="memberName-column"
+          slot-scope="{row}"
+        >
+          <span
+            class="link-type"
+          >{{ row.memberName }}</span>
+        </template>
+        <template
+          slot="memberType-column"
+          slot-scope="{row}"
+        >
+          <div
+            :class="row.type | formatterMemberTypeTagClass"
+          >
+            {{ row.type | formatterMemberType }}
+          </div>
+        </template>
+        <template
+          slot="status-column"
+          slot-scope="{row}"
+        >
+          <div
+            :class="['tag-green', 'tag-red'][row.status]"
+          >
+            {{ row.status | formatterAllowAgent }}
+          </div>
+        </template>
+      </table-page>
+    </div>
+  </div>
+</template>
+<script>
+import { repeatInfoType } from './options';
+  export default {
+    props: {
+      userItem: {
+        type: Object,
+        default () {
+          return {};
+        }
+      }
+    },
+    data() {
+      return {
+        loading: false,
+        total: 0,
+        listQuery: {
+          page: 1,
+          size: 20,
+          username: this.userItem.username,
+          type: 'realName',
+          repeat: this.userItem.realName
+        },
+        queryColumns: [ {
+          type: 'input',
+          prop: 'username',
+          label: '用户名',
+          readonly: true
+        }],
+        repeatInfoType,
+        tableColumns: [{
+          label: '重复信息类型',
+          prop: 'repeatType',
+          align: 'center',
+          minWidth: '10%',
+          visible: true,
+          render(row) {
+            return {
+              realName: '真实姓名',
+              regIp: '注册IP',
+              loginTime: '最后登录时间',
+              lastIP: '最后登录IP',
+              password: '密码'
+            }[row.repeatType];
+          }
+        },{
+          label: '真实姓名',
+          prop: 'realName',
+          align: 'center',
+          minWidth: '10%',
+          visible: true
+        },{
+          label: '用户名',
+          prop: 'username',
+          align: 'center',
+          minWidth: '10%',
+          visible: true
+        }, {
+          label: '用户类型',
+          prop: 'type',
+          align: 'center',
+          minWidth: '10%',
+          visible: true,
+          slotName: 'memberType-column'
+        }, {
+          label: '密码',
+          prop: 'password',
+          align: 'center',
+          minWidth: '10%',
+          visible: true,
+          render(row) {
+            return row.password.substr(0,4) + '******';
+          }
+        }, {
+          label: '注册IP',
+          prop: 'regIp',
+          align: 'center',
+          minWidth: '10%',
+          visible: true
+        }, {
+          label: '注册时间',
+          prop: 'registTime',
+          align: 'center',
+          minWidth: '10%',
+          visible: true
+        }, {
+          label: '最后登录IP',
+          prop: 'loginTime',
+          align: 'center',
+          minWidth: '10%',
+          visible: true
+        }, {
+          label: '状态',
+          prop: 'status',
+          align: 'center',
+          minWidth: '10%',
+          visible: true,
+          slotName: 'status-column'
+        }],
+        data: []
+      };
+    },
+    created() {
+      this.getList();
+    },
+    methods: {
+      // 获取列表
+      async getList() {
+        this.loading = true;
+        const listQuery = Object.assign({}, this.listQuery, {
+          page: this.listQuery.page - 1
+        });
+        const {
+          data
+        } = await this.$api.findAbnormal(listQuery);
+        const {
+          totalCount,
+          list
+        } = data;
+        this.total = totalCount;
+        this.data = list;
+        this.loading = false;
+      },
+      // 搜索
+      handleSearch() {
+        this.listQuery.page = 1;
+        this.getList();
+      }
+    }
+  };
+</script>

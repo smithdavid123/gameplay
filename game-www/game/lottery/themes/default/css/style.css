@@ -1,0 +1,837 @@
+@import url(../../../css/theme-shared.css);
+body {
+    background: url(../images/bg.jpg) no-repeat center top #efefef;
+}
+
+/* 上排功能區 */
+
+.play-page-container .play-content .play-top-content {
+    background: #fff;
+}
+
+.play-page-container .play-content .play-top-content .divider {
+    width: 1px;
+    height: 100%;
+    background: #e6e6e6;
+}
+
+/* 當前彩種文字 */
+
+.play-content .lotteryName .name {
+    color: #c04d1e;
+    font-size: 24px;
+    width: 100%;
+}
+
+/* 截止時間與現在開獎 */
+
+.lottery-open-info .issue-container .issue {
+    color: #a3a3a3;
+}
+
+.lottery-open-info .issue-container .issue span {
+    color: #636363;
+}
+
+.lottery-open-info .issue-container .issue .issue-text {
+    color: #808080;
+}
+
+.lottery-open-info .surplus-time .time_box {
+    color: #fff;
+}
+
+.lottery-open-info .surplus-time .time_box .textAuto {
+    background: linear-gradient(#b7b7b7, #9a9a9a);
+}
+
+.lottery-open-info .surplus-time .dian {
+    color: #9c9c9c;
+}
+
+/* .lottery-open-code .issue-container {
+    
+} */
+
+.lottery-open-code .issue-container .issue {
+    color: #666666;
+}
+
+.lottery-open-code .issue-container .issue span {
+    color: #666666;
+}
+
+.lottery-ssc .lottery-open-code>.code>.list>.ball, .lottery-11x5 .lottery-open-code>.code>.list>.ball, .lottery-3d .lottery-open-code>.code>.list>.ball {
+    color: #fff;
+    background: linear-gradient(#ca163f, #ab042b);
+    border: 2px solid #f7113f;
+}
+
+/* 走勢、聲音等功能按鈕 */
+
+.menu_bar>.item {
+    background: #c04d1e;
+    color: #fff;
+}
+
+.menu_bar .result i {
+    background: url(../images/result.png) no-repeat center;
+}
+
+.menu_bar .zs i {
+    background: url(../images/zs.png) no-repeat center;
+}
+
+.menu_bar .skin i {
+    background: url(../images/skin.png) no-repeat center;
+}
+
+/* .menu_bar .sound i {
+    background: url(../images/sound_on.png) no-repeat center;
+} */
+
+.menu_bar .sound.on i {
+    background: url(../images/sound_on.png) no-repeat center;
+}
+
+.menu_bar .sound.off i {
+    background: url(../images/sound_off.png) no-repeat center;
+}
+
+.sound.on::after, .sound.off::after {
+    /* color: #fff; */
+}
+
+/* 聲音logo關閉斜線 */
+
+.sound.off::before {
+    background: #fff;
+}
+
+/* 所有彩種title */
+
+.lottery_menu .lottery-menu-top {
+    background: #78655b;
+    color: #f3f3f3;
+}
+
+/* 所有彩種選單 */
+
+.lottery_menu .container-fluid {
+    background: #fff;
+}
+
+.lottery_menu .container-fluid .accordion-toggle {
+    color: #808080;
+}
+
+/* 彩種大項目bg */
+
+.lottery_menu .container-fluid .accordion-group .accordion-heading {
+    /* background-color: #fff; */
+}
+
+/* 彩種大項目右邊箭頭 */
+
+.lottery_menu .container-fluid .accordion-toggle .icon {
+    background: url(../images/jt.png) no-repeat;
+}
+
+/* 彩種大項目右邊展開與收合文字 */
+
+.lottery_menu .container-fluid .accordion-toggle::after {
+    color: #a9a9a9;
+}
+
+/* 彩種小項目選單 */
+
+.lottery_menu .container-fluid .accordion-inner {
+    /* background: #fff; */
+}
+
+.lottery_menu .container-fluid .accordion-inner .item {
+    color: #808080;
+    background: #f1f1f1;
+}
+
+.lottery_menu .container-fluid .accordion-inner .item.active, .lottery_menu .container-fluid .accordion-inner .item:hover {
+    color: #fff;
+    background: #78655b;
+}
+
+/** 玩法區域 */
+
+.play-content .lottery-play-box {
+    border-color: #dfdfdf;
+    /* box-shadow: 0px 0px 4px 1px #5e5e5e4d;
+    border-radius: 10px 10px 0 0; */
+}
+
+.play-content .lottery-play-box .lottery-play {
+    color: #333333;
+    background: #fff;
+    border: 1px solid #bfbbba;
+}
+
+/* 彩種規則容器(最上排) */
+
+.play-content .lottery-play-box .lottery-play .play-groups {
+    background: #fff;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+/* 彩種規則選項) */
+
+.play-content .lottery-play-box .lottery-play .play-groups>.list>.item {
+    color: #333;
+}
+
+.play-content .lottery-play-box .lottery-play .play-groups>.list>.item:hover, .play-content .lottery-play-box .lottery-play .play-groups>.list>.item.selected {
+    color: #fff !important;
+    background: #e38b42;
+}
+
+/* 彩種模式容器(第二排) */
+
+.play-content .lottery-play-box .lottery-play .play-list {}
+
+/* 彩種模式Label */
+
+.play-content .lottery-play-box .lottery-play .play-list>.row>.label {
+    color: #777777;
+}
+
+/* 彩種模式選項 */
+
+.play-content .lottery-play-box .lottery-play .play-list>.row>.column {
+    color: #525252;
+    border: 1px solid #dddddd;
+    background: #fff;
+}
+
+.play-content .lottery-play-box .lottery-play .play-list>.row>.column:hover {
+    border-color: #e38b42;
+    color: #e38b42;
+}
+
+.play-content .lottery-play-box .lottery-play .play-list>.row>.column.selected {
+    background: #e38b42;
+    color: #fff !important;
+}
+
+/* 彩種投注操作區 */
+
+.play-content .lottery-play-box .lottery-play .center-middle-panel {
+    background: #fff;
+}
+
+/* 玩法提示幫助與案例文字 */
+
+.play-content .lottery-play-box .lottery-play .center-middle-panel .play-help {}
+
+.play-content .lottery-play-box .lottery-play .center-middle-panel .play-help>.tips {
+    background: url(../images/prompt.png) no-repeat 4px;
+}
+
+.play-content .lottery-play-box .lottery-play .center-middle-panel .play-help>.tips>a {
+    color: #c04d1e;
+    /* border: 1px solid #dddddd;
+    background: #fff; */
+}
+
+/* 玩法提示幫助與案例浮出視窗 */
+
+.play-content .lottery-play-box .lottery-play .center-middle-panel .play-help>.help, .play-content .lottery-play-box .lottery-play .center-middle-panel .play-help>.example {
+    color: inherit;
+}
+
+/* 玩法獎金 */
+
+.play-content .lottery-play-box .lottery-play .center-middle-panel .play-help>.bonus [data-field="bonus"] {
+    color: #ef0037;
+}
+
+/** 彩球選項區 */
+
+.play-content .lottery-play-box .lottery-play .play-area {}
+
+/** 彩球選項區Label */
+
+.play-content .lottery-play-box .lottery-play .play-area>.row>.label {
+    color: #666666;
+}
+
+/** 彩球選項區彩球 */
+
+.play-content .lottery-play-box .lottery-play .play-area>.row>.balls>.item {
+    border: 1px solid #c25726;
+    color: #c25726;
+    background: #fff;
+}
+
+.play-content .lottery-play-box .lottery-play .play-area>.row>.balls>.item:hover {
+    background: linear-gradient(#fffefc, #ffddbb);
+}
+
+.play-content .lottery-play-box .lottery-play .play-area>.row>.balls>.item.selected {
+    color: #fff;
+    background: linear-gradient(#e38b42, #c45b29);
+}
+
+/* 彩球選項 趣味型 */
+
+.play-content .lottery-play-box .lottery-play .play-area>.row.medium>.balls>.item, .play-content .lottery-play-box .lottery-play .play-area>.row.large>.balls>.item, .play-content .lottery-play-box .lottery-play .play-area>.row.x-large>.balls>.item {
+    border: 1px solid #d9d9da;
+    color: #000;
+    background: linear-gradient(#ffffff, #f2f1f3);
+}
+
+.play-content .lottery-play-box .lottery-play .play-area>.row.medium>.balls>.item:hover, .play-content .lottery-play-box .lottery-play .play-area>.row.large>.balls>.item:hover, .play-content .lottery-play-box .lottery-play .play-area>.row.x-large>.balls>.item:hover {
+    border-color: #8d6dec;
+    color: #8d6dec;
+}
+
+.play-content .lottery-play-box .lottery-play .play-area>.row.medium>.balls>.item.selected, .play-content .lottery-play-box .lottery-play .play-area>.row.large>.balls>.item.selected, .play-content .lottery-play-box .lottery-play .play-area>.row.x-large>.balls>.item.selected {
+    color: #fff;
+    border-color: transparent;
+    background: linear-gradient(#856cf1, #d47fbf);
+}
+
+/* 彩球右方快速選取按鈕 */
+
+.play-content .lottery-play-box .lottery-play .play-area>.row>.tools>.item {
+    border: 1px solid #c25726;
+    color: #c25726;
+    background: #fff;
+}
+
+.play-content .lottery-play-box .lottery-play .play-area>.row>.tools>.item:hover {
+    background: linear-gradient(#fffefc, #ffddbb);
+}
+
+.play-content .lottery-play-box .lottery-play .play-area>.row>.tools>.item:active {
+    color: #fff;
+    background: linear-gradient(#e38b42, #c45b29);
+}
+
+/* 彩球單式手動輸入 */
+
+.play-content .lottery-play-box .lottery-play .play-area>.textarea>textarea {
+    color: #333;
+    background: #fff;
+    border: 1px solid #d6dae0;
+}
+
+/* 彩球下排的操作區 */
+
+.play-content .lottery-play-box .lottery-play .play-options {
+    /* border-top: 1px solid #bfbfbf; */
+}
+
+/* 彩球下排的操作區 高亮文字 */
+
+.play-content .lottery-play-box .lottery-play .play-options .highlight {
+    color: #ef0037;
+}
+
+/* 彩球下排的操作區 倍數 */
+
+.play-content .lottery-play-box .lottery-play .play-options .multiple>.sub, .play-content .lottery-play-box .lottery-play .play-options .multiple>.add {
+    color: #333;
+    background: linear-gradient(#ffffff, #d8d8d8);
+    border: 1px solid #bfbfbf;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .multiple>.multiple-unit {
+    color: #a7a7a7;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .multiple>input {
+    color: #7d7d7d;
+    background: #fff;
+    border: 1px solid #bfbfbf;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .multiple>.sub:active, .play-content .lottery-play-box .lottery-play .play-options .multiple>.add:active {
+    background: #054c94;
+    color: #fff;
+    border: 1px solid #054c94;
+}
+
+/* 彩球下排的操作區 模式 */
+
+.play-content .lottery-play-box .lottery-play .play-options .model {}
+
+.play-content .lottery-play-box .lottery-play .play-options .model>.item {
+    border-color: #bfbfbf;
+    background: #fff;
+    color: #666666;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .model>.item:hover, .play-content .lottery-play-box .lottery-play .play-options .model>.item.selected {
+    background: linear-gradient(#e38b42, #c65d2a);
+    color: #fff;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .text>span {
+    color: #ef0037;
+}
+
+/* 獎金共計 num */
+
+.play-content .lottery-play-box .lottery-play .adjust-bonus .adjust-point .nums {
+    color: #ff5a00;
+    font-size: 13px;
+}
+
+/* 獎金調節 bar 外容器 */
+
+.play-content .lottery-play-box .lottery-play .adjust-bonus>.slider-wrapper {
+    background: #f9f9f9;
+    /* border: 1px solid #c6c3b9; */
+}
+
+/* 獎金調節 bar slider 選取區主顏色*/
+
+.play-content .lottery-play-box .lottery-play .adjust-bonus>.slider-wrapper .noUi-connect {
+    background: #f25500;
+}
+
+/* 獎金調節 bar slider 未選取區*/
+
+.play-content .lottery-play-box .lottery-play .adjust-bonus>.slider-wrapper .noUi-connect .noUi-base .noUi-background {
+    background: #ababab;
+}
+
+/* 獎金調節 bar 拖曳節點 */
+
+.play-content .lottery-play-box .lottery-play .adjust-bonus>.slider-wrapper .noUi-horizontal .noUi-handle {
+    background: #f25500;
+    border-color: #c84600;
+}
+
+/* 彩球下排的操作區 - 投注按鈕區 */
+
+.play-content .lottery-play-box .lottery-play .play-options .play-options-right-container {}
+
+.play-content .lottery-play-box .lottery-play .play-options .play-options-right-container .btn-gp>.button {
+    color: #595959;
+    background: transparent;
+    box-shadow: 0 0 2px 1px #d2d2d2;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .play-options-right-container .btn-gp>.button[data-command="add"] {
+    background: #fff;
+    color: #c25726;
+    border: 1px solid #c25726;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .play-options-right-container .btn-gp>.button[data-command="quick-bet"] {
+    background: linear-gradient(#ca163f, #ac052b);
+    color: #fff;
+    border: 1px solid #ff184a;
+}
+
+.play-content .lottery-play-box .lottery-play .play-options .play-options-right-container .btn-gp>.button[data-command="submit"] {
+    background: linear-gradient(#2370b7, #2d5c88);
+    color: #fff;
+    border-color: transparent;
+}
+
+.lottery-record-box {
+    background: #fff;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: 1px solid #bfbbba;
+}
+
+/* 彩球下排的操作區 - 投注按鈕icon */
+
+.play-content .lottery-play-box .lottery-play .play-options .play-options-right-container .btn-gp>.button .icon {
+    margin-right: 5px;
+}
+
+/* 添加號碼前的 icon */
+
+/* .play-content .lottery-play-box .lottery-play .play-options .play-options-right-container .btn-gp>.button[data-command="add"] .icon {
+    width: 25px;
+    height: 25px;
+    background: url(../images/add.png) no-repeat center;
+} */
+
+/* 一鍵投注前的 icon */
+
+/* .play-content .lottery-play-box .lottery-play .play-options .play-options-right-container .btn-gp>.button[data-command="quick-bet"] .icon {
+    width: 29px;
+    height: 23px;
+    background: url(../images/quickBet.png) no-repeat center;
+} */
+
+/* 暫存區與訂單紀錄 */
+
+.lottery-record {
+    background: #fff;
+}
+
+/* 彩球下排的操作區 - 投注按鈕icon */
+
+.lottery-record .scroll-wrap {
+    border: 1px solid #dfdfdf;
+}
+
+.lottery-record .scroll-wrap .scroll-title .item {
+    background: #78655b;
+    color: #fff;
+}
+
+/* 號碼暫存列表 模擬table head的區塊 */
+
+.lottery-record>.scroll-wrap .count_down {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+/* 號碼暫存列表右方按鈕區 普通按鈕 */
+
+.lottery-record .btn-gp>.button-container>.button {
+    background: #fff;
+    color: #6b6b6b;
+    border: 1px solid #6b6b6b;
+}
+
+.lottery-record .btn-gp>.submit {
+    color: #fff;
+    background: linear-gradient(#f86f00, #da4a0c);
+    /* box-shadow: inset -1px -1px 2px 0px rgba(0, 0, 0, 0.3); */
+}
+
+.lottery-record .btn-gp>.submit .icon {
+    background: url(../images/sub.png) no-repeat center;
+}
+
+/* 號碼暫存列表 */
+
+.lottery-record {
+    background: #fff;
+}
+
+/* 號碼暫存列表 暫存投注區塊 */
+
+.lottery-record .scroll-wrap>.scroll-item::-webkit-scrollbar-thumb {
+    background: #b7b7b7;
+}
+
+.lottery-record .scroll-wrap>.scroll-item::-webkit-scrollbar-track {
+    background: #fbfbfb;
+}
+
+.lottery-record .scroll-wrap>.scroll-item .list>.item {}
+
+.lottery-record .scroll-wrap>.scroll-item .list>.item [data-command="details"] {
+    color: #636461;
+}
+
+.lottery-record .scroll-wrap>.scroll-item .empty-hint {
+    color: #b3b3b3;
+}
+
+.lottery-record .list>.item>.remove a {
+    background: url(../images/delete_icon.png) no-repeat center;
+}
+
+/* 訂單紀錄容器 */
+
+.lottery-order {
+    border: 1px solid #dfdfdf;
+}
+
+.lottery-order>.content {}
+
+.lottery-order>.content>.item {}
+
+/* 訂單紀錄Tab */
+
+.lottery-order>.tab {
+    color: #7e7e7e;
+}
+
+.lottery-order>.tab>.item {
+    color: #7e7e7e;
+}
+
+.lottery-order>.tab>.item.active {
+    color: #fff;
+    background: #7e7e7e;
+}
+
+/* 訂單紀錄表格 */
+
+.lottery-order>.content {}
+
+.lottery-order>.content>.item>.table {
+    color: #333333;
+}
+
+.lottery-order>.content>.item>.table>thead>tr {
+    background: #f7f7f7;
+}
+
+.lottery-order>.content>.item>.table>tbody>tr {}
+
+/* .lottery-order>.content>.item>.table>tbody>tr:nth-child(even) {
+    background: #f7f7f7;
+} */
+
+.lottery-order>.content>.item>.table>tbody>tr a {
+    color: #e87905 !important;
+    background: transparent !important;
+}
+
+/* easy-page */
+
+.lottery-order>.content>.item>.page-list .easy-page>.status {}
+
+/* 
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>.active>a {
+    background: #b78044;
+    border-color: #b78044;
+    border-radius: 10px;
+    color: #fff;
+}
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>.disabled>span,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>.disabled>span:hover,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>.disabled>span:focus,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>.disabled>a,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>.disabled>a:hover,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>.disabled>a:focus {
+    color: #545454;
+    cursor: not-allowed;
+    border-color: #545454;
+}
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>li>a,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>li>a:hover,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>li>a:focus,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>li>span,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>li>span:hover,
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>li>span:focus {
+    color: #666;
+    border-color: #666;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.lottery-order>.content>.item>.page-list .easy-page>.page-list>li>a:hover {
+    color: #b78044;
+    border-color: #b78044;
+    background: transparent;
+} */
+
+/* 開獎歷史 */
+
+.lottery-open-list {
+    background: #fff;
+}
+
+.lottery-open-list .scroll-wrap {
+    box-shadow: 0px 0px 4px 1px #5e5e5e4d;
+}
+
+.lottery-open-list .head-container {
+    background: #ffffff;
+    color: #c04d1e;
+    box-shadow: 0px 0px 4px 1px #5e5e5e4d;
+}
+
+.lottery-open-list .head-container img {
+    margin-right: 5px;
+    content: url("../images/icon_history.png");
+}
+
+.lottery-open-list .scroll-wrap .list>.item:nth-child(odd) {
+    background: #f1f1f1;
+}
+
+.lottery-open-list .scroll-wrap .list>.item:nth-child(even) {
+    background: #fff;
+}
+
+/* .lottery-open-list .scroll-wrap .list>.item {
+    color: #5e5e5e;
+}
+.lottery-open-list .scroll-wrap .list>.item>div:first-child {
+    background: #fafafa;
+}
+.lottery-open-list .scroll-wrap .list>.item:hover>div {
+    color: #ff7e00;
+    background: #ededed;
+} */
+
+[data-command="clear"] img {
+    content: url(../images/garbage-can.png);
+}
+
+/** 彩票列表內容, 切換 tab 樣式 */
+
+.play-page-container .play-content .play-top-content {
+    background: #fff;
+}
+
+.play-page-container .play-content .play-top-content .main-lottery-category .category-list {
+    border-bottom: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+}
+
+.play-page-container .play-content .play-top-content .main-lottery-category .category-list .category-list-item.active {
+    background: #e38b42;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.play-page-container .play-content .play-top-content .main-lottery-category .category-items .category-item .item {
+    border: 1px solid #636363;
+    color: #636363;
+}
+
+.play-page-container .play-content .play-top-content .main-lottery-category .category-items .category-item .item.active {
+    color: #fff;
+    background: #e38b42;
+    border: 0;
+}
+
+/* 上方公告區塊 */
+
+.top-others-container .notice {
+    background: #c04d1e;
+    color: #fff;
+}
+
+.lottery-play .play-area>.row>.balls>.item.red {
+    background: #ffb5b5 !important;
+    color: #fff;
+}
+
+.lottery-play .play-area>.row>.balls>.item.blue {
+    background: #97cbff !important;;
+    color: #fff;
+}
+
+.lottery-play .play-area>.row>.balls>.item.green {
+    background: #a0e0a0 !important;;
+    color: #fff;
+}
+
+.lottery-play .play-area>.row>.balls>.item.red.selected {
+    background: #f00 !important;;
+}
+
+.lottery-play .play-area>.row>.balls>.item.blue.selected {
+    background: #00f !important;;
+}
+
+.lottery-play .play-area>.row>.balls>.item.green.selected {
+    background: #0f0 !important;;
+    color: #fff;
+}
+
+.lottery-lhc .lottery-open-code>.code>.list>.ball {
+    width: 35px;
+    margin: 0 2px;
+    /*border-radius: 26px;*/
+    font-size: 16px;
+    background-size: cover;
+}
+
+.lottery-lhc .lottery-open-code>.code>.list>.ball .n {
+    height: 24px;
+    line-height: 24px;
+    border-radius: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.lottery-lhc .lottery-open-code>.code>.list>.ball .n.red, .lottery-open-list .list>.item>.code .ball .n.red {
+    background: #fb6a6a;
+}
+
+.lottery-lhc .lottery-open-code>.code>.list>.ball .n.green, .lottery-open-list .list>.item>.code .ball .n.green {
+    background: #8bc38b;
+}
+
+.lottery-lhc .lottery-open-code>.code>.list>.ball .n.blue, .lottery-open-list .list>.item>.code .ball .n.blue {
+    background: #5252ff;
+}
+
+.lottery-lhc .lottery-open-code>.code>.list>.ball .sx {
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    background: #333;
+    font-size: 14px;
+}
+
+.lottery-open-list .list>.item>.code .ball .n {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.lottery-lhc .lottery-open-list .list>.item>.code .ball .sx {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.lottery-lhc .lottery-open-list {
+    width: 300px;
+}
+
+.lottery-lhc .lottery-open-list .list>.item {
+    height: 40px;
+    line-height: 40px;
+}
+
+/* .lottery-lhc .lottery-open-list .list > .item:hover .code {
+    width: 50%;
+    color: #333;
+    margin: auto 25%;
+} */
+
+/* 六合彩半波球样式 */
+
+.lottery-lhc .lottery-play .play-area>.row.shengxiao>.balls>.item {
+    width: 48%;
+    float: left;
+    margin: 5px 1%;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.lottery-lhc .lottery-play .play-area>.row.shengxiao>.balls>.item .name {
+    display: inline-block;
+    width: 60px;
+    vertical-align: middle;
+}
+
+.lottery-lhc .lottery-play .play-area>.row.shengxiao>.balls>.item .num {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.lottery-lhc .lottery-play .play-area>.row.shengxiao>.balls>.item .num.red {
+    background: #f00;
+}
+
+.lottery-lhc .lottery-play .play-area>.row.shengxiao>.balls>.item .num.green {
+    background: #0f0;
+}
+
+.lottery-lhc .lottery-play .play-area>.row.shengxiao>.balls>.item .num.blue {
+    background: #00f;
+}

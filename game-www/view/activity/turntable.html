@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>幸运抽奖</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery.eraser.js"></script>
+</head>
+
+<body class="turntable">
+    <template id="global-slot">
+        <div class="page-container">
+            <div class="page-content">
+                <div class="bingo-box disable">
+                    <!-- <img src="./images/turntable/title.png" /> -->
+                    <!-- <div class="cards">
+                        <div class="card">
+                            <div class="front"></div>
+                            <div class="back"></div>
+                        </div>
+                        <div class="card">
+                            <div class="front"></div>
+                            <div class="back"></div>
+                        </div>
+                        <div class="card">
+                            <div class="front"></div>
+                            <div class="back"></div>
+                        </div>
+                    </div> -->
+                    <div class="count-div">
+                        <div class="play-count">还有 <div data-field="count">0</div> 次抽奖机会</div>
+                    </div>
+                    <a class="drawBtn"><img src="images/turntable/draw_btn.png" /></a>
+                </div>
+                <div class="rule-box">
+                    <!-- <div class="rule-title">活 动 规 则</div> -->
+                    <div class="rule-content">
+                        <div class="rule-row">1.当日首充200元以上，即可参与活动。</div>
+                        <div class="rule-row">2.活动开奖内容<span><br>（88元、68元、58元、38元、28元、18元、8.8元、谢谢惠顾）</span>。</div>
+                        <div class="rule-row">3.抽奖成功后，获得相应金额且自动到达会员账户。</div>
+                        <div class="rule-row">4.用户投注注数不可大于该玩法总注数的80%，否则不能参与该活动。</div>
+                        <div class="rule-row">5.平台风控将实时监控，禁止一切违反游戏规则 的行为，一经发现平台有权冻结账号。</div>
+                        <div class="rule-row">6.本活动最终解释权为本平台所有。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='model_1'>
+                <div class="box">
+                    <div class="content">
+                        <span class="model_close hover"></span>
+                        <!-- <div class="title"></div> -->
+                        <div class="money">抽到<span class="prize_unit"></span><span class="Jeprice">0</span>元现金</div>
+                        <a class="TZbtn hover" href="../../game/lottery/play.html">
+                            <!-- 立即投注 -->
+                        </a>
+                        <div class="prompt">可进入个人中心-资金明细</div>
+                        <div class="prompt">查看优惠活动纪录</div>
+                    </div>
+                </div>
+            </div>
+            <div class='model_2'>
+                <div class="box">
+                    <div class="content">
+                        <span class="model_close hover"></span>
+                        <!-- <div class="title">真可惜</div> -->
+                        <!-- <div class="thanks">谢谢惠顾</div> -->
+                        <a class="TZbtn hover" href="../../game/lottery/play.html">
+                            <!-- 立即投注 -->
+                        </a>
+                        <div class="prompt">可进入个人中心-资金明细</div>
+                        <div class="prompt">查看优惠活动纪录</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = globalSingleSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../../assets/js/service.js"></script>
+    <script type="text/javascript" src="../../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/turntable.js"></script>
+
+</body>
+
+</html>

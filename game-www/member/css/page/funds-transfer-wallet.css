@@ -1,0 +1,205 @@
+/* 比鄰百家樂遊戲獨立部分 end */
+
+.main-panel .transfer-wallet ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto 16px auto;
+}
+
+.main-panel .transfer-wallet ul li {
+    position: relative;
+    width: 280px;
+    height: 166px;
+    margin-right: 8px;
+    background: url(../../images/gameItem_bg.png) no-repeat top;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+}
+.main-panel .transfer-wallet ul li:nth-child(3n+3) {
+    margin-right: 0;
+}
+.main-panel .transfer-wallet ul li:nth-child(n+4) {
+    margin-top: 8px;
+}
+
+.main-panel .transfer-wallet ul li .play-btn {
+    background: linear-gradient(#e68022, #d66616);
+    text-align: center;
+    line-height: 23px;
+    color: #fff;
+    position: absolute;
+    font-size: 14px;
+    right: 10px;
+    /* left: 10px; */
+    bottom: 55px;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+.main-panel .transfer-wallet ul li .play-btn img {
+    margin-left: 8px;
+}
+
+.main-panel .transfer-wallet ul li .name {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.main-panel .transfer-wallet ul li .name-cn {
+    position: absolute;
+    right: 42px;
+    top: 20px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.main-panel .transfer-wallet ul li .money {
+    position: absolute;
+    left: 11px;
+    /* right: 10px; */
+    top: 76px;
+    font-size: 13px;
+    color: #313131;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #b9b9b9;
+    padding: 7px 12px;
+    border-radius: 4px 0 0 4px;
+}
+
+.main-panel .transfer-wallet ul li .money [data-global="queryBalance"] {
+    color: #e23b20;
+}
+
+.main-panel .transfer-wallet ul li .money [data-command="baccaratrefresh"] {
+    cursor: pointer;
+    background:url(../../images/refresh.png) no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}
+
+.main-panel .transfer-wallet ul li .money .refresh.loading {
+    background: url("../../images/input_spinner.gif") no-repeat center;
+    background-size: 20px 20px;
+    pointer-events: none;
+    cursor: none;
+}
+
+.main-panel .transfer-wallet ul li .unactive {
+    position: absolute;
+    right: 42px;
+    top: 20px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.main-panel .transfer-wallet ul li .transfer-money {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-panel .transfer-wallet ul li .transfer-money input {
+    width: 142px;
+    height: 32px;
+    line-height: 32px;
+    /* float: left; */
+    border: 1px solid #bfbfbf;
+    font-size: 13px;
+    text-align: left;
+    padding: 0 10px;
+    position: relative;
+    left: 1px;
+    border-radius: 4px 0 0 4px;
+}
+
+.main-panel .transfer-wallet ul li .transfer-money a {
+    font-size: 13px;
+    line-height: 32px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.main-panel .transfer-wallet ul li .transfer-money [data-command="lotterytogame"] {
+    background: linear-gradient(#3059a3, #134fa1);
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+}
+
+.main-panel .transfer-wallet ul li .transfer-money [data-command="gametolottery"] {
+    background: linear-gradient(#2d6589, #224e6b);
+    color: #fff;
+}
+
+.main-panel .transfer-wallet ul li .transfer-money.disable {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.main-panel .transfer-wallet ul li .play-btn.openGame {
+    cursor: pointer;
+    border-radius: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 86px;
+    background: url(/member/css/images/btn_7.png) no-repeat;
+    background-size: 100% 100%;
+    color: #faebc4;
+}
+
+.main-panel .transfer-wallet ul li .play-btn.openGame:hover {
+    opacity: .8;
+}
+
+.main-panel .transfer-wallet ul li .title {
+    width: 141px;
+    height: 60px;
+    line-height: 67px;
+    background: #d63c3c;
+    color: #eef9ff;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    left: -49px;
+    top: -7px;
+    transform: rotateZ(-45deg);
+}
+
+.main-panel .transfer-wallet ul li .name .bg{
+    width: 100%;
+    height: 100%;
+}
+.main-panel .transfer-wallet ul li .name .icon{
+    max-height: 50px;
+    max-width: 128px;
+}
+.main-panel .transfer-wallet ul li .money.notOpen{
+    position: absolute;
+    top: 34px;
+    left: 50%;
+    padding: 0;
+    transform: translateX(-50%);
+    width: auto;
+}

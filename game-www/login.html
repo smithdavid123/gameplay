@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>用户登录</title>
+    <!-- BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/page/login.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="assets/plugins/jquery.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="assets/js/init0.js"></script>
+    <script type="text/javascript" src="assets/js/init1.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="assets/js/template.js"></script>
+</head>
+
+<body>
+    <template id="global-slot">
+        <div class="login-container">
+            <div class="terms">
+                <div class="terms-titlt">壹佰娱乐游戏协议</div>
+                <div class="text">
+                    <div class="title">账户安全信息</div>
+                    <p> 用户必须年满18岁或以上的，遵守所在地的法律法规进行游戏或参与优惠推广。</p>
+                    <p> 会员需确保自身的用户名、账户信息、银行信息、IP信息的唯一性和正确性，若因为以上信息的唯一性和正确性原因导致存款、游戏、参与优惠活动、提款等问题，平台不承担责任。</p>
+                    <p> 平台保留必要权力，根据实际情况要求会员提供充分的证明文件，以验证会员身份。接到相关通知后，会员必须配合完成验证程序，才可获得奖金或提款。若会员不按要求提供证件验证，即同意自动放弃帐户全数余额。
+                    </p>
+                    <p> 平台不支持任何会员私下的账号买卖、托管及代玩行为，如因私下买卖、委托及代玩行为出现任何纠纷，需玩家自行解决，平台不承担责任。</p>
+                    <p> 平台建议会员不要设置过于简单的密码，妥善保管密码，不要将密码泄露于他人，并且不定期修改。不要相信任何第三方以任何理由索要账号、账号密码、银行卡等账户信息的行为，平台内部人员不会跟任何玩家获取游戏账号密码。如由于将密码告知他人或个人原因导致账号资金等损失情况，平台不承担责任。
+                    </p>
+                    <p> 请对登录账户的电脑定期杀毒，以排除由于电脑中毒造成账户被盗等安全隐患。</p>
+                    <div class="title">优惠活动规则</div>
+                    <p> 同一帐户/家庭/户籍地址/电邮地址/电话号码/付款帐号（如借记卡/信用卡、E-Pay、Neteller 账号等）/
+                        IP地址/共享电脑环境(如学校、公共图书馆或工作场所等)，仅限于领取优惠一次。平台严禁利用多个帐户对打套利的行为，平台有权取消套利获利及赠送奖金，严重者永久冻结账户。</p>
+                    <p> 优惠活动只对真正参与游戏而有风险投注的有效用户开放。任何以套取赠送奖金为目的进行无风险投的用户，都视为无效用户。如平台判定该用户为无效用户，可以拒绝该用户申请参与活动资格或者取消套利得利及赠送奖金。
+                    </p>
+                    <p> 在优惠活动期间，发现有任何违背、欺骗、或利用规则与条款进行非法获利的用户，平台有权终止登陆、暂停使用帐号、没收奖金及赢利，严重者永久冻结账户。</p>
+                    <p> 所有优惠活动奖金及活动盈利不可转账至其它账户，奖金额度及盈利发放时间，根据活动规定，如遇特殊情况，平台有权推迟奖金及盈利发放时间。</p>
+                    <p> 平台保留修改优惠活动条款与规则的权利，包括不见限于暂停、修改或取消优惠活动等，请用户关注网站公告活动说明，如因未及时关注公告影响游戏及其他，平台不承担责任。</p>
+                    <p> 平台所有的活动内容及规则，以网站公告公布的活动为准，请勿轻信其他渠道获取的活动信息，若由于从非官方渠道获得活动信息而造成财产损失的，所有损失由用户自己承担。</p>
+                    <div class="title">银行充提</div>
+                    <p> 平台推荐用户优先使用第三方存款，其次尽量使用四大银行的网银支付。
+                        如使用在手机上充值或者使用邮政等非平台推荐的银行充值，平台不能保证到帐时间，因为以上原因造成未能及时到帐，用户有义务提供充值证明协助平台查询充值到帐状况，同时平台无法保障不能证明实际到帐结果的资金安全。
+                    </p>
+                    <p> 请尽量使用工行进行提款，如使用农行、建行、招行等银行提款，可能会出现跨行转账延迟到帐的情况，如遇延迟到帐，请耐心等待银行的转账处理。</p>
+                    <p> 因为银行系统或者第三方支付平台官方维护，以致用户充值和提款造成延误，平台会出示相关公告，请用户自己把握充值或者提款时间，以免耽误游戏或者资金周转，如没有及时关注平台出示的相关公告，而造成不利结果，平台不承担责任。
+                    </p>
+                    <div class="title">投注游戏</div>
+                    <p> 平台提醒会员在确定游戏投注之前一定仔细检查所要下注的彩种、期数、注数、金额、号码等内容，平台不接受因为以上任何理由造成损失的索赔。</p>
+                    <p> 平台所提供的开奖号码只供参考，一切开奖结果以官网公布为准。平台由于任何原因导致开奖错误，有权利根据官网公布的正确开奖号码进行修正，根据官网公布中奖号码实际派发奖金，对于按照错误号码派发的奖金给予撤销，用户不得以该理由索赔。
+                    </p>
+                    <p> 有追号需求的用户，请预留充分的时间进行充值和投注，以保证有足够的余额和投注时间，平台不接受任何因为充值到帐时间问题，造成不利结果的索赔。</p>
+                    <p> 彩种官方若未开奖，平台将视情况进行撤单。超过30分钟后第三方无论以任何形式补开，增开，重开，平台均不重复性开奖。</p>
+
+                    <p>如果您注册账户或进行游戏，则视为已同意该条款协议，请您自觉遵守以及严格执行。</p>
+                    <p>针对此条款任何修改，变动，调整，平台保留最终解释权。</p>
+                </div>
+                <div class="termsbtnbox">
+                    <div id="choice" class="termsbtn">我同意</div>
+                    <div class="cancelbtn">取消</div>
+                </div>
+            </div>
+            <div class="login-top">
+                <a class="login-logo" href="login.html"><img src="assets/images/logo.png" /></a>
+            </div>
+            <div class="login-content">
+                <div class="login-main-container">
+                    <div class="login-form">
+                        <div class="title">
+                            <!-- 用户登录 -->
+                            <img src="assets/images/login/title.png" />
+                        </div>
+                        <!-- <div class="tab-links">
+                                    <a href="/reg.html">用户注册</a>
+                                    <a class="active" href="#">用户登录</a>
+                                </div> -->
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <i data-type="username"></i>
+                                <input name="username" type="text" class="form-control" placeholder="请输入您的名称">
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group">
+                                <i data-type="password"></i>
+                                <input name="password" type="password" class="form-control" placeholder="请输入您的密码">
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group">
+                                <i data-type="securityCode"></i>
+                                <input name="securityCode" type="text" class="form-control" placeholder="验证码">
+                                <a class="security-code" title="点击刷新"></a>
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="agreement">
+                                <span class="select active" data-command="choice" name="agree" checked="checked"
+                                    data-command2="no"></span>
+                                我已阅读并同意<a class="underline">【壹佰娱乐游戏协议】</a>
+                            </div>
+
+                            <!-- <a data-command="login" class="btn btn-block btn-submit hover">立即登录</a> -->
+                            <a data-command="login" class="btn-submit hover">立即登录</a>
+                            <div class="form_hint">开启<span style="text-decoration: underline;">谷歌验证</span>使你账号更加安全</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer-single">
+                <div class="normal-links">
+                    <a class="item">
+                        <img src="assets/images/reg/download_icon.png" />
+                        APP下载
+                        <div class="popup-container">
+                            <div class="title">APP下载</div>
+                            <div class="qrcode-items">
+                                <div class="qrcode-item android hide">
+                                    <div class="title"></div>
+                                    <div id="header-code" class="code"></div>
+                                </div>
+                                <div class="qrcode-item ios hide">
+                                    <div class="title"></div>
+                                    <div id="header-code2" class="code"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="item" target="_blank" href="service.html">
+                        <img src="assets/images/reg/service_icon.png" />
+                        在线客服
+                    </a>
+                    <a class="item">
+                        <img src="assets/images/reg/lines_icon.png" />
+                        测速中心
+                        <div class="popup-container">
+                            <div class="title">线路检测</div>
+                            <div class="nl-lines-box"></div>
+                            <div class="re-ping hover">重新检测</div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="footer-center flex-row">
+                    <div class="payment">
+                        <div class="text flex-row">
+                            支付方式
+                            <div class="pay-list">
+                                <span class="item"><img src="assets/images/reg/alipay.png"></span>
+                                <span class="item"><img src="assets/images/reg/wechatpay.png"></span>
+                                <span class="item"><img src="assets/images/reg/unionpay.png"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="browser">
+                        <div class="text flex-row">
+                            浏览器下载
+                            <div class="browser-list">
+                                <a class="item hover" target="_blank" href="http://www.firefox.com.cn/"><img
+                                        src="assets/images/reg/ff.png"></a>
+                                <a class="item hover" target="_blank" href="https://oomake.com/download/chrome"><img
+                                        src="assets/images/reg/chrome.png"></a>
+                                <a class="item hover" target="_blank"
+                                    href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads"><img
+                                        src="assets/images/reg/ie.png"></a>
+                                <a class="item hover" target="_blank" href="https://ie.sogou.com/"><img
+                                        src="assets/images/reg/sogo.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright-row">
+                    copyright © 壹佰娱乐 2020Reserved
+                </div>
+            </div>
+            <!-- <div class="pai">
+                <div class="text">
+                    <div class="flex-row"><img
+                            src="/assets/images/reg/hint_icon.png" />&emsp;温馨提示：反应时间越小，网站速度越快的网址排在越上面。
+                    </div>
+                    <div class="nl-lines-box"></div>
+                </div>
+                <div class="divider"></div>
+                <div class="text">
+                    推荐您使用以下瀏覽器:
+                    <div class="browser-list">
+                        <a class="item hover" target="_blank" href="http://www.firefox.com.cn/"><img
+                                src="/assets/images/reg/ff.png"></a>
+                        <a class="item hover" target="_blank" href="https://oomake.com/download/chrome"><img
+                                src="/assets/images/reg/chrome.png"></a>
+                        <a class="item hover" target="_blank"
+                            href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads"><img
+                                src="/assets/images/reg/ie.png"></a>
+                        <a class="item hover" target="_blank" href="https://ie.sogou.com/"><img
+                                src="/assets/images/reg/sogo.png"></a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = globalLoginSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="assets/js/utils.js"></script>
+    <script type="text/javascript" src="assets/js/service.js"></script>
+    <script type="text/javascript" src="assets/js/global.js"></script>
+    <!-- BEGIN PAGE JS -->
+    <script type="text/javascript" src="assets/js/login.js"></script>
+    <script type="text/javascript" src="assets/js/reg.js"></script>
+
+</body>
+
+</html>

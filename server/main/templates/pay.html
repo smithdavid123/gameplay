@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>第三方支付</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #444444;
+    font-size: 13px;
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    background: #eeeeee;
+}
+
+.result {
+    width: 200px;
+    margin: 50px auto 0 auto;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.result > .title {
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #000000;
+}
+
+.result > .text {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.result > .text > .highlight {
+    color: #ff0000;
+}
+
+.result > .qrcode {
+	text-align: center;
+	border: 1px solid #444444;
+}
+
+.result > .qrcode > img {
+	width: 198px;
+}
+
+.result > .message {
+    line-height: 36px;
+    text-align: center;
+    color: #ff0000;
+    font-size: 16px;
+}
+
+.result > .footer {
+    border-top: 1px solid #000000;
+    padding: 10px 0;
+}
+
+.result > .footer > .home {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+    .result {
+    	width: auto;
+	    margin: 0;
+	    border: none;
+	    border-radius: 0;
+	    padding: 0 20px;
+    }
+    .result > .text {
+    	width: 200px;
+    	margin-left: auto;
+    	margin-right: auto;
+    }
+    .result > .footer {
+    	display: none;
+    }
+		
+}
+
+.mybtn {
+    display: inline-block;
+    padding: .3em .5em;
+    background-image: linear-gradient(#ddd, #36cec7);
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3em;
+    box-shadow: 0 1px white inset;
+    text-align: center;
+    text-shadow: 0 1px 1px black;
+    color:white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mybtn active{
+    box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+    border-color: rgba(0,0,0,.3);
+    background: #bbb;
+}
+
+</style>
+</head>
+<body>
+<form>
+	<input type="hidden" name="payType" value="{{payType}}">
+	<input type="hidden" name="amount" value="{{amount}}">
+	<input type="hidden" name="codeUrl" value="{{codeUrl}}">
+	<input type="hidden" name="urlType" value="{{urlType}}">
+</form>
+<div class="result">
+    <div class="title">
+    	二维码支付
+    </div>
+    <div class="title" style="border-bottom: 0px; height: 35px; line-height: 35px; margin-bottom: 2px;">
+    	<label style="color:red">重要通知：请务必备注!!</label>
+    </div>
+    <div class="title" style="border-bottom: 0px; height: 30px; line-height: 30px; margin-bottom: 2px;">
+    	<label style="color:#f0f">请备注: {{mark}}</label>
+    </div>
+    <div data-field="payType" class="text">支付方式：<span>钱包</span></div>
+    <div data-field="amount" class="text">支付金额：<span class="highlight">100.00</span>元</div>
+    <div data-field="codeUrl" class="qrcode"><img src="{{codeUrl}}"></div>
+    <div data-field="payType" class="message">请用<span>银联钱包</span>扫一扫</div>
+    <div class="footer"><div class="home"></div></div>
+</div>
+
+<script type="text/javascript">
+
+    function closePage() {
+		alert("系统已记录本次充值信息，需经过管理员审核，请耐心等待！");
+		closewin();	
+	}
+
+	function closewin(){  
+		if (navigator.userAgent.indexOf("Firefox") != -1 || navigator.userAgent.indexOf("Chrome") !=-1) {  
+			window.location.href="about:blank";  
+			window.close();  
+		} else {  
+			window.opener = null;  
+			window.open("", "_self");  
+			window.close();  
+		}  
+
+	} 
+
+</script>
+
+<div style = "height: 100px; width: 100%; margin-top:10px">
+	<div class="mybtn" style="width: 97%; margin-left: 1%; height: 30px; cursor: pointer" onclick="closePage()">支付完成</div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="/static/js/base64.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	var payType = $('input[name="payType"]').val();
+    	if (payType == 'WXPAY') {
+    		$('[data-field="payType"] > span').html('微信');
+    	}
+		if (payType == 'ALIPAY') {
+			$('[data-field="payType"] > span').html('支付宝');
+    	}
+		if (payType == 'QQPAY') {
+			$('[data-field="payType"] > span').html('QQ钱包');
+    	}
+		if (payType == 'JDPAY') {
+			$('[data-field="payType"] > span').html('京东钱包');
+    	}
+		if (payType == 'UNIONPAY') {
+			$('[data-field="payType"] > span').html('银联钱包');
+    	}
+		
+    	var amount = $('input[name="amount"]').val();
+    	$('[data-field="amount"] > span').html(amount);
+    	
+    	var codeUrl = $('input[name="codeUrl"]').val();
+    	var urlType = $('input[name="urlType"]').val();
+    	
+    	if (urlType == 'Base64') {
+    		var base64Url = window.atob(codeUrl);
+    		$('.qrcode').qrcode({width: 200, height: 200, text: base64Url});
+    	} else {
+    		$('.qrcode').html('<img src="' + codeUrl + '">');
+    	}
+    });
+</script>
+
+<audio controls="controls" style="display: none;"></audio></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>

@@ -1,0 +1,15 @@
+
+Listen 8007
+<VirtualHost *:8007 >
+DocumentRoot C:/source/server/game/main
+	<Directory "C:/source/server/game/main">
+		Order allow,deny
+		Allow from all 
+	</Directory>
+ErrorLog C:/source/server/game/logs/error.log
+# Customlog C:/source/server/game/server.log combined
+
+CustomLog "|bin/rotatelogs.exe C:/source/server/game/logs/log-server-%y%m%d.log 86400  480" common
+WSGIScriptAlias / C:/source/server/game/main/server.wsgi
+</VirtualHost>
+

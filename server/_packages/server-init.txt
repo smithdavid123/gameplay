@@ -1,0 +1,72 @@
+rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+
+
+yum install -y wget vim lsof git nginx httpd unzip screen
+
+
+
+vim /etc/hosts
+
+vim /etc/hostname
+
+
+
+
+yum install -y nginx
+
+
+systemctl start nginx.service
+systemctl enable nginx.service
+
+
+systemctl stop firewalld
+
+
+
+yum -y remove  mariadb*
+
+wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+yum -y install mysql57-community-release-el7-10.noarch.rpm
+yum -y install mysql-community-server
+
+vi /etc/my.cnf
+
+validate_password_policy=0
+#关闭密码策略
+validate_password = off
+character_set_server=utf8
+init_connect='SET NAMES utf8'
+
+query_cache_size=64M
+query_cache_type=1
+tmp_table_size=512M
+max_heap_table_size=512M
+
+sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
+systemctl start  mysqld.service
+systemctl enable mysqld.service
+
+
+grep "password" /var/log/mysqld.log
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'sdddne2020';
+
+grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;
+
+
+
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+firewall-cmd --reload
+
+yum install -y php php-fpm php-mbstring php-mysqli
+
+systemctl start php-fpm
+
+systemctl start httpd
+
+
+
+
+143.92.61.113

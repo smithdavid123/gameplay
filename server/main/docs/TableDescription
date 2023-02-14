@@ -1,0 +1,25 @@
+
+book
+status: 默认2
+#--------------------------核对所有类别---------------------------
+
+
+1、下单status设为0，取消订单status设为-1，开奖后为2：	updateTime更新
+2、追号
+	1）总单：status下单设为0，后期不更改
+	2）分单：status同第一条（注：game_order表hide为1，订单详情时不参与检索）
+3、派奖
+	updateTime使用createTime即可
+
+4、提现
+	使用
+	原单：
+		初始 0	
+		拒绝 1
+		完成 2，		updateTime更新
+	退回新单：	
+		status: -1
+		
+		
+统计检索条件：
+	status > 1

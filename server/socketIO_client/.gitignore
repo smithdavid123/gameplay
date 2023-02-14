@@ -1,0 +1,8 @@
+/__init__.pyc
+/exceptions.pyc
+/heartbeats.pyc
+/logs.pyc
+/namespaces.pyc
+/parsers.pyc
+/symmetries.pyc
+/transports.pyc

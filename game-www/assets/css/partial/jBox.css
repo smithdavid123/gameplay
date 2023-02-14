@@ -1,0 +1,126 @@
+
+/*jBox插件样式*/
+#jBox-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.jBox-Modal .jBox-container,
+.jBox-Confirm .jBox-container {
+    box-shadow: none;
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+    color: #787878;
+}
+
+.jBox-container .table-bordered > tbody > tr > td,
+.jBox-container .table-bordered > tbody > tr > th,
+.jBox-container .table-bordered > tfoot > tr > td,
+.jBox-container .table-bordered > tfoot > tr > th,
+.jBox-container .table-bordered > thead > tr > td,
+.jBox-container .table-bordered > thead > tr > th{
+	color: #565656;
+	border:1px solid #dcdcdc;
+}
+
+.jBox-Modal .jBox-title,
+.jBox-Confirm .jBox-title {
+    height: 48px;
+    line-height: 48px;
+    background: #a68561;
+    padding: 0 20px !important;
+    font-size: 16px;
+    color: #fff;
+    text-shadow: none;
+}
+
+.jBox-Modal.title-center .jBox-title {
+    text-align: center;
+}
+
+.jBox-Modal .jBox-title span,
+.jBox-Confirm .jBox-title span {
+    font-size: 14px;
+}
+
+.jBox-closeButton-title .jBox-closeButton {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    font-family: 'Adobe Arabic','-webkit-pictograph';
+}
+
+.jBox-Modal .jBox-content,
+.jBox-Confirm .jBox-content {
+    padding: 0;
+}
+
+.jBox-Modal .form-horizontal {
+    color: #787878;
+}
+
+.jBox-Modal .form-horizontal .form-body {
+    margin: 30px 15px 10px 15px;
+}
+
+.jBox-Modal .form-horizontal .form-body .form-group .form-control-static {
+    color: #666;
+    font-size: 15px;
+}
+
+.jBox-Modal .form-horizontal .form-body .form-group {
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.jBox-Modal .form-horizontal .form-body .form-group label {
+    color: #000;
+    font-size: 15px;
+}
+
+.jBox-Modal .form-horizontal .form-body .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.jBox-Modal .form-horizontal .form-body .form-group .form-help {
+    padding: 3px 0;
+    color: #9fa0a0;
+}
+
+.jBox-Modal .form-horizontal .form-actions {
+    width: 100%;
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.jBox-Modal .form-horizontal .form-actions .btn {
+    padding: 0 12px;
+    width: 100px;
+    line-height: 36px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+.jBox-Modal .form-horizontal .form-actions .btn:not(:first-child) {
+    margin-left: 20px;
+}
+
+.jBox-Modal .form-inline select.input-small,
+.jBox-Modal .form-inline input.input-small {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    padding: 4px 8px;
+}

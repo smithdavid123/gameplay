@@ -1,0 +1,293 @@
+.main-container .tabs .tab {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+/*我要充值*/
+.main-panel .recharge-form {
+    margin: 10px 0;
+    /* padding: 0px 40px; */
+}
+
+/* step 第一種形式: 橫線上帶圓圈箭頭 */
+.main-panel .recharge-form > .step-list.style1 {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.main-panel .recharge-form > .step-list.style1 > .item {
+    position: relative;
+    color: #666;
+    border-bottom: 1px solid #000;
+    width: 33.33%;
+    line-height: 70px;
+}
+.main-panel .recharge-form > .step-list.style1 > .item > .angle-right {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    line-height: 24px;
+    background-color: #eee;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 20px;
+}
+.main-panel .recharge-form > .step-list.style1 > .item > .text {
+    text-align: center;
+    font-size: 15px;
+}
+.main-panel .recharge-form > .step-list.style1 > .item.active > .angle-right {
+    background-color: #3986b7;
+}
+
+/* step 第二種顯示形式: 底圖配進度條 */
+.main-panel .recharge-form > .step-list.style2 {
+    width: 914px;
+    height: 136px;
+    position: relative;
+    background: url(../../images/recharge_banner.png) no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 13px 136px 0 180px;
+}
+.main-panel .recharge-form > .step-list.style2 > .progressBar {
+    width: 33%;
+    height: 7px;
+    position: absolute;
+    bottom: 45px;
+    left: 40px;
+    border-radius: 5px;
+    background: rgb(111,72,19);
+    background: -moz-linear-gradient(left, rgba(111,72,19,1) 0%, rgba(205,124,41,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(111,72,19,1) 0%,rgba(205,124,41,1) 100%);
+    background: linear-gradient(to right, rgba(111,72,19,1) 0%,rgba(205,124,41,1) 100%);
+}
+.main-panel .recharge-form > .step-list.style2 > .item {
+    z-index: 2;
+}
+
+/* step 第三種顯示形式: 分三條 bar, step 分別顯示在該 bar 底下 */
+.main-panel .recharge-form > .step-list.style3 {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.main-panel .recharge-form > .step-list.style3 > .item {
+    position: relative;
+    color: #666666;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: left;
+    margin-right: -5px;
+    border: 1px solid #666666;
+    padding-left: 20px;
+}
+.main-panel .recharge-form > .step-list.style3 > .step1{
+    background: #f1f1f1;
+}
+.main-panel .recharge-form > .step-list.style3 > .item.active{
+    color: #ff8500;
+    background: #fff;
+    border: 1px solid #ff8500;
+    width: 100%;
+}
+.main-panel .recharge-form > .step-list.style3 > .item.step2{
+    margin: 0 0 10px 0;
+}
+.main-panel .recharge-form > .step-list.style3 > .item.step2.active{
+    margin: 10px 0 0 0;
+}
+
+/* step 第四種顯示形式: step-list 一次只顯示該 step */
+.main-panel .recharge-form > .step-list.style4 {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 15px;
+}
+.main-panel .recharge-form > .step-list.style4 > .item {
+    position: relative;
+    text-align: left;
+    display: none;
+    color: #875f08;
+    color: #33586f;
+    font-size: 18px;
+}
+.main-panel .recharge-form > .step-list.style4 > .item.active {
+    display: inline;
+}
+
+/*內容區*/
+.main-panel .recharge-form .section {
+    width: 914px;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+.main-panel .recharge-form .section .input-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.main-panel .recharge-form .section .input-item .text {
+    float: left;
+}
+.main-panel .recharge-form .section .input-item .input {
+    float: left;
+    width: 160px;
+    margin-right: 5px;
+}
+.main-panel .recharge-form .section .input-item .help {
+    font-size: 12px;
+    color: #484848;
+}
+.main-panel .recharge-form .section .section-bank {
+    float: left;
+    margin-top: 10px;
+}
+.main-panel .recharge-form .section .bank-list {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    margin-bottom: 20px;
+}
+.main-panel .recharge-form .section .bank-list > .item {
+    width: 166px;
+    height: 48px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+}
+.main-panel .recharge-form .section .bank-list > .item:nth-child(5n+5) {
+    margin-right: 0;
+}
+.main-panel .recharge-form .section .bank-list > .item.selected {
+    border: 3px solid #865d08;
+    background: #f6f6f6;
+}
+.section .input-lg{
+    height: 34px;
+}
+.main-panel .recharge-form .section .bank-list > .item > i {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: #f87d00;
+    font-size: 16px;
+}
+/* 填寫與按鈕的容器 */
+.main-panel .recharge-form .section .form-box {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main-panel .recharge-form .section .help-info {
+    height: 40px;
+    line-height: 40px;
+    color: #875f08;
+}
+
+/*第二頁內容*/
+.main-panel .recharge-form .section .request-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+.main-panel .recharge-form .section .request-result > .msg {
+    width: 100%;
+    line-height: 50px;
+    background: #fff;
+    text-align: center;
+}
+.main-panel .recharge-form .section .request-result > .item-box {
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #fff;
+    margin: 10px;
+    padding: 10px 80px;
+}
+.main-panel .recharge-form .section .request-result > .item-box > .item {
+    height: 50px;
+    line-height: 50px;
+}
+.main-panel .recharge-form .section .request-result > .item-box > .item > .title {
+    float: left;
+}
+.main-panel .recharge-form .section .request-result > .item-box > .item > .bank-code {
+    height: 42px;
+    width: 156px;
+    margin: 4px 12px;
+    border: 3px solid #6f7cb1;
+    border-radius: 5px;
+    float: left;
+}
+.main-panel .recharge-form .section .request-result > .item-box > .item > .text {
+    margin: 0 12px;
+    float: left;
+}
+.main-panel .recharge-form .section .request-result > .item-box > .item > .text span {
+    margin: 0 5px;
+    color: #eb5800;
+    font-size: 14px;
+}
+.main-panel .recharge-form .section .request-result > .item-box > .item > .text [data-field="billno"] {
+    /* font-size: 15px; */
+}
+.main-panel .recharge-form .section .request-result > .item-box > .item > .text > input {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    font-size: 16px;
+    margin: 5px 0;
+    background: #ffffff;
+}
+.main-panel .recharge-form .section .request-result .item .copy-btn{
+    padding: 4px 14px;
+    border: none;
+    border-radius: 20px;
+    background-color: #eee;
+    line-height: 1.42857143;
+}
+.main-panel .recharge-form .section .request-result .highlight {
+    color: #222;
+}
+
+/*每個內容區內的按鈕列*/
+.main-panel .recharge-form .section .btn-gp {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.main-panel .recharge-form .section .btn-gp > a:not(:last-child) {
+    margin-right: 10px;
+}

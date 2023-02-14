@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/page/agent-open-account.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="member-slot">
+        <div class="main-container pad-large">
+            <div class="tabs style3">
+                <div class="tab">
+                    <div class="title">开户方式：</div>
+                    <div data-tab="add-account" class="item active">普通开户</div>
+                    <div data-tab="add-link" class="item">链接开户</div>
+                </div>
+                <div class="content">
+                    <div data-content="add-account" class="item active">
+                        <div class="add-account">
+                            <div class="alert-warning" role="alert">
+                                <img src="images/alert_left.png">
+                                <div class="words">
+                                    温馨提示：<br />
+                                    自动注册的会员初始密码为“a123456”。
+                                </div>
+                            </div>
+                            <div class="add-account">
+                                <form class="form-horizontal" autocomplete="off">
+                                    <div data-init="type" class="form-group">
+                                        <label class="col-sm-2 control-label">账户类型:</label>
+                                        <div class="col-sm-10">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="type" value="0">玩家
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="type" value="1" checked="checked">代理
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">用户名:</label>
+                                        <div class="col-sm-5">
+                                            <input name="username" type="text" class="form-control input-small lf">
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <span class="help-block">大小写字母开头，不能超过10个字符</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">彩票返点:</label>
+                                        <div class="col-sm-5">
+                                            <input name="lotteryPoint" type="text" class="form-control input-small lf">
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <span data-help="lotteryPoint" class="help-block lf">可分配返点范围：0.1~9.7</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-10 col-sm-offset-2 m-t-10">
+                                            <a data-command="create" class="btn btn-primary">立即开户</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div data-table="quota" class="quota-table">
+                                    <div class="title-medium m-b-10">我的剩余配额</div>
+                                    <table class="table table-bordered table-data">
+                                        <thead>
+                                            <tr>
+                                                <td width="25%" class="text-center">开户区间</td>
+                                                <td width="25%" class="text-center">总数量</td>
+                                                <td width="25%" class="text-center">已使用</td>
+                                                <td width="25%" class="text-center">剩余</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-content="add-link" class="item">
+                        <div class="add-account">
+                            <div class="alert-warning" role="alert">
+                                <img src="images/alert_left.png">
+                                <div class="words">
+                                    温馨提示：<br />
+                                    生成链接不会立即扣减配额，只有用户使用该链接注册成功的时候，才会扣减配额。请确保您的配额充足，配额不足将造成用户注册不成功！
+                                </div>
+                            </div>
+                            <form class="form-horizontal" autocomplete="off">
+                                <div data-init="type" class="form-group">
+                                    <label class="col-sm-2 control-label">账户类型</label>
+                                    <div class="col-sm-10">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="type" value="0">玩家
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="type" value="1" checked="checked">代理
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">链接有效期</label>
+                                    <div class="col-sm-5">
+                                        <select name="time" class="form-control input-small">
+                                            <option value="1days">1天</option>
+                                            <option value="7days">7天</option>
+                                            <option value="30days">30天</option>
+                                            <option value="" selected="selected">永久有效</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">使用次数</label>
+                                    <div class="col-sm-5">
+                                        <input name="amount" type="text" class="form-control input-small" value="9999">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">彩票返点</label>
+                                    <div class="col-sm-5">
+                                        <input name="lotteryPoint" type="text" class="form-control input-small lf">
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <span data-help="lotteryPoint" class="help-block lf">可分配返点范围：0.1~9.7</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-10 col-sm-offset-2 m-t-10">
+                                        <a data-command="create" class="btn btn-success">生成链接</a>
+                                    </div>
+                                </div>
+                            </form>
+                            <div data-table="quota" class="quota-table">
+                                <div class="title-medium m-b-10">我的剩余配额</div>
+                                <table class="table table-bordered table-data">
+                                    <thead>
+                                        <tr>
+                                            <td width="25%" class="text-center">开户区间</td>
+                                            <td width="25%" class="text-center">总数量</td>
+                                            <td width="25%" class="text-center">已使用</td>
+                                            <td width="25%" class="text-center">剩余</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <section id="manager-link" class="hide">
+                                <div class="title-medium m-b-10">我的注册链接</div>
+                                <table class="table table-bordered table-data">
+                                    <thead>
+                                        <tr>
+                                            <td class="text-center">序号</td>
+                                            <td class="text-center">注册号</td>
+                                            <td class="text-center">用户类型</td>
+                                            <td class="text-center">彩票返点</td>
+                                            <td class="text-center">过期时间</td>
+                                            <td class="text-center">剩余个数</td>
+                                            <td class="text-center">链接地址</td>
+                                            <td class="text-center">操作</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <div class="easy-page"></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = memberSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <script type="text/javascript" src="js/clipboard.min.js"></script>
+
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/agent-open-account.js"></script>
+
+</body>
+
+</html>

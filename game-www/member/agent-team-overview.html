@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/page/agent-team-overview.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="member-slot">
+        <div class="main-container">
+            <div class="team-info">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td width="23%">团队成员：<span data-field="totalUser">0</span>人（代理<span
+                                    data-field="totalAgent">0</span>人，玩家<span data-field="totalPlayer">0</span>人）
+                            </td>
+                            <td width="77%">团队在线：<span data-field="totalOnline">0</span>人</td>
+                        </tr>
+                        <tr>
+                            <td width="33%">团队余额：<span class="span-highlight"
+                                    data-field="totalBalance">0.00</span>元（不包含自己）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="team-stat">
+                <div class="search-params">
+                    <div class="days">
+                        <div data-val="last3d" class="btn">最近3天</div>
+                        <div data-val="last7d" class="btn">最近7天</div>
+                        <div data-val="last1m" class="btn">最近一个月</div>
+                    </div>
+                    <div class="time">
+                        <label>选择日期：</label>
+                        <input data-init="date-picker" name="sDate" type="text" readonly>
+                        <label style="margin: 0 5px;">至</label>
+                        <input data-init="date-picker" name="eDate" type="text" readonly>
+                        <a data-command="search" class="btn btn-primary"
+                            style="margin-left: 6px;margin-bottom: 3px;">搜索</a>
+                    </div>
+                </div>
+                <div class="select-type">
+                    <label><input name="stat" type="radio" value="uRechargeChart"> 充值量</label>
+                    <label><input name="stat" type="radio" value="uWithdrawChart"> 提现量</label>
+                    <label><input name="stat" type="radio" value="uConsumeChart"> 投注量</label>
+                    <label><input name="stat" type="radio" value="uBonusChart">返派奖</label>
+                    <label><input name="stat" type="radio" value="uRebateChart"> 返点</label>
+                    <label><input name="stat" type="radio" value="uActivityChart">活动</label>
+                    <label><input name="stat" type="radio" value="uRegistChart"> 新增用户数</label>
+                </div>
+                <div class="total-info">
+                    <div class="item">
+                        <div class="text">充值量</div>
+                        <div data-field="uRechargeChart" class="value">0.00</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">提现量</div>
+                        <div data-field="uWithdrawChart" class="value">0.00</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">投注量</div>
+                        <div data-field="uConsumeChart" class="value">0.00</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">派奖金额</div>
+                        <div data-field="uBonusChart" class="value">0.00</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">返点</div>
+                        <div data-field="uRebateChart" class="value">0.00</div>
+                    </div>
+                </div>
+                <div class="chart">
+                    <div class="instance" style="height: 400px"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = memberSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/echarts/macarons.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/agent-team-overview.js"></script>
+
+</body>
+
+</html>

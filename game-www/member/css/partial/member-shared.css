@@ -1,0 +1,494 @@
+body {
+  background: url(../../images/bg.jpg) no-repeat center top;
+  background-size: auto;
+  height: 1200px;
+  min-width: 1280px;
+  min-height: 760px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/*限制寬度的容器*/
+.page-content-single {
+  width: 1347px;
+  height: 924px;
+  /*background: url(/member/images/member_content_bg.png) no-repeat;*/
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 0 0 13px;
+}
+
+.page-content {
+  width: 1347px;
+  /* height: 924px; */
+  /* background: url(/member/images/member_content_bg.png) no-repeat; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 0 0 13px;
+}
+
+.page-content-top {
+  width: 189px;
+  height: 840px;
+  background: url(../../images/page-content-top-bg.png) no-repeat center;
+}
+
+.page-content-bottom {
+  width: 1019px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: #e8d6b1;
+  border: 1px solid #bea264;
+  border-radius: 10px;
+  margin-top: 7px;
+  margin: 7px 0 20px 10px;
+}
+
+/** personal info and baccarat wallet start */
+.page-content-bottom .personal-info-baccarat {
+  width: 100%;
+  height: 145px;
+  padding: 10px;
+}
+.page-content-bottom .personal-info-baccarat .login-info {
+  width: 220px;
+  color: #322727;
+}
+.page-content-bottom .personal-info-baccarat .wallets {
+  width: 343px;
+}
+.page-content-bottom .personal-info-baccarat .wallets .balance {
+  width: 304px;
+  height: 40px;
+  background: url(../../images/wallets_balance_bg.png) no-repeat center;
+  font-size: 17px;
+}
+.page-content-bottom .personal-info-baccarat .wallets .balance .title {
+  color: #322727;
+  margin-right: 10px;
+}
+.page-content-bottom .personal-info-baccarat .wallets .balance [data-global="lotteryBalance"] {
+  color: #ff0006;
+  margin-right: 10px;
+}
+.page-content-bottom .personal-info-baccarat .wallets .wallet-btns{
+  margin-top: 30px;
+}
+.page-content-bottom .personal-info-baccarat .wallets .wallet-btns .item {
+  background: url(../../images/wallet_btn_item_bg.png) no-repeat center;
+  padding: 20px 36px;
+  color: #fff;
+  font-size: 14px;
+}
+.page-content-bottom .personal-info-baccarat .wallets .wallet-btns .item:hover {
+  background: url(../../images/wallet_btn_item_bg_hover.png) no-repeat center;
+}
+.page-content-bottom .personal-info-baccarat .wallet-info-row {
+  width: 412px;
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+
+.page-content-bottom .personal-info-baccarat .wallet-info-row .personal-wallets {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.page-content-bottom .personal-info-baccarat .wallet-info-row .personal-wallets .item {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #322727;
+  font-size: 14px;
+}
+
+.page-content-bottom .personal-info-baccarat .wallet-info-row .personal-wallets .item>span {
+  color: #ff0006;
+  font-size: 15px;
+}
+.page-content-bottom .personal-info-baccarat .divider {
+  background: #ba9e65;
+  width: 1px;
+  height: 93%;
+}
+/** personal info and baccarat wallet end */
+
+.page-content .main-panel {
+  width: 100%;
+  height: 626px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.page-content .main-panel .main-container {
+  width: 98%;
+  padding: 10px;
+
+  background: #fff;
+  margin: 10px;
+  border-radius: 4px;
+}
+/* .page-content .main-panel .main-container.pad-large {
+  padding: 45px;
+}
+.page-content .main-panel .main-container.pad-large .control-label {
+  text-align: right;
+} */
+
+/*個人資訊*/
+
+.page-content .personal-info {
+  position: relative;
+  width: 100%;
+  height: 158px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transform: translateY(-18px);
+}
+
+.page-content .personal-info > .avatar {
+  position: relative;
+  width: 87px;
+  height: 87px;
+  overflow: hidden;
+  border-radius: 50%;
+  animation-name: bounceIn;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.page-content .personal-info > .avatar > img {
+  width: 100%;
+  height: 100%;
+}
+.page-content .personal-info > .avatar > a {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  background: #ba0f26;
+  color: #fff;
+  cursor: pointer;
+}
+
+.page-content .personal-info > .avatar > a:hover {
+  opacity: 0.85;
+}
+
+.page-content .personal-info > .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.page-content .personal-info > .details > .greeting {
+  color: #e8d6b1;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.page-content .personal-info > .details > .greeting span {
+  text-align: center;
+  word-break: break-all;
+}
+
+.page-content .personal-info > .details > .greeting [data-command="mod-nickname"] {
+  font-size: 14px;
+  color: #fff;
+  background: #a4805e;
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 2px 12px;
+  border-radius: 20px;
+}
+.page-content .personal-info > .details > .greeting [data-global="lotteryBalance"] {
+  color: #b63901;
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+.page-content .personal-info > .details > .greeting .accountType {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  top: 28px;
+  background: #a68561;
+  padding: 4px 15px;
+  border-radius: 0 20px 20px 0;
+  animation-name: bounceInLeft;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+/** 個人中心登入資訊 */
+.page-content .personal-info > .login-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #ffffff;
+  font-size: 13px;
+  margin-top: 40px;
+}
+.page-content .personal-info > .login-info > div {
+  margin-bottom: 15px;
+}
+
+/** 個人中心帳戶餘額 */
+.page-content .personal-info > .wallets {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.page-content .personal-info > .wallets > .title {
+  font-size: 14px;
+  color: #fff;
+  margin-left: 26px;
+}
+
+.page-content .personal-info > .wallets .balance {
+  width: 100%;
+  line-height: 48px;
+  color: #fffc10;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content
+  .personal-info
+  > .wallets
+  .balance
+  [data-global="lotteryBalance"] {
+  font-size: 32px;
+  margin: 0 5px;
+}
+.page-content .personal-info > .wallets .wallet-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+/** left panel 今日充值等數值 */
+.page-content .personal-info > .wallets .wallet-today {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.page-content .personal-info > .wallets .wallet-today .item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #e6e6e6;
+  margin: 2px 0;
+}
+.page-content .personal-info > .wallets .wallet-today .item .todayNum {
+  color: #f9db32;
+  font-size: 17px;
+}
+
+/* 個人中心的錢包 */
+.page-content .personal-info .wallet-info-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 960px;
+  height: 44px;
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  overflow-x: auto;
+}
+.page-content .personal-info .wallet-info-row .personal-wallets {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.page-content .personal-info .wallet-info-row .personal-wallets > .item {
+  font-size: 13px;
+  color: #707070;
+}
+.page-content .personal-info .wallet-info-row .personal-wallets > .item span {
+  color: #ff8911;
+  font-size: 14px;
+}
+.page-content
+  .personal-info
+  .wallet-info-row
+  .personal-wallets
+  > .item:not(:first-child) {
+  margin-left: 35px;
+}
+.page-content .personal-info .wallet-info-row .personal-wallets > .none {
+  width: 100%;
+  font-size: 17px;
+  text-align: center;
+}
+.page-content .personal-info .wallet-info-row > a {
+  font-size: 15px;
+  color: #5f5cc7;
+}
+
+/** 個人中心的連結按鈕 */
+/* .page-content .personal-info>.link-btns {
+  position: absolute;
+  bottom: 80px;
+  left: 340px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.page-content .personal-info>.link-btns>a {
+  color: #fff;
+  padding: 10px 32px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.page-content .personal-info>.link-btns>a:not(:first-child) {
+  margin-left: 8px;
+}
+.page-content .personal-info > .link-btns > .link-btns-recharge {
+  background: #ff6468;
+}
+.page-content .personal-info > .link-btns > .link-btns-withdraw {
+  background: #01a2ea;
+}
+.page-content .personal-info > .link-btns > .link-btns-transfer {
+  background: #ff8911;
+} */
+
+/*主項目menu*/
+
+.page-content .main-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.page-content .main-menu .item {
+  background-size: contain;
+  width: 107%;
+  height: 38px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #e8d6b1;
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 27px;
+}
+
+.page-content .main-menu .item:not(:first-child) {
+  margin-top: 15px;
+}
+.page-content .main-menu .item:hover,
+.page-content .main-menu .item.active {
+  background: url(../../images/menu_item_active.png) no-repeat 1px 2px;
+  background-size: contain;
+}
+.page-content .main-menu .item.active {
+  pointer-events: none;
+}
+.page-content .main-menu .item > img {
+  width: 39px;
+  height: 34px;
+  object-fit: none;
+  margin-right: 8px;
+}
+.page-content .main-menu .item .icon-normal,
+.page-content .main-menu .item:hover .icon-active,
+.page-content .main-menu .item.active .icon-active {
+  display: block;
+}
+/* .page-content .main-menu .item:hover .icon-normal,
+.page-content .main-menu .item.active .icon-normal,
+.page-content .main-menu .item .icon-active {
+  display: none;
+} */
+
+/*次項目menu*/
+
+.page-content .sub-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: none;
+  padding: 12px 15px;
+  background: #a54a35;
+  border-radius: 4px;
+}
+
+.page-content .sub-menu .item {
+  position: relative;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #e8d6b1;
+  background: transparent;
+  border-radius: 20px;
+  border: 1px solid #e8d6b1;
+  font-weight: 500;
+}
+.page-content .sub-menu .item:not(:first-child) {
+  margin-left: 14px;
+}
+.page-content .sub-menu .item:hover,
+.page-content .sub-menu .item.active {
+  color: #a34934;
+  background: #e8d6b1;
+}
+.page-content .sub-menu .item.active {
+  pointer-events: none;
+}

@@ -1,0 +1,341 @@
+﻿@import url(partial/single-page.css);
+@import url(partial/member-shared.css);
+
+body {
+    /* background: url(../images/bg.jpg) no-repeat center 91px #2d3457;
+    background-size: auto; */
+}
+
+.help-block {
+    color: #666;
+}
+
+/*重写Bootstrap样式*/
+.table-bordered {
+}
+.table-bordered > tbody > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th {
+    border: 1px solid #e1e1e1;
+    vertical-align: middle;
+}
+.table-bordered > tbody > tr > td a{
+    color: #a68561;
+    cursor: pointer;
+}
+.table-bordered > tbody > tr > td a:hover{
+    opacity: 0.8;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    margin: 2px 0;
+}
+
+.form-control,
+form.form-horizontal .form-control{
+    border: 1px solid #cccccc;
+}
+
+/*标题控制*/
+.main-panel .title-medium {
+    color: #fff;
+    background: #a68561;
+    border: none;
+    padding: 0 12px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+/*数据搜索*/
+.main-panel .form-search {
+    margin-bottom: 20px;
+}
+/*個人中心搜尋頁input欄位共同風格*/
+.main-panel .form-search select.input-small,
+.main-panel .form-search input.input-small {
+    width: 146px;
+    height: 30px;
+    padding: 4px 8px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.main-panel .form-search .form-group {
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+/*数据表格*/
+.main-panel .table-responsive {
+    overflow-x: inherit;
+}
+.main-panel .table-data {
+    font-size: 15px;
+}
+.main-panel .table-data > thead {
+    color: #333333;
+    background: #f0f0f0;
+    border: 1px solid #e1e1e1;
+}
+.main-panel .table-data > tbody {
+    background: #fff;
+}
+.main-panel .table-data > tbody > tr:nth-child(even) {
+    background: #fafafa;
+}
+.main-panel .table > tbody .btn-gp > .static-link {
+    padding: 0 4px;
+}
+
+.main-panel .empty-data > .center-content {
+    padding: 50px 0 30px 0;
+    margin: 0 auto;
+}
+.main-panel .empty-data > .center-content > .bg1 {
+    height: 136px;
+    background: url("../images/empty_bg1.png") no-repeat center;
+}
+.main-panel .empty-data > .center-content > .bg2 {
+    height: 208px;
+    background: url("../images/empty_bg2.png") no-repeat center;
+}
+.main-panel .empty-data > .center-content > .text {
+    text-align: center;
+    color: #ccc;
+    font-size: 18px;
+    line-height: 36px;
+    padding: 12px 0;
+}
+
+body .btn.disabled, 
+body .btn[disabled], 
+body fieldset[disabled]{
+    /* TODO 控制用戶中心 "已設置" btn 要不要顯示 */
+    /* display: none; */
+}
+
+/*tab切换样式*/
+.main-panel .tabs > .tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.main-panel .tabs > .tab > .title {
+    float: left;
+    color: #555555;
+    font-size: 15px;
+}
+.main-panel .tabs > .tab > .item {
+    background: #fff;
+    border: 1px solid #bfbfbf;
+    padding: 5px 30px;
+    color: #484848;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 150px;
+    margin: 5px;
+}
+.main-panel .tabs > .tab > .item:nth-child(5n+2) {
+    margin-left: 80px;
+}
+.main-panel .tabs > .tab > .item:nth-child(2) {
+    margin-left: 5px;
+}
+.main-panel .tabs > .tab > .item.active {
+    /* background: url(../images/1.png) no-repeat left; */
+    background: #a68561;
+    border-color: transparent;
+    color: #fff;
+    pointer-events: none;
+}
+.main-panel .tabs > .content > .item {
+    display: none;
+}
+.main-panel .tabs > .content > .item.active {
+    display: table;
+    width: 100%;
+}
+
+
+/*銀行代碼*/
+.main-panel .bank-code {
+    width: 180px;
+    height: 40px;
+    background: url("../images/bank_list.png") no-repeat;
+}
+.main-panel .bank-code.b1 {
+    background-position: 0 0;
+}
+.main-panel .bank-code.b2 {
+    background-position: 0 -48px;
+}
+.main-panel .bank-code.b3 {
+    background-position: 0 -96px;
+}
+.main-panel .bank-code.b4 {
+    background-position: 0 -144px;
+}
+.main-panel .bank-code.b5 {
+    background-position: 0 -192px;
+}
+.main-panel .bank-code.b6 {
+    background-position: 0 -240px;
+}
+.main-panel .bank-code.b7 {
+    background-position: 0 -288px;
+}
+.main-panel .bank-code.b8 {
+    background-position: 0 -336px;
+}
+.main-panel .bank-code.b9 {
+    background-position: 0 -384px;
+}
+.main-panel .bank-code.b10 {
+    background-position: 0 -432px;
+}
+.main-panel .bank-code.b11 {
+    background-position: 0 -480px;
+}
+.main-panel .bank-code.b12 {
+    background-position: 0 -528px;
+}
+.main-panel .bank-code.b13 {
+    background-position: 0 -576px;
+}
+.main-panel .bank-code.b14 {
+    background-position: 0 -624px;
+}
+.main-panel .bank-code.b15 {
+    background-position: 0 -672px;
+}
+.main-panel .bank-code.b16 {
+    background-position: 0 -720px;
+}
+.main-panel .bank-code.b17 {
+    background-position: 0 -768px;
+}
+.main-panel .bank-code.b18 {
+    background-position: 0 -816px;
+}
+.main-panel .bank-code.b19 {
+    background-position: 0 -864px;
+}
+.main-panel .bank-code.b20 {
+    background-position: 0 -912px;
+}
+.main-panel .bank-code.b21 {
+    background-position: 0 -960px;
+}
+.main-panel .bank-code.b22 {
+    background-position: 0 -1008px;
+}
+.main-panel .bank-code.b23 {
+    background-position: 0 -1056px;
+}
+.main-panel .bank-code.b24 {
+    background-position: 0 -1104px;
+}
+.main-panel .bank-code.wxpay {
+    background-position: 0 -1152px;
+}
+.main-panel .bank-code.alipay {
+    background-position: 0 -1200px;
+}
+.main-panel .bank-code.nocard {
+    background-position: 0 -1248px;
+}
+.main-panel .bank-code.qqpay {
+    background-position: 0 -1296px;
+}
+.main-panel .bank-code.jdpay {
+    background-position: 0 -1344px;
+}
+.main-panel .bank-code.unionpay {
+    background-position: 0 -1392px;
+}
+.main-panel .bank-code.quickpay {
+    background-position: 0 -1440px;
+}
+
+/*報表中心訂單詳情本文*/
+textarea.order-content {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    line-height: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: none;
+    font-family: Consolas, "Courier New", Arial, sans-serif;
+}
+/*消息中心收信內容本文*/
+textarea.message-content {
+    width: 100%;
+    min-height: 300px;
+    resize: none;
+    line-height: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: none;
+    color: #787878;
+}
+/*消息中心發送消息內容文本*/
+textarea.send-message {
+    width: 100%;
+    min-height: 300px;
+    resize: none;
+    line-height: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/*我的(棋牌)契約-契约内容*/
+.contract-info-item {
+    margin: 0 0 20px 0;
+    padding: 10px;
+    border: 1px solid #a68561;
+    display: none;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+	background: #000 ;
+}
+
+/*整體placeholder*/
+input::-webkit-input-placeholder{
+    color:#999 !important;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#999 !important;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#999 !important;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    color:#999 !important;
+}
+/*整體scroll*/
+*::-webkit-scrollbar {/*滚动条整体样式*/
+    display: block;
+    width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 30px;
+}
+*::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #b89f81;
+}
+*::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}

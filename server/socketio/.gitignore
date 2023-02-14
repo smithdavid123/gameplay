@@ -1,0 +1,10 @@
+/__init__.pyc
+/base_manager.pyc
+/kombu_manager.pyc
+/middleware.pyc
+/namespace.pyc
+/packet.pyc
+/pubsub_manager.pyc
+/redis_manager.pyc
+/server.pyc
+/zmq_manager.pyc

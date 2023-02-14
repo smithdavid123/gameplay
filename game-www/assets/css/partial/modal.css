@@ -1,0 +1,160 @@
+/*modal自訂樣式*/
+.modal-table-wrapper {
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+.modal-table-wrapper > .modal-tab {
+    height: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-table-wrapper > .modal-tab > .text {
+    height: 36px;
+    line-height: 36px;
+    float: left;
+}
+
+.modal-table-wrapper > .modal-tab > .item {
+    color: #555;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    padding: 4px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-table-wrapper > .modal-tab > .item.active {
+    background: #a68561;
+    color: #fff;
+    border: 1px solid #a68561;
+    pointer-events: none;
+}
+
+.modal-table-wrapper > .tab-content > .content-panel {
+    display: none;
+}
+
+.modal-table-wrapper > .tab-content > .content-panel.active {
+    display: block;
+}
+
+.modal-table-wrapper .table-data {
+    border-top-color: #ddd;
+}
+
+.modal-table-wrapper .table-data > thead > tr > td {
+    background: #a68561 !important;
+    color: #fff !important;
+}
+
+.modal-table-wrapper .form-inline .form-group > label {
+    margin: 0 5px;
+}
+
+.modal-table-wrapper > .tips {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+
+/*選擇頭像*/
+.avatar-list {
+    overflow: hidden;
+    margin: 0 15px 15px 15px;
+}
+
+.avatar-list > .item {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    float: left;
+    display: table-cell;
+    margin: 0 5px 10px 5px;
+}
+
+.avatar-list > .item > img {
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-list > .item:hover {
+    border: 3px solid #a874db;
+}
+
+.avatar-list > .item.selected {
+    border: 3px solid #a874db;
+}
+
+.avatar-list > .item > i {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    color: #a874db;
+    font-size: 22px;
+}
+
+/*契约表格*/
+.table-contract > tbody > tr > td {
+    border: none;
+    line-height: 34px;
+}
+.table-contract > tbody > tr > td > .btn-mini {
+    margin: 6px 0;
+}
+
+/*收件箱-用戶消息*/
+.account-message-details .actions {
+    text-align: center;
+}
+.account-message-details .actions a {
+    margin: 0 6px;
+}
+
+/*發消息-用戶列表選擇*/
+.account-list-select {
+    padding: 20px;
+}
+.account-list-select > .list {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ececec;
+}
+
+.account-list-select > .list > .item {
+    width: 180px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    display: inline-block;
+}
+
+.account-list-select > .list > .item > label > input {
+    margin-right: 8px;
+    vertical-align: -2px;
+}
+
+.account-list-select .actions {
+    text-align: center;
+}
+.account-list-select .actions a {
+    margin: 0 6px;
+}
+
+/*會員中心內的定單與追號詳情*/
+.lottery-order-details {
+    padding: 20px;
+}
+.lottery-order-details .actions {
+    text-align: center;
+}
+.lottery-order-details .actions a {
+    margin: 0 6px;
+}

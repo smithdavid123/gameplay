@@ -1,0 +1,600 @@
+@charset "UTF-8";
+
+body {
+    width: 100%;
+    background: url(../../images/index/bg.jpg) no-repeat center top #fff;
+    vertical-align: middle;
+    background-size: auto;
+    position: relative;
+}
+
+.page-content {
+    transform: translateY(-16px);
+}
+
+.page-content .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/** 橘邊框一般共用容器style */
+.page-content .inner .common-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.page-content .inner .common-container>.title {
+    position: relative;
+    width: 100%;
+    line-height: 50px;
+    background: rgb(44,145,142);
+    background: -moz-linear-gradient(-45deg, rgba(44,145,142,1) 0%, rgba(44,145,142,1) 50%, rgba(57,190,130,1) 70%, rgba(57,190,130,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(44,145,142,1) 0%,rgba(44,145,142,1) 50%,rgba(57,190,130,1) 70%,rgba(57,190,130,1) 100%);
+    background: linear-gradient(135deg, rgba(44,145,142,1) 0%,rgba(44,145,142,1) 50%,rgba(57,190,130,1) 70%,rgba(57,190,130,1) 100%);
+    color: #ffffff;
+    font-size: 20px;
+    padding-left: 12px;
+}
+.page-content .inner .common-container>.title>img {
+    margin-right: 10px;
+}
+/* .page-content .inner .common-container>.title .sub-title {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;
+} */
+.page-content .inner .common-container>.title .more-link {
+    text-align: center;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    font-size: 13px;
+    color: #8e8e8e;
+    cursor: pointer;
+}
+.page-content .inner .common-container > .title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+
+.page-content .inner .common-container .common-inner {
+    width: 100%;
+    background: #fff;
+    border: 2px solid #2c918e;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/** 上方容器:彩票中心、carousel、APP */
+.top-container {
+    /* width: 1280px; */
+}
+
+/** 彩票中心 */
+.top-container .lottery-list {
+    width: 367px;
+    height: 613px;
+    background: url(../../images/index/lottery_list_bg.png) no-repeat center;
+    padding: 70px 11px 0px 47px;
+}
+.top-container .lottery-list .lottery-content {
+    height: 520px;
+    overflow-y: auto;
+}
+.top-container .lottery-list .lottery-content::-webkit-scrollbar {display:none}
+.top-container .lottery-list .lottery-content .lottery-category {
+    margin-bottom: 10px;
+}
+.top-container .lottery-list .lottery-content .lottery-category .category-name {
+    background: url(../../images/index/lottery_list_title.png) no-repeat center;
+    width: 258px;
+    height: 37px;
+}
+
+.top-container .lottery-list .lottery-content .lottery-category .category-name>img {
+    transform: translate(39px,1px);
+}
+
+.top-container .lottery-list .lottery-content .lottery-category .list {
+    margin: 0 0 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px 0 12px;
+}
+.top-container .lottery-list .lottery-content .lottery-category .list .link-item {
+    width: 140px;
+    border: 1px solid #828282;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 6px 2px;
+    text-align: center;
+}
+.top-container .lottery-list .lottery-content .lottery-category .list .item {
+    color: #828282;
+    font-size: 14px;
+}
+
+.top-container .lottery-list .lottery-content .lottery-category .list .link-item:hover {
+    background: #b60025;
+    border: 0;
+}
+.top-container .lottery-list .lottery-content .lottery-category .list .link-item:hover .item {
+    color: #fff;
+}
+
+
+/** carousel */
+.carousel-inner .item {
+    width: 700px;
+    height: 680px;
+    object-fit: none;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+    max-width: 700px !important;
+    max-height: 650px !important;
+    margin: 0 auto;
+}
+
+.carousel-indicators li {
+    width: 15px !important;
+    height: 15px !important;
+    border: 1px solid #8e837b !important;
+    margin: 1px 8px !important;
+}
+.carousel-indicators .active {
+    background: linear-gradient(#f5f3e9, #e8e0c3);
+}
+/** APP */
+
+/** 上方容器:彩票中心、carousel、APP end */
+
+/** 熱門彩種 */
+.page-content .inner .hot-lottery-box {
+    width: 869px;
+    height: 460px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-left: 753px;
+    padding: 90px 175px 0 0;
+    background: url(/assets/images/index/hot_lottery_bg.png) no-repeat;
+}
+.page-content .inner .hot-lottery-box .divider {
+    width: 1px;
+    height: 238px;
+    margin-top: 75px;
+    background: rgba(161,146,134,1);
+    background: -moz-linear-gradient(top, transparent 0%, rgba(161,146,134,1) 50%, transparent 100%);
+    background: -webkit-linear-gradient(top, transparent 0%,rgba(161,146,134,1) 50%,transparent 100%);
+    background: linear-gradient(to bottom, transparent 0%,rgba(161,146,134,1) 50%,transparent 100%);
+}
+.page-content .inner .hot-lottery-box .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 15px;
+}
+.page-content .inner .hot-lottery-box .item .game-logo {
+    width: 103px;
+    height: 103px;
+}
+.page-content .inner .hot-lottery-box .item:hover .game-logo {
+    animation-name: tada;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+}
+.page-content .inner .hot-lottery-box .item .hot-lottery-name {
+    font-size: 27px;
+    color: #715647;
+    writing-mode: vertical-rl;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.page-content .inner .hot-lottery-box .item:hover .hot-lottery-name {
+    animation-name: headShake;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+}
+
+/** 主要區塊 */
+.page-content .inner .main-box {
+    /* width: 1230px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+
+/** 系統公告 */
+.page-content .inner .notice-box {
+    width: 633px;
+    height: 500px;
+    background: url(../../images/index/notice_box_bg.png) no-repeat top center;
+    padding: 148px 90px 40px 90px;
+    transform: translate(0px, -41px);
+    position: relative;
+}
+.page-content .inner .notice-box .notice-more {
+    position: absolute;
+    bottom: 48px;
+    right: 10px;
+}
+.page-content .inner .notice-box-content {
+    height: 311px;
+    overflow-y: auto;
+    padding: 0px 0px;
+}
+.page-content .inner .notice-box-content .list {
+    width: 100%;
+    display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+    align-items: center;
+}
+.page-content .inner .notice-box-content .list .item {
+    position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+    transition: color .3s;
+    margin: 3px 0;
+    border-bottom: 1px solid #c2b8b2;
+}
+.page-content .inner .notice-box-content .list .item:nth-child(1)::after,
+.page-content .inner .notice-box-content .list .item:nth-child(2)::after {
+    display: table;
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    background: url(../../images/index/notice_new.png) no-repeat center;
+    width: 29px;
+	height: 29px;
+}
+.page-content .inner .notice-box-content .list .item:hover {
+    color: #fce6b9;
+}
+.page-content .inner .notice-box-content .list .item .title {
+    position: relative;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+    max-width: 100%;
+    color: #333;
+    font-size: 14px;;
+}
+.page-content .inner .notice-box-content .list .item .time {
+    font-size: 14px;
+    color: #6f6f6f;
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
+/** APP下載 */
+.page-content .inner .download {
+    width: 312px;
+    height: 613px;
+    background: url(../../images/index/download_bg.png) top left no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 308px;
+}
+.page-content .inner .download .qrcode-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.page-content .inner .download .qrcode-display .code {
+    position: relative;
+    width: 168px;
+    height: 168px;
+    background: url(../../images/index/code_bg.png) no-repeat center;
+    border-radius: 5px;
+    display: none;
+}
+.page-content .inner .download .qrcode-display .code.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-content .inner .download .qrcode-display .code canvas {
+    margin: 5px;
+    width: 122px;
+    height: 122px;
+}
+.page-content .inner .qrcode-switch-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0;
+}
+.page-content .inner .qrcode-switch-box .qrcode-switch-link {
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.page-content .inner .qrcode-switch-box .qrcode-switch-link.active {
+    color: #333;
+    background: #eee;
+    padding: 2px 7px;
+}
+
+/** 遊戲中心(百家樂) */
+.page-content .inner .baccarat-box {
+    width: 692px;
+    /* height: 285px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translate(0px, -64px);
+}
+.page-content .inner .baccarat-wallets {
+    width: 642px;
+    height: 430px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+.page-content .inner .baccarat-wallets .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7px;
+}
+.page-content .inner .baccarat-wallets .item .icon {
+    width: 190px;
+    height: 210px;
+    object-fit: none;
+}
+.page-content .inner .baccarat-wallets .item:nth-child(n+4) {
+    margin-top: 15px;
+}
+.page-content .inner .baccarat-wallets .item:nth-child(3n+1) {
+    margin-left: 0;
+}
+.page-content .inner .baccarat-wallets .item .item-name-box {
+    position: absolute;
+    width: 190px;
+    height: 210px;
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.page-content .inner .baccarat-wallets .item .open-btn {
+    line-height: 21px;
+    color: #fdd69b;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    background: transparent;
+    padding: 2px 8px;
+    width: 190px;
+    height: 210px;
+}
+
+/*公告样式*/
+.sys-notice-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transition: all 0.3s;
+    opacity: 0;
+    z-index: -1;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sys-notice-alert.notice-show {
+    opacity: 1;
+    z-index: 1001;
+}
+
+.sys-notice-alert .notice-content {
+    width: 866px;
+    height: 630px;
+    position: relative;
+    background: #fff;
+}
+
+.sys-notice-alert .notice-content .w-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+
+}
+
+.sys-notice-alert .notice-content .w-close {
+    position: absolute;
+    top: -21px;
+    right: -15px;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    /* text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 39px; */
+    cursor: pointer;
+    font-family: 'Adobe Arabic', '-webkit-pictograph';
+    background: url(../../images/index/notice_alert_close_icon.png) no-repeat;
+}
+
+.sys-notice-alert .notice-content .w-close:hover {
+    opacity: 0.8;
+}
+
+.sys-notice-alert .notice-content .w-title {
+    height: 51px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    background: url(../../images/index/notice_alert_title_bg.png) no-repeat center;
+    border-radius: 0;
+}
+
+.sys-notice-alert .notice-content .title-list {
+    position: absolute;
+    width: 279px;
+    bottom: 56px;
+    top: 51px;
+    left: 0;
+    background-color: #fff;
+    padding: 16px 20px 16px 20px;
+    border-radius: 0 0 0 5px;
+    border-right: 1px solid #c6af97;
+    overflow: auto;
+}
+
+.sys-notice-alert .notice-content .title-list>.item {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    position: relative;
+    color: #6c6c6c;
+    background: #e6e6e6;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.sys-notice-alert .notice-content .title-list>.item:hover,
+.sys-notice-alert .notice-content .title-list>.item.active {
+    color: #fff;
+    background: #c69849;
+}
+.sys-notice-alert .notice-content .title-list>.item.active {
+    pointer-events: none;
+}
+
+.sys-notice-alert .notice-content .title-list>.item.more {
+    text-align: center;
+}
+
+.sys-notice-alert .notice-content .title-list>.item .text {
+    padding: 8px 0;
+    text-align: center;
+}
+
+.sys-notice-alert .notice-content .more{
+    font-size: 15px;
+    position: absolute;
+    width: 240px;
+    height: 40px;
+    line-height: 40px;
+    bottom: 8px;
+    left: 20px;
+    text-align: center;
+    color: #6c6c6c;
+    background: #e6e6e6;
+    cursor: pointer;
+}
+.sys-notice-alert .notice-content .more:hover{
+    color: #fff;
+    background: #c69849;
+}
+.sys-notice-alert .notice-content .title-list>.item .text .textTime {
+    text-align: right;
+    color: #bbbbbb;
+    font-size: 15px;
+}
+
+.sys-notice-alert .notice-content .content-list {
+    position: absolute;
+    top: 51px;
+    left: 278px;
+    right: 0px;
+    bottom: 0px;
+    background: #fff;
+    padding: 40px 25px 16px 25px;
+    border-radius: 0 0 5px 0;
+}
+
+.sys-notice-alert .notice-content .content-list>.title {
+    font-size: 22px;
+    color: #703c03;
+}
+
+.sys-notice-alert .notice-content .content-list>.time {
+    color: #999999;
+    font-size: 12px;
+    text-align: right;
+    margin-top: -19px;
+}
+
+.sys-notice-alert .notice-content .content-list>.content {
+    position: relative;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 24px;
+    height: 456px;
+    color: #676767;
+    word-break: break-all;
+}
+
+.sys-notice-alert .notice-content .content-list>.content::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    display: block;
+    width: 5px;
+    height: 30px;
+}
+
+.sys-notice-alert .notice-content .content-list>.content::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    /* -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+    background: #a2a2a2;
+}
+
+.sys-notice-alert .notice-content .content-list>.content::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #e5e5e5;
+}
+
+.sys-notice-alert>.content-list>.content>p {
+    margin-bottom: 16px;
+}

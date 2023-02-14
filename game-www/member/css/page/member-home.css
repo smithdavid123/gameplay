@@ -1,0 +1,299 @@
+/*账户安全列表*/
+
+/* 123564 */
+
+.main-panel .security-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.main-panel .security-list>.item {
+    position: relative;
+    width: 283px;
+    height: 183px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.main-panel .security-list>.item:nth-child(1) {
+    background: url(../../images/item_bg_1.png) no-repeat;
+}
+
+.main-panel .security-list>.item:nth-child(2) {
+    background: url(../../images/item_bg_2.png) no-repeat;
+}
+
+.main-panel .security-list>.item:nth-child(3) {
+    background: url(../../images/item_bg_3.png) no-repeat;
+}
+
+.main-panel .security-list>.item:nth-child(4) {
+    background: url(../../images/item_bg_4.png) no-repeat;
+}
+
+.main-panel .security-list>.item:nth-child(5) {
+    background: url(../../images/item_bg_5.png) no-repeat;
+}
+
+.main-panel .security-list>.item:nth-child(6) {
+    background: url(../../images/item_bg_6.png) no-repeat;
+}
+
+.main-panel .security-list>.item:nth-child(3n-1) {
+    margin: 0 30px 0 30px;
+}
+
+.main-panel .security-list>.item:nth-child(n+4) {
+    margin-top: 20px;
+}
+
+.main-panel .security-list>.item .item-icon {
+    margin-right: 5px;
+}
+
+/* 標題 */
+
+.main-panel .security-list>.item .title {
+    font-size: 18px;
+    text-align: center;
+    color: #313131;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-panel .security-list>.item .title span {
+    font-size: 14px;
+}
+
+.main-panel .security-list>.item .title span.wbd, .main-panel .security-list>.item.safe .title span.ybd {
+    display: inline-block;
+}
+
+.main-panel .security-list>.item.safe .title span.wbd, .main-panel .security-list>.item .title span.ybd {
+    display: none;
+}
+
+.wbd {
+    color: #e60012 !important;
+}
+
+.ybd {
+    color: #81a3bb !important;
+}
+
+.main-panel .security-list>.item>img {
+    width: 89px;
+    height: 91px;
+    object-fit: none;
+    margin-right: 16px;
+}
+
+.main-panel .security-list>.item .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.main-panel .security-list>.item .details .description {
+    color: #555555;
+    font-size: 13px;
+}
+
+.main-panel .security-list>.item .button-groups {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-panel .security-list>.item .button-groups>.btn {
+    width: 150px;
+    height: 30px;
+    padding: 0;
+    border-radius: 5px;
+    background: #fff;
+    color: #5a5a5a;
+    border: 1px solid #5a5a5a;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-panel .security-list>.item .button-groups>.btn:hover {
+    border: 2px solid #b79c8f;
+}
+
+.main-panel .security-list>.item .button-groups>.btn:nth-child(n+2) {
+    margin-top: 8px;
+}
+
+.main-panel .security-list>.item .button-groups>.btn img {
+    width: 19px;
+    height: 19px;
+    object-fit: none;
+    margin-right: 5px;
+}
+
+/*.main-panel .security-list>.item .button-groups>.btn:not(:last-child) {
+    margin-right: 10px;
+}*/
+
+.main-panel .security-list>.item .button-groups>.btn-primary, .main-panel .security-list>.item .button-groups>.btn-success, .main-panel .security-list>.item .button-groups>.btn-danger {
+    background: #a68561;
+    color: #fff;
+    border: 1px solid #a68561;
+}
+
+.main-panel .security-list>.item .button-groups>.btn.disabled {
+    display: none;
+    /* background: #d4d4d4;
+    color: #7d7d7d;
+    border-color: transparent; */
+}
+
+/* 谷歌验证码 */
+
+.content_google {
+    text-align: center;
+    font-size: 14px;
+    text-align: center;
+}
+
+.content_google [data-img="googleCode"] {
+    width: 150px;
+    height: 150px;
+}
+
+[data-command="switch-googleVerify"] {
+    position: relative;
+    display: inline-block;
+    width: 72px;
+    height: 30px;
+    border-radius: 15px;
+    background: #eee;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all .3s;
+}
+
+[data-command="switch-googleVerify"] i {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all .3s;
+}
+
+[data-command="switch-googleVerify"][google-state='open'] {
+    background: #703c03;
+}
+
+[data-command="switch-googleVerify"][google-state='open'] i {
+    right: 42px;
+}
+
+[data-command="switch-googleVerify"]::before {
+    content: "关闭";
+    display: table;
+    position: absolute;
+    left: 50%;
+    top: 23px;
+    transform: translateX(-50%);
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #666;
+    width: 100%;
+    text-align: center;
+}
+
+[data-command="switch-googleVerify"][google-state='bind']::before {
+    content: "未绑定";
+}
+
+[data-command="switch-googleVerify"][google-state='open']::before {
+    content: "开启";
+    color: #703c03;
+}
+
+/* 個人中心的錢包 */
+
+/* .personal-wallets {
+    width: 760px;
+    height: 95px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.personal-wallets>.item {
+    width: 139px;
+    font-size: 14px;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #a58362;
+}
+.personal-wallets>.item:nth-child(5n+1) {
+    border-left: none;
+}
+.personal-wallets>.item:nth-child(n+6) {
+    margin-top: 5px;
+}
+.personal-wallets>.item span {
+    color: #b63901;
+    margin-top: 5px;
+}
+
+.personal-wallets>.none {
+    width: 100%;
+    font-size: 17px;
+    text-align: center;
+}
+
+.member-bill-link {
+    color: #b63901;
+    font-size: 14px;
+}
+
+.member-home-login-info {
+    display: flex;
+    flex-direction: row;
+    color: #333333;
+    font-size: 11px;
+    margin-left: 20px;
+}
+.member-home-login-info > div {
+    margin-right: 20px;
+}
+
+.link-btns {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+.link-btns > a:nth-child(n+2) {
+    margin-top: 10px;
+} */

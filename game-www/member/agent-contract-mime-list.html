@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="member-slot">
+        <div class="main-container">
+            <div id="dividend-contract" class="contract-info-item">
+                <div class="title-medium m-b-10">基础分红比例</div>
+                <table data-table="baseInfo" class="table table-bordered table-data">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">分红比例：</td>
+                            <td><span data-field="scalePoint">0.0</span> %</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">活跃用户：</td>
+                            <td><span data-field="activeUser">0</span> 人</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="text-right">契约状态：</td>
+                            <td width="50%"><span data-field="status">已签订契约</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="title-medium m-b-10" style="text-align: center;padding:0;">活跃用户定义：每天消费500算一个活跃用户
+                    （只计算单个下级会员亏损，盈利会员亏损不会相加，单线亏损就有分红）
+                </div> -->
+                <section data-table="extraRules">
+                    <div class="title-medium m-b-10">附加分红比例</div>
+                    <table data-table="extraRules" class="table table-bordered table-data">
+                        <thead>
+                            <tr>
+                                <td width="33.33%" class="text-center">周期消费(万)</td>
+                                <td width="33.33%" class="text-center">活跃用户</td>
+                                <td width="33.33%" class="text-center">分红比例(%)</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </section>
+                <div data-type="action" class="text-center">
+                    <a data-command="agree" class="btn btn-success">同意签约</a>
+                    <a data-command="refuse" class="btn btn-danger">拒绝签约</a>
+                </div>
+            </div>
+            <div id="dividend-contract2" class="contract-info-item">
+                <div class="title-medium m-b-10">基础分红比例</div>
+                <table data-table="baseInfo" class="table table-bordered table-data">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">分红比例：</td>
+                            <td><span data-field="scalePoint">0.0</span> %</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">活跃用户：</td>
+                            <td><span data-field="activeUser">0</span> 人</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="text-right">契约状态：</td>
+                            <td width="50%"><span data-field="status">已签订契约</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="title-medium m-b-10" style="text-align: center;padding:0;">活跃用户定义：每天消费500算一个活跃用户
+                （只计算单个下级会员亏损，盈利会员亏损不会相加，单线亏损就有分红）
+            </div> -->
+                <section data-table="extraRules">
+                    <div class="title-medium m-b-10">附加分红比例</div>
+                    <table data-table="extraRules" class="table table-bordered table-data">
+                        <thead>
+                            <tr>
+                                <td width="25%" class="text-center">每日消费(万)</td>
+                                <td width="25%" class="text-center">每日亏损(万)</td>
+                                <td width="25%" class="text-center">活跃用户</td>
+                                <td width="25%" class="text-center">分红比例(%)</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </section>
+                <div data-type="action" class="text-center">
+                    <a data-command="agree" class="btn btn-success">同意签约</a>
+                    <a data-command="refuse" class="btn btn-danger">拒绝签约</a>
+                </div>
+            </div>
+            <div id="dividend-contract3" class="contract-info-item">
+                <div class="title-medium m-b-10">基础分红比例</div>
+                <table data-table="baseInfo" class="table table-bordered table-data">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">分红比例：</td>
+                            <td><span data-field="scalePoint">0.0</span> %</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">活跃用户：</td>
+                            <td><span data-field="activeUser">0</span> 人</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="text-right">契约状态：</td>
+                            <td width="50%"><span data-field="status">已签订契约</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="title-medium m-b-10" style="text-align: center;padding:0;">活跃用户定义：每天消费500算一个活跃用户
+                    （只计算单个下级会员亏损，盈利会员亏损不会相加，单线亏损就有分红）
+                </div> -->
+                <section data-table="extraRules">
+                    <div class="title-medium m-b-10">附加分红比例</div>
+                    <table data-table="extraRules" class="table table-bordered table-data">
+                        <thead>
+                            <tr>
+                                <td width="25%" class="text-center">周期消费(万)</td>
+                                <td width="25%" class="text-center">周期亏损(万)</td>
+                                <td width="25%" class="text-center">活跃用户</td>
+                                <td width="25%" class="text-center">分红比例(%)</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </section>
+                <div data-type="action" class="text-center">
+                    <a data-command="agree" class="btn btn-success">同意签约</a>
+                    <a data-command="refuse" class="btn btn-danger">拒绝签约</a>
+                </div>
+            </div>
+            <div id="salary-contract" class="contract-info-item">
+                <div class="title-medium m-b-10">基础工资比例</div>
+                <table data-table="baseInfo" class="table table-bordered table-data">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">工资比例：</td>
+                            <td><span data-field="scalePoint">0.0</span> %</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">活跃用户：</td>
+                            <td><span data-field="activeUser">0</span> 人</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="text-right">契约状态：</td>
+                            <td width="50%"><span data-field="status">已签订契约</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-table="extraRules">
+                    <div class="title-medium m-b-10">附加工资比例</div>
+                    <table data-table="extraRules" class="table table-bordered table-data">
+                        <thead>
+                            <tr>
+                                <td width="30%" class="text-center">每日消费(万)</td>
+                                <td width="30%" class="text-center">活跃用户</td>
+                                <td width="30%" class="text-center">工资比例(%)</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">10</td>
+                                <td class="text-center">3</td>
+                                <td class="text-center">1.7 %</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">20</td>
+                                <td class="text-center">3</td>
+                                <td class="text-center">1.8 %</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">30</td>
+                                <td class="text-center">3</td>
+                                <td class="text-center">1.9 %</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <div data-type="action" class="text-center">
+                    <a data-command="agree" class="btn btn-success">同意签约</a>
+                    <a data-command="refuse" class="btn btn-danger">拒绝签约</a>
+                </div>
+            </div>
+            <!-- 间隙返 -->
+            <div id="salary-contract2" class="contract-info-item">
+                <div class="title-medium m-b-10">契约日工资</div>
+                <table class="table table-bordered table-data">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">日消费金额：</td>
+                            <td>每<span data-field="unitConsume">0</span>元</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">日工资金额：</td>
+                            <td>返<span data-field="unitAmount">0</span>元</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">日活跃用户：</td>
+                            <td><span data-field="activeUser">0</span>人</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="text-right">契约工资状态：</td>
+                            <td width="50%"><span data-field="status">已签订契约</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div data-type="action" class="text-center">
+                    <a data-command="agree" class="btn btn-success">同意签约</a>
+                    <a data-command="refuse" class="btn btn-danger">拒绝签约</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = memberSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/agent-contract-mime-list.js"></script>
+
+</body>
+
+</html>

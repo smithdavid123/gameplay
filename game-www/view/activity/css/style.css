@@ -1,0 +1,401 @@
+body.activity-index {
+    background: url(../images/bg.jpg) no-repeat center top;
+    background-size: auto;
+    height: 1200px;
+    min-width: 1280px;
+    min-height: 760px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+body.turntable {
+    background: url(../images/turntable/bg.jpg) no-repeat center top;
+    background-size: auto;
+    height: 1200px;
+    min-width: 1280px;
+    min-height: 760px;
+    position: relative;
+}
+
+.page-content .inner {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 0px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-content .title-row {
+    margin: 40px auto;
+    width: 500px;
+    height: 108px;
+    text-align: center;
+}
+
+.activity-list {
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.activity-list .item {
+    width: 1194px;
+    height: 189px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+    background: url(../images/item_bg.png) no-repeat center;
+    background-size: contain;
+    padding: 0 0 13px 5px;
+}
+.activity-list .item > .pic {
+    /* margin-top: -25px; */
+    width: 879px;
+    height: 171px;
+}
+.activity-list .item.activity>.pic {
+    background: url(../images/item_activity.png) no-repeat center;
+}
+.activity-list .item.none>.pic {
+    background: url(../images/item_none.png) no-repeat center;
+}
+
+.activity-list .item .pic .text {
+    width: 80%;
+    color: #0e2b98;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+}
+
+.activity-list .item .activity-info {
+    width: 308px;
+    height: 130px;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+.activity-list .item .activity-info .activity-title {
+    color: #2c918e;
+    font-size: 18px;
+    font-weight: bold;
+    /*margin-bottom: 15px;*/
+}
+.activity-list .item .activity-info .activity-detail {
+    color: #703c03;
+    font-size: 14px;
+}
+.activity-list .item .activity-info .item_btn {
+    position: absolute;
+    right: 100px;
+    bottom: 20px;
+    margin-top: 300px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 25px;
+    background: #e66854;
+    border-radius: 20px;
+}
+.activity-list .item .activity-info .item_btn:hover {
+    animation-name: rubberBand;
+	animation-duration: .5s;
+	animation-timing-function: linear;
+}
+
+.turntable-title {}
+
+/** turntable */
+.bingo-box {
+    margin-top: 60px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+    width: 1333px;
+    height: 632px;
+    background: url(../images/turntable/bingo_box_bg.png);
+    margin: 0 auto;
+    padding-left: 89px;
+}
+
+.bingo-box .count-div {
+    margin: 200px auto 0 auto;
+}
+
+.bingo-box .count-div .play-count {
+    width: 363px;
+    height: 42px;
+    font-size: 22px;
+    color: #fff9e7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 0px 10px #291104, 0px 0px 10px #291104, 0px 0px 10px #291104, 0px 0px 10px #291104, 0px 0px 10px #291104, 0px 0px 10px #291104, 0px 0px 10px #291104;
+}
+
+.bingo-box .count-div .play-count [data-field="count"] {
+    color: #fff;
+    font-size: 26px;
+    margin: 0 8px;
+}
+
+.bingo-box .drawBtn {
+    cursor: pointer;
+}
+.bingo-box.disable .drawBtn {
+    pointer-events: none;
+}
+
+.rule-box {
+    width: 1235px;
+    height: 195px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* margin-top: 36px; */
+    background: url(../images/turntable/rule_bg.png) no-repeat center;
+    margin: 0 auto;
+    transform: translate(52px, -18px);
+    z-index: -1;
+    padding-left: 150px;
+}
+
+.rule-box .rule-title {
+    background-size: contain;
+    width: 52px;
+    height: 100%;
+    font-size: 15px;
+    color: #fff;
+    writing-mode: vertical-rl;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.rule-box .rule-content {
+    height: 150px;
+    margin-top: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.rule-box .rule-row {
+    font-size: 15px;
+    color: #fedac2;
+    margin-bottom: 13px;
+    margin-right: 10px;
+}
+/* 
+.rule-box .rule-row span {
+    color: #ffde00;
+} */
+
+.rule-box .rule-row:not(:first-child) {
+    margin-top: 4px;
+}
+
+.rule-box .rule-title {
+    font-size: 20px;
+    color: #fff;
+}
+
+.bingo-box .cards {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bingo-box.disable .cards {
+    pointer-events: none;
+}
+
+.bingo-box .cards .card {
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: 1.5s all ease;
+    width: 360px;
+    height: 418px;
+    /*margin: 0 39px;*/
+}
+
+.bingo-box .cards .card.active {
+    transform: rotateY(180deg);
+}
+
+.bingo-box .cards .card>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.bingo-box .cards .card .front {
+    background: url(../images/turntable/bingo_btn.png) no-repeat center;
+}
+
+.bingo-box .cards .card .back {
+    transform: rotateY(180deg);
+}
+
+.bingo-box .cards .card .back .drawNum {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 66px;
+    color: #ff0000;
+}
+
+.model_1, .model_2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .9);
+    z-index: 1000;
+    display: none;
+    color: #fff;
+}
+
+/*.model_1 .box {
+    background: url(../images/turntable/back_light.png) no-repeat;
+    width: 973px;
+    height: 936px;
+    margin: 0 auto;
+}*/
+.model_1 .content {
+    background: url(../images/turntable/1.png) no-repeat top;
+    background-size: contain;
+    width: 350px;
+    height: 547px;
+    padding-top: 232px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -268px 0 0 -173px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.model_2 .content {
+    background: url(../images/turntable/2.png) no-repeat top;
+    background-size: contain;
+    width: 320px;
+    height: 547px;
+    padding-top: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -268px 0 0 -173px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.model_1 .model_close, .model_2 .model_close {
+    background: url(../images/turntable/close_icon.png) no-repeat center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: absolute;
+    top: -21px;
+    right: -12px;
+}
+/* .model_1 .model_close {
+    top: 161px;
+    right: 126px;
+} */
+.model_2 .model_close {
+    top: -21px;
+    right: -28px;
+}
+
+.model_1 .title, .model_2 .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #705403;
+}
+.model_1 .money {
+    font-size: 20px;
+    color: #5d4343;
+    line-height: 48px;
+}
+.model_1 .money .Jeprice {
+    color: #e80000;
+    font-size: 48px;
+    margin: 0 8px;
+}
+.model_2 .thanks {
+    font-size: 66px;
+    color: #fff;
+    margin: 30px 0 20px 0;
+}
+
+.model_1 .prompt, .model_2 .prompt {
+    color: #873c01;
+    font-size: 14px;
+    text-align: center;
+}
+
+.model_1 .TZbtn, .model_2 .TZbtn {
+    width: 208px;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    cursor: pointer;
+    background: url(../images/turntable/TZBtn.png) no-repeat center;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3c0b0b;
+    margin-bottom: 10px;
+}
+
+/*.page-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-footer .footer-copyright-row {
+    width: 400px;
+    margin: 0 10px;
+}
+
+.page-footer .divider {
+    width: calc((100% - 460px) / 2);
+    height: 3px;
+    background: #8a7767;
+}*/

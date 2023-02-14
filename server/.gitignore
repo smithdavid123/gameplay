@@ -1,0 +1,7 @@
+*.pyc
+.pyc
+.pydevproject
+.project
+.project
+log*.txt
+

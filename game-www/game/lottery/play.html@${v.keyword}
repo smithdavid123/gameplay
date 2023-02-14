@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>彩票游戏</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/plugins/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" id='themes' href="themes/default/css/style.css" />
+    <link rel="stylesheet" type="text/css" id='themes2' href="themes/default/css/two-sided.css">
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../../assets/plugins/jquery.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery.eraser.js"></script>
+
+    <script type="text/javascript" src="../../assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../../assets/js/init2.js"></script>
+    <!--BEGIN THEME JS-->
+    <script type="text/javascript" src="js/theme.js"></script>
+    <script type="text/javascript">
+        isLoop = false;
+    </script>
+</head>
+
+<body>
+    <template id="global-slot">
+        <div class="play-page-container">
+            <div class="play-content">
+                <!-- <div class="main-lottery-left">
+                    <div class="lottery_menu">
+                        <div class="lottery-menu-top">
+                            所有彩种
+                        </div>
+                        <div class="container-fluid">
+                            <div class="accordion" id="accordion3"></div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="top-others-container flex-row flex-spbt">
+                    <div class="notice">
+                        <img src="images/icon_notice.png">
+                        <div class="box" id='box'>
+                            <div class="list" id="list1"></div>
+                            <div class="list" id="list2"></div>
+                        </div>
+                    </div>
+
+                    <div class="menu_bar">
+                        <a class="item zs hover" data-command="trend"><i></i>走势图</a>
+                        <span class="item sound on hover"><i></i>声音</span>
+                        <a class="item skin hover"><i></i>换肤色</a>
+                    </div>
+                </div>
+                <div class="play-main-content">
+                    <!-- 投注區 -->
+                    <div class="main-box">
+                        <div class="flex-column w-100">
+
+                            <div class="play-top-content">
+                                <div class="main-lottery-category">
+                                    <div class="category-list">
+                                    </div>
+                                    <div class="category-items">
+                                    </div>
+                                </div>
+
+                                <div class="divider">
+                                </div>
+
+                                <!-- 截止時間 -->
+                                <div class="lottery-open-info">
+                                    <div class="lotteryName w-100">
+                                        <!-- <img src="./images/cqssc.png"> -->
+                                        <div class="name">重庆时时彩</div>
+                                    </div>
+                                    <div class="loading">
+                                        <img src="images/loading.svg">
+                                    </div>
+                                    <div class="issue-container">
+                                        <div class="issue">
+                                            第<span data-field="global-issue">20160101-001</span>期 投注截止时间
+                                        </div>
+                                    </div>
+                                    <div class="surplus-time clear" data-field="global-surplus-time1">
+                                        <div class="time_box">
+                                            <div class="hh textAuto"><span>00</span></div>
+                                            <div class="dian">:</div>
+                                            <div class="mm textAuto"><span>00</span></div>
+                                            <div class="dian">:</div>
+                                            <div class="ss textAuto"><span>00</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="divider">
+                                </div>
+
+                                <!-- 目前開獎 -->
+                                <div class="lottery-open-code">
+                                    <div class="loading">
+                                        <img src="images/loading.svg">
+                                    </div>
+                                    <div class="issue-container">
+                                        <div class="issue">
+                                            开奖号码&emsp;第<span>20160101-001</span> 期
+                                        </div>
+        
+                                        <!-- <div data-name="scratch" class="scratch active">
+                                                    <div style="margin-right: 6px;">刮奖 </div>
+                                                    <div><i></i></div>
+                                                </div> -->
+                                    </div>
+                                    <div class="code">
+                                        <div class="list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="play-bottom-content w-100">
+                            <div class="play_type">
+                                <span class="item active" data-type="standard">标准玩法</span>
+                                <span class="item" data-type="twoSided">双面玩法</span>
+                            </div>
+
+                            <div class="lottery-play-box flex-row flex-spbt">
+                                <!--开奖历史-->
+                                <div class="lottery-open-list">
+                                    <div class="loading">
+                                        <img src="images/loading.svg">
+                                    </div>
+                                    <div class="head-container flex-row"><img>历史开奖</div>
+                                    <div class="scroll-wrap">
+                                        <div class="scroll-item">
+                                            <div class="list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 標準玩法 -->
+                                <div class="lottery-play">
+                                    <div class="play-groups"></div>
+                                    <div class="play-list"></div>
+                                    <div class="center-middle-panel">
+                                        <div class="play-help"></div>
+                                        <div class="play-area"></div>
+                                        <div class="play-options"></div>
+                                        <!-- <div class="adjust-bonus"></div> -->
+                                    </div>
+                                </div>
+
+                                <!-- 雙面玩法 -->
+                                <div class='twoSided lf'>
+                                    <div class="title clear">
+                                        <div class="list lf">
+                                            <div class="item lf active">整合</div>
+                                        </div>
+
+                                        <div class="prompt rt">
+                                            <div class="exp lf">玩法说明
+                                                <div class="textBox">
+                                                    <div class="text help">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="exp lf">中奖举例
+                                                <div class="textBox">
+                                                    <div class="text explae">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal lf">
+                                        <span class="text lf">下单模式:</span>
+                                        <div data="switchIcon" class="switchIcon lf">
+                                            <span class="ball"></span>
+                                        </div>
+                                        <span class="text lf">金额:</span>
+                                        <input data-val='moneyTel' value="1" type="number" min="1" class="lf">
+                                        <div class="unit lf" data-type="unit" data-val='yuan'>
+                                            <span class='item lf active' data-val='yuan'>元</span>
+                                            <span class='item lf' data-val='jiao'>角</span>
+                                            <span class='item lf' data-val='fen'>分</span>
+                                            <span class='item lf' data-val='li'>厘</span>
+                                        </div>
+                                        <div class="sliderBOX lf" data-code='1800'>
+                                            <div class="text lf">奖金调节</div>
+                                            <div class="slider-wrapper lf">
+                                                <div class="slider"></div>
+                                            </div>
+                                            <div class="text lf">
+                                                <span data-field="code">0</span>
+                                                <span style="margin: 0 2px;">/</span>
+                                                <span data-field="point">0.0</span>%
+                                            </div>
+                                        </div>
+                                        <span data='submit' class="btn submit hover lf">确定</span>
+                                        <span data='chase' class="btn chase hover lf">追号</span>
+                                        <span data='reset' class="btn reset hover lf">重置</span>
+                                    </div>
+                                    <div class="betting lf"></div>
+                                    <div class="lottery-order-2 lf" order-type='2'>
+                                        <div class="tab">
+                                            <div data-href="order" class="item active">订单记录</div>
+                                            <div data-href="chase" class="item">追号记录</div>
+                                        </div>
+                                        <div class="content">
+                                            <div data-name="order" class="item active">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <td width="25%">订单号</td>
+                                                            <td width="20%">彩种</td>
+                                                            <td width="30%">期号</td>
+                                                            <td width="10%">奖金</td>
+                                                            <td width="15%">操作</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                                <div class="page-list">
+                                                    <div class="easy-page"></div>
+                                                </div>
+                                            </div>
+                                            <div data-name="chase" class="item">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <td width="25%">订单号</td>
+                                                            <td width="20%">彩种</td>
+                                                            <td width="30%">期号</td>
+                                                            <td width="10%">奖金</td>
+                                                            <td width="15%">操作</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                                <div class="page-list">
+                                                    <div class="easy-page"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lottery-record-box">
+                            <!--号码列表-->
+                            <div class="lottery-record">
+                                <div class="scroll-wrap">
+                                    <div class="count_down" data-field="global-surplus-time1">
+                                        <div class="item">
+                                            <div class="width-40">玩法</div>
+                                            <div class="width-6">注数</div>
+                                            <div class="width-6">倍数</div>
+                                            <div class="width-6">单位</div>
+                                            <div class="width-10">最大投注</div>
+                                            <div class="width-10">返点</div>
+                                            <div class="width-10">投注金额</div>
+                                            <div class="width-12">
+                                                <a data-command="clear">
+                                                    <!-- 清空 -->
+                                                    <img src="play.html?${v.keyword}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="scroll-item">
+                                        <div class="list"></div>
+                                        <div class="empty-hint">请选择号码</div>
+                                    </div>
+                                </div>
+                                <div class="btn-gp">
+                                    <div class="button-container">
+                                        <div class="button hover" data-command="chase">设置追号</div>
+                                        <div class="button hover" data-command="clear">清空号码</div>
+                                    </div>
+                                    <div class="submit hover" data-command="submit">
+                                        <!-- <i class="icon"></i> -->
+                                        确认投注
+                                        <div class="flex-column m-l-20" style="font-size: 14px;">
+                                            截止时间
+                                            <span data-field="global-surplus-time2">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--订单记录-->
+                            <div class="lottery-order" order-type="1">
+                                <div class="tab">
+                                    <div data-href="order" class="item active">订单记录</div>
+                                    <div data-href="chase" class="item">追号记录</div>
+                                </div>
+                                <div class="content">
+                                    <div data-name="order" class="item active">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td width="8%">订单号</td>
+                                                    <td width="14%">彩种</td>
+                                                    <!-- <td width="15%">玩法</td> -->
+                                                    <td width="12%">期号</td>
+                                                    <!-- <td width="10%">投注金额</td> -->
+                                                    <td width="9%">奖金</td>
+                                                    <!-- <td width="8%">状态</td> -->
+                                                    <!-- <td width="18%">下单日期</td> -->
+                                                    <td width="7%">操作</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                        <div class="page-list">
+                                            <div class="easy-page"></div>
+                                        </div>
+                                    </div>
+                                    <div data-name="chase" class="item">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td width="8%">订单号</td>
+                                                    <td width="14%">彩种</td>
+                                                    <!-- <td width="15%">玩法</td> -->
+                                                    <!-- <td width="15%">开始期号</td> -->
+                                                    <!-- <td width="14%">已追/总期号</td> -->
+                                                    <!-- <td width="10%">总金额</td> -->
+                                                    <td width="10%">奖金</td>
+                                                    <td width="8%">状态</td>
+                                                    <td width="7%">操作</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                        <div class="page-list">
+                                            <div class="easy-page"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--开奖提示信息-->
+        <div class="lottery-notice">
+            <!-- <a data-command="close" class="close">×</a> -->
+            <a data-command="close" class="close"></a>
+            <div class="title"></div>
+            <div class="current-open">
+                <div class="current-open-name">
+                    <img src="images/cqssc.png" alt="">
+                    <div>
+                        <div class="name">重庆时时彩</div>
+                        <div class="issue">第<span data-field="issue">0.000</span>期</div>
+                    </div>
+                </div>
+                <!-- <div class="lottery-open-code">
+                    <div class="code"></div>
+                </div> -->
+            </div>
+            <div class="content">
+                <div class="name"></div>
+                <div class="text text-open">第<span data-field="issue">0.000</span>期开奖</div>
+                <div class="text">总投注<span data-field="money">0.000</span>元</div>
+                <div class="text">总派彩<span data-field="winMoney">0.000</span>元</div>
+                <div class="text">总盈亏<span data-field="profit">0.000</span>元</div>
+            </div>
+            <div class="msg-auto">
+                <span data-field="count">10</span>秒后自动关闭
+                <a data-command="wait" class="link">稍后关闭</a> 或 <a data-command="clear" class="link">不再提示</div>
+            <div class="msg-tips">自动关闭已取消，请点击右上角手动关闭</div>
+        </div>
+
+
+        <!--追号模板-->
+        <script id="lottery-chase" type="text/html">
+        <div class="lottery-chase">
+            <div class="tab">
+                <div data-href="normal" class="item active">普通追号</div>
+                <div data-href="multiple" class="item">翻倍追号</div>
+                <div data-href="advanced" class="item">利润率追号</div>
+            </div>
+            <div class="content">
+                <div data-name="normal" class="item active">
+                    <div class="settings">
+                        <div class="item-issue">
+                            <label>连续追：</label>
+                            <div class="list">
+                                <a data-val="5" class="selected">5期</a>
+                                <a data-val="10">10期</a>
+                                <a data-val="15">15期</a>
+                                <a data-val="20">20期</a>
+                            </div>
+                        </div>
+                        <div class="item-input">
+                            <input name="num" type="text" value="5">
+                            <label>期</label>
+                        </div>
+                        <div class="item-input">
+                            <label>倍数：</label>
+                            <input name="multiple" type="text" value="1">
+                        </div>
+                        <div class="button" data-command="generate">生成追单</div>
+                    </div>
+                </div>
+                <div data-name="multiple" class="item">
+                    <div class="settings">
+                        <div class="item-input">
+                            <label>连续追：</label>
+                            <input name="num" type="text" value="5">
+                            <label>期</label>
+                        </div>
+                        <div class="item-input">
+                            <label>起始倍数：</label>
+                            <input name="multiple" type="text" value="1">
+                            <label>每间隔</label>
+                            <input name="interval" type="text" value="1">
+                            <label>期，倍数x</label>
+                            <input name="increase" type="text" value="2">
+                        </div>
+                        <div class="button" data-command="generate">生成追单</div>
+                    </div>
+                </div>
+                <div data-name="advanced" class="item">
+                    <div class="settings">
+                        <div class="item-input">
+                            <label>连续追：</label>
+                            <input name="num" type="text" value="5">
+                            <label>期</label>
+                        </div>
+                        <div class="item-input">
+                            <label>起始倍数：</label>
+                            <input name="startMultiple" type="text" value="1">
+                            <label>最大倍投：</label>
+                            <input name="maxMultiple" type="text" value="100">
+                            <label>最低收益率：</label>
+                            <input name="minProfit" type="text" value="30">
+                            <label>%</label>
+                        </div>
+                        <div class="button" data-command="generate">生成追单</div>
+                    </div>
+                </div>
+            </div>  
+            <div class="result">
+                <table data-table="head" class="table">
+                    <thead>
+                    <tr>
+                        <td class="id">序号</td>
+                        <td class="issue"><input type="checkbox"> 追号期次</td>
+                        <td class="multiple"></td>
+                        <td class="amount">金额（元）</td>
+                        <td class="time">代购截止时间</td>
+                    </tr>
+                    </thead>
+                </table>
+                <div class="list">
+                    <table data-table="body" class="table">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="total">
+                已选择<span class="highlight" data-field="count">0</span>个追单，
+                共计<span class="highlight" data-field="money">0</span>元
+                <a data-command="submit" class="submit">
+                    <!-- <i class="fa fa-check-circle"></i> -->
+                    确认投注</a>
+                <label><input name="winStop" type="checkbox" checked="checked">中奖后停止追号</label>
+            </div>
+        </div>
+        </script>
+        <div id="print-order" class="print-order">
+            <div class="item">&emsp;订单号：<span data-field="billno"></span></div>
+            <div class="item">&emsp;用户名：<span data-field="username"></span></div>
+            <div class="item">&emsp;奖金模式：<span data-field="bonusModel"></span></div>
+            <div class="item">&emsp;订单状态：<span data-field="status"></span></div>
+            <div class="item">&emsp;中奖金额：<span data-field="winMoney"></span></div>
+            <div class="item">&emsp;开奖号码：<span data-field="openCode"></span></div>
+            <div class="item">&emsp;投注内容：<span data-field="purchase"></span></div>
+            <div class="item">&emsp;&emsp;彩种：<span data-field="lotteryName"></span></div>
+            <div class="item">&emsp;&emsp;期号：<span data-field="issue"></span></div>
+            <div class="item">&emsp;&emsp;玩法：<span data-field="methodName"></span></div>
+            <div class="item">&emsp;&emsp;注数：<span data-field="nums"></span></div>
+            <div class="item">资金模式：<span data-field="model"></span></div>
+            <div class="item">&emsp;&emsp;倍数：<span data-field="multiple"></span></div>
+            <div class="item">投注金额：<span data-field="money"></span></div>
+            <div class="item">加入时间：<span data-field="orderTime"></span></div>
+            <div class="item">截止时间：<span data-field="stopTime"></span></div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = globalSharedTpl();
+    </script>
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/print-js/print.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../../assets/js/service.js"></script>
+    <script type="text/javascript" src="../../assets/js/global.js"></script>
+    <!--BEGIN PLAY JS-->
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/layout.js"></script>
+    <script type="text/javascript" src="js/open.js"></script>
+    <script type="text/javascript" src="js/play.js"></script>
+    <script type="text/javascript" src="js/record.js"></script>
+    <script type="text/javascript" src="js/chase.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/recordSM.js"></script>
+    <script type="text/javascript" src="js/chaseSM.js"></script>
+    <script type="text/javascript" src="js/two-sided.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            /** 彩票列表 */
+            var buildLotteryGroup = function () {
+                const categories = lotteryCategories(); // 彩種分類
+                const gameList = buildLotteryList(); // 彩種列表
+                const targetDom = $('.accordion'); // 彩種左列表
+                const targetDomList = $('.category-list'); // 彩種上分類選單
+                const targetDomItem = $('.category-items');
+                const keyword = location.href.split("?")[1] || 'cqssc'; // 目前彩種代號
+                let activeCategoryIndex = 0;
+
+                /** 改變顯示的當前彩種 */
+                var changeCurrentLottery = function (keyword, name, type) {
+                    $(".lotteryName img").attr('src', './images/' + keyword + '.png')
+                        .attr('onerror', `this.src='/game/lottery/images/lottery_${type || '8'}.png';`); // 預防彩票抓不到圖
+                    $(".lotteryName .name").text(name);
+                    $(".current-open-name img").attr('src', './images/' + keyword + '.png');
+                    $(".current-open-name .name").text(name);
+                }
+
+                /** 彩票列表內容, 切換 tab 樣式 */
+                var buildLotteryContent = function (index) {
+                    let result = $(`<div class="category-item"></div>`);
+                    $.each(gameList[index], function (i, v) {
+                        let $thisItem = $(`<a title="${v.name}" class="textAuto item" href="play.html?${v.keyword}">
+                                            ${v.name}
+                                           </a>`);
+                        if (v.keyword == keyword) {
+                            $thisItem.addClass("active");
+                            changeCurrentLottery(v.keyword, v.name, v.type);
+                            activeCategoryIndex = index;
+                        }
+                        result.append($thisItem);
+                    });
+                    return result[0].outerHTML;
+                }
+
+                $.each(categories, function (i, v) {
+                    let $thisItem = $(`
+                                    <div class="category-list-item" data-index="${i}">
+                                        ${v.name}
+                                    </div>
+                                    `);
+                    targetDomList.append($thisItem);
+
+                    // let $thisItems = $(`
+                    //                 <div>
+                    //                     ${buildLotteryContent(i)}
+                    //                 </div>
+                    //                 `);
+                    targetDomItem.append(buildLotteryContent(i));
+                });
+                $(".category-list .category-list-item").eq(activeCategoryIndex).addClass('active');
+                $(".category-items .category-item").eq(activeCategoryIndex).addClass('active');
+                $('.category-list .category-list-item').click(function () {
+
+                    $(".category-list .category-list-item").removeClass('active');
+                    $(".category-list .category-list-item").eq($(this).attr('data-index')).addClass('active');
+                    $(".category-items .category-item").removeClass('active');
+                    $(".category-items .category-item").eq($(this).attr('data-index')).addClass('active');
+                });
+
+                /** 彩票列表內容, 左側菜單展開樣式 */
+                // var buildLotteryContent = function (index) {
+                //     let result = $(`<div class="accordion-inner"></div>`);
+                //     $.each(gameList[index], function (i, v) {
+                //         // let $thisItem = $(`<a class="item" href="play.html?${v.keyword}"> <img src="/game/lottery/images/${v.keyword}.png" alt=""> ${v.name}</a>`); // 有icon
+                //         let $thisItem = $(`<a class="item" href="play.html?${v.keyword}">${v.name}</a>`); // 無icon
+                //         if (v.keyword == keyword) {
+                //             $thisItem.addClass("active");
+                //             $thisItem.attr("data-lottery", v.keyword).attr("lottery-type", v.type);
+                //             changeCurrentLottery(v.keyword, v.name);
+                //             activeCategoryIndex = index;
+                //         }
+                //         result.append($thisItem);
+                //     });
+                //     return result[0].outerHTML;
+                // }
+
+                // $.each(categories, function (i, v) {
+                //     let $thisItem = $(`<div class="accordion-group">
+                //                     <div class="accordion-heading">
+                //                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse_${i}" href="play.html?${v.keyword}#collapse_${i}">
+
+                //                             ${v.name}
+                //                             <!--<i class="icon"></i>-->
+                //                         </a>
+                //                     </div>
+                //                     <div id="collapse_${i}" class="accordion-body collapse" style="height: 0px; ">
+                //                         ${buildLotteryContent(i)}
+                //                     </div>
+                //                 </div>`);
+                //     targetDom.append($thisItem);
+                // });
+
+                // // collapse點擊事件
+                // $('.accordion-heading').click(function () {
+                //     $(".lottery_menu .collapse").collapse('hide');
+                // });
+                // // 當前collapse調整
+                // $(".lottery_menu .collapse").eq(activeCategoryIndex).collapse();
+            }
+
+            buildLotteryGroup();
+
+            // TODO 壹佰因為把開獎放在 lottery-play-box 內, 所以要加這行
+            $(".main-box .play_type").find('.item').eq(0).trigger('click');
+
+            //公告无缝滚动
+            SystemCtrl.request('LIST_NOTICE', {
+                data: { content: true },
+                success: function (res) {
+                    scrollAnimate(res);
+                }
+            });
+            var scrollAnimate = function(data){
+                var $list = '';
+                $.each(data,(i,v)=>{
+                    $list += `<a class="item" href="/member/notice.html">${v.title}</a>`
+                })
+                var box=$("#box");
+                $("#list1").html($list);
+                $("#list2").html($list);
+                var top = 0;
+                var h = $("#list1").height();
+                function scrollup(){
+                    if(top>=h){ 
+                        top = 0;
+                    }else{
+                        top ++;
+                    }
+                    box.css({'top':-top+'px'})
+                }
+    
+                var scrollMove=setInterval(scrollup,50);//数值越大，滚动速度越慢
+
+                //鼠标经过时，滚动停止
+                box.mouseenter(function(){
+                    clearInterval(scrollMove)
+                })
+
+                //鼠标离开时，滚动继续
+                box.mouseleave(function(){
+                    scrollMove=setInterval(scrollup,30);
+                })
+
+            };
+            
+        });
+    </script>
+
+</body>
+
+</html>

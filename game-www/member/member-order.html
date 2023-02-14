@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="member-slot">
+        <div class="main-container">
+            <div class="form-inline form-search">
+                <form role="form">
+                    <div class="m-b-10">
+                        <div class="form-group">
+                            <label>选择游戏：</label>
+                            <select name="lottery" class="form-control input-small">
+                                <option value="">全部游戏</option>
+                            </select>
+                        </div>
+                        <div class="form-group input-icon icon-right">
+                            <label>投注期号：</label>
+                            <input name="issue" type="text" placeholder="投注期号" class="form-control input-small">
+                            <!-- <i class="fa fa-file-text-o"></i> -->
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="form-group">
+                            <label>订单状态：</label>
+                            <select name="status" class="form-control input-small">
+                                <option value="">全部状态</option>
+                                <option value="0">未开奖</option>
+                                <option value="1">未中奖</option>
+                                <option value="2">已中奖</option>
+                                <option value="-1">已撤单</option>
+                            </select>
+                        </div>
+                        <div class="form-group input-icon icon-right">
+                            <label>选择日期：</label>
+                            <input data-init="date-picker" name="sDate" type="text" placeholder="开始日期"
+                                class="form-control input-small">
+                            <i class="fa fa-calendar"></i>
+                            <label>至</label>
+                            <input data-init="date-picker" name="eDate" type="text" placeholder="结束日期"
+                                class="form-control input-small">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <a data-command="search" class="btn btn-primary">搜索</a>
+                    </div>
+                </form>
+            </div>
+            <div class="table-responsive hide">
+                <table class="table table-bordered table-data">
+                    <thead>
+                        <tr>
+                            <td class="text-center">订单号</td>
+                            <td class="text-center">彩种</td>
+                            <td class="text-center">玩法</td>
+                            <td class="text-center">期号</td>
+                            <td class="text-center">投注金额</td>
+                            <td class="text-center">奖金</td>
+                            <td class="text-center">状态</td>
+                            <td width="160px" class="text-center">下单日期</td>
+                            <td width="80px" class="text-center">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="easy-page"></div>
+            </div>
+            <div class="empty-data">
+                <div class="center-content">
+                    <div class="bg1"></div>
+                    <div class="text">欧普斯~没有投注记录！</div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <script type="text/javascript">
+        document.body.innerHTML = memberSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/member-order.js"></script>
+
+</body>
+
+</html>

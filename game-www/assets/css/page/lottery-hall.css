@@ -1,0 +1,163 @@
+body {
+    width: 100%;
+    vertical-align: middle;
+    background: url(../../images/lotteryHall/bg.jpg) no-repeat center top #efefef;
+    background-size: auto;
+    position: relative;
+}
+
+.page-container {
+    
+}
+
+.page-content .inner {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.page-content .inner .lottery-category {
+    width: 100%;
+    /* height: 566px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.page-content .inner .lottery-category .item {
+    width: 90px;
+    height: 76px;
+    position: relative;
+    color: #623000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: url(../../images/lotteryHall/lottery_category_item_bg.png) no-repeat center;
+    margin-left: 15px;
+}
+/* .page-content .inner .lottery-category .item:not(:last-child) {
+} */
+.page-content .inner .lottery-category .item:hover,
+.page-content .inner .lottery-category .item.active {
+    background: url(../../images/lotteryHall/lottery_category_item_active_bg.png) no-repeat center;
+    color: #fff;
+}
+.page-content .inner .lottery-category .item.active {
+    pointer-events: none;
+}
+.page-content .inner .lottery-category .item .name {
+    font-size: 16px;
+}
+/* .page-content .inner .lottery-category .item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+} */
+/* 開獎列表 */
+.page-content .inner .lottery-open-list {
+    width: 1162px;
+    height: 711px;
+    background: url(../../images/lotteryHall/lottery_open_list_bg.png) no-repeat center;
+    overflow-y: auto;
+    padding: 15px 28px;
+    margin-bottom: 20px;
+}
+.page-content .inner .lottery-open-list .list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.page-content .inner .lottery-open-list .list .item {
+    width: 355px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: url(../../images/lotteryHall/line_bg.png) #fff;
+    background-repeat: no-repeat, no-repeat;
+    background-position: -25px -39px, center;
+    background-size: 118px;
+    padding: 8px 2px;
+    border: 1px solid #aa6343;
+    border-radius: 5px;
+    margin-right: 20px;
+    transition: all .2s;
+}
+.page-content .inner .lottery-open-list .list .item:hover {
+    transform: scale(1.05);
+}
+.page-content .inner .lottery-open-list .list .item:nth-child(3n+3) {
+    margin-right: 0;
+}
+.page-content .inner .lottery-open-list .list .item:nth-child(n+4) {
+    margin-top: 25px;
+}
+.page-content .inner .lottery-open-list .list .item .open-img {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 5px;
+}
+.page-content .inner .lottery-open-list .list .item .open-name {
+    color: #fe5600;
+    font-size: 15px;
+}
+.page-content .inner .lottery-open-list .list .item .open-issue {
+    font-size: 15px;
+    color: #636363;
+}
+.page-content .inner .lottery-open-list .list .item .open-issue span {
+    color: #fe5600;
+    margin: 0 5px;
+}
+
+.page-content .inner .lottery-open-list .list .item .open-code {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 240px;
+    margin-bottom: 5px;
+    min-height: 76px;
+}
+.page-content .inner .lottery-open-list .list .item .open-code .ball {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    background: linear-gradient(#f77f00, #fa5400);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 32px;
+    margin: 3px;
+}
+.page-content .inner .lottery-open-list .list .item .hall-play-btn {
+    width: 90px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 16px;
+    background: linear-gradient(#d35546, #a22214);
+    border-bottom: 1px solid #72140c;
+    color: #ffffff;
+    border-radius: 20px;
+}
+.page-content .inner .lottery-open-list .list .item .hall-play-btn:hover {
+    animation-name: tada;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+}
+/* .page-content .inner .lottery-open-list .list .item .hall-play-btn img {
+    height: 18px;
+    object-fit: none;
+    margin-left: 10px;
+} */

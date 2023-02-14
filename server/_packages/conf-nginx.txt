@@ -1,0 +1,49 @@
+server {
+        listen       80; 
+        server_name  l23yl.com;
+        #charset koi8-r;
+        #access_log  logs/host.access.log  main;
+        location  / {
+			proxy_pass   http://127.0.0.1:8005;
+			index  index.html index.htm;
+			
+			proxy_set_header X-Real-IP $remote_addr;
+			proxy_set_header REMOTE-HOST $remote_addr;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+
+
+
+
+server {
+	listen       8005;
+	server_name  l23yl.com;
+
+	location / {
+		root   C:\source\www;
+		index  index.html index.htm;
+	}
+	location /api/ {
+		proxy_pass http://127.0.0.1:8007/;
+        proxy_set_header Host $host:$server_port;
+		
+		
+	}
+}
+
+
+server {
+    listen   8108;
+    server_name localhost;
+    charset  utf-8;
+    access_log /var/log/nginx/uwsgi_access.log;
+    error_log /var/log/nginx/uwsgi_error.log;
+    client_max_body_size 100M;
+    location / {
+        include    uwsgi_params;
+        uwsgi_pass 127.0.0.1:8107;
+        uwsgi_param UWSGI_CHDIR /root/server/main;
+        uwsgi_param UWSGI_SCRIPT main:app;
+    }
+}

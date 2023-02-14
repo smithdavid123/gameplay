@@ -1,0 +1,61 @@
+/*未綁定卡片時顯示內容*/
+.main-panel .step-msg {
+    display: none;
+    font-size: 18px;
+    line-height: 52px;
+}
+.main-panel .step-msg > a {
+    color: #8e6804;
+}
+
+/*有綁定卡片時顯示內容*/
+.main-panel .panel-content {
+    margin-top: 20px;
+    display: none;
+}
+
+/*提現銀行卡*/
+.main-panel .panel-content .select-card {
+    display: table;
+    width: 100%;
+}
+.main-panel .panel-content .select-card > .item {
+    position: relative;
+    height: 72px;
+    line-height: 72px;
+    margin-bottom: 15px;
+    /* border-radius: 15px; */
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+    border: 1px solid transparent;
+}
+.main-panel .panel-content .select-card > .item:last-child {
+    margin-bottom: 0;
+}
+.main-panel .panel-content .select-card > .item > .bank-code {
+    float: left;
+    margin: 16px 16px;
+}
+.main-panel .panel-content .select-card > .item > .card-info {
+    height: 72px;
+    font-size: 18px;
+    margin-left: 200px;
+}
+.main-panel .panel-content .select-card > .item.selected {
+    border: 3px solid #6f7cb1;
+}
+.main-panel .panel-content .select-card > .item > i {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    font-size: 22px;
+    color: #f87d00;
+}
+
+/*可提現金額*/
+.main-panel .panel-content .form-control-static {
+    color: #666;
+    font-size: 15px;
+}
+.main-panel .panel-content .form-control-static span {
+    color: #222;
+}

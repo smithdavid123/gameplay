@@ -1,0 +1,8 @@
+/__init__.pyc
+/api.pyc
+/client.pyc
+/greenthread.pyc
+/http.pyc
+/log.pyc
+/patcher.pyc
+/wsgi.pyc

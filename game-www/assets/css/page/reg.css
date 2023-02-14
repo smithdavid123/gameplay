@@ -1,0 +1,657 @@
+.reg-container {
+    background: url(../../images/reg/bg.jpg) no-repeat center;
+    background-size: auto;
+    width: 100%;
+    height: 1080px;
+    min-width: 1280px;
+    min-height: 760px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 表格內容 */
+
+.reg-content {
+    width: 1240px;
+    min-height: 800px;
+    height: calc(100vh - 40px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.reg-content .reg-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translate(-12%, -36%);
+}
+
+.reg-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: url(../../images/reg/input_bg.png) no-repeat center top;
+    width: 1127px;
+    height: 757px;
+    color: #0c253c;
+    font-size: 14px;
+    padding: 45px;
+}
+
+.reg-form>.title {
+    margin: 47px auto 20px auto;
+    color: #fff;
+    font-size: 24px;
+    transform: translate(126px, 10px);
+}
+
+.reg-form .form-group {
+    position: relative;
+    height: 50px;
+    margin: 0 0 12px 0;
+    width: 84%;
+    /* background: #fff; */
+    border-bottom: 1px solid #977f68;
+}
+
+.reg-form .form-group input {
+    border: 0;
+    /*box-shadow: inset 0 0 0 rgba(0, 0, 0, .075) !important;*/
+}
+
+.reg-form .form-group>i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background: #a69e96; */
+}
+
+.reg-form .form-group i[data-type="username"]::before {
+    content: '';
+    width: 21px;
+    height: 24px;
+    background: url(../../images/reg/user_icon.png) no-repeat center;
+    background-size: contain;
+}
+
+.reg-form .form-group i[data-type="password"]::before {
+    content: '';
+    width: 18px;
+    height: 22px;
+    background: url(../../images/reg/password_icon.png) no-repeat center;
+    background-size: contain;
+}
+
+.reg-form .form-group i[data-type="securityCode"]::before {
+    content: '';
+    width: 21px;
+    height: 22px;
+    background: url(../../images/reg/code_icon.png) no-repeat center;
+    background-size: contain;
+}
+
+.reg-form .security-code {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 80px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.reg-form .security-code>img {
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
+.form-group>.security-code>img {
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
+.reg-form .form-group input[type="text"], .reg-form .form-group input[type="password"] {
+    height: 100%;
+    font-size: 16px;
+    padding: 0 35px 0 60px;
+    color: #707d87;
+    background: transparent;
+}
+
+.reg-form .btn-submit {
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(#d9411e, #bb3212);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.reg-form .form_hint {
+    font-size: 14px;
+    margin-top: 30px;
+    color: #63411e;
+}
+
+/* 提示訊息 start */
+
+.reg-form .form-group .help-msg {
+    line-height: 30px;
+    color: #666;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.yes {
+    background: url(../../images/reg/yes.png) center;
+    background-size: cover;
+    width: 16px;
+    height: 12px;
+    display: block;
+}
+
+.no {
+    background: url(../../images/reg/no.png) center;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.reg-form .form-group .help-block {
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+.reg-form .form-group .help-block>i {
+    font-size: 22px;
+    vertical-align: -2px;
+}
+
+.reg-form .form-group .help-block.has-success {
+    color: #029cff;
+}
+
+/* 提示訊息 end */
+
+.reg-container .reg-form .form-horizontal {
+    width: 390px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(126px, 10px);
+}
+
+.reg-container .reg-form .form-horizontal>.title {
+    margin-bottom: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 下方連結 */
+
+.normal-links {
+    width: 22%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0 8px;
+}
+
+.normal-links .divider {
+    width: 1px;
+    height: 15px;
+    background: #5d5d5d;
+}
+
+.normal-links .item {
+    position: relative;
+    color: #63411e;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.normal-links>.item {
+    border: 1px solid #63411e;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.normal-links .item img {
+    margin-right: 5px;
+}
+
+.normal-links .item .popup-container {
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #969696;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.normal-links .item:hover .popup-container {
+    display: flex;
+}
+
+.normal-links .item .popup-container::before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    z-index: -1;
+}
+
+.normal-links .item .popup-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    left: 0;
+    bottom: -20px;
+}
+
+.normal-links .item .popup-container>.title {
+    width: 100%;
+    background: #894a25;
+    line-height: 37px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.normal-links .item .popup-container .qrcode-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.normal-links .item .popup-container .qrcode-items .qrcode-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    ;
+    align-items: center;
+    color: #361f53;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.normal-links .item .popup-container .qrcode-items .qrcode-item .title {
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+}
+
+.normal-links .item .popup-container .qrcode-items .qrcode-item .code {
+    width: 122px;
+    height: 122px;
+    position: relative;
+    background: #fff;
+}
+
+.normal-links .item .popup-container .qrcode-items .qrcode-item:not(:first-child) .code::before {
+    content: '';
+    width: 1px;
+    height: 122px;
+    position: absolute;
+    left: -16px;
+    top: 0;
+    background: #e1e1e1;
+}
+
+.normal-links .item .popup-container .qrcode-items .qrcode-item .code canvas {
+    margin: 0px;
+    width: 122px;
+    height: 122px;
+}
+
+/** 線路檢測 */
+
+.normal-links .item .popup-container .nl-lines-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 15px 5px 15px;
+}
+
+.normal-links .item .popup-container .nl-lines-box .item {
+    position: relative;
+    width: 214px;
+    height: 56px;
+}
+
+.normal-links .item .popup-container .nl-lines-box .item:nth-child(1)::before {
+    content: '线路1';
+}
+
+.normal-links .item .popup-container .nl-lines-box .item:nth-child(2)::before {
+    content: '线路2';
+}
+
+.normal-links .item .popup-container .nl-lines-box .item:nth-child(3)::before {
+    content: '线路3';
+}
+
+.normal-links .item .popup-container .nl-lines-box .item:nth-child(4)::before {
+    content: '线路4';
+}
+
+.normal-links .item .popup-container .nl-lines-box .item:nth-child(5)::before {
+    content: '线路5';
+}
+
+.normal-links .item .popup-container .nl-lines-box .item:nth-child(6)::before {
+    content: '线路6';
+}
+
+.normal-links .item .popup-container .nl-lines-box .item::before {
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    font-size: 14px;
+    color: #5d5d5d;
+}
+
+.normal-links .item .popup-container .nl-lines-box .item:nth-child(n+4) {
+    display: none;
+}
+
+.normal-links .item .popup-container .nl-lines-box .item .speed {
+    font-size: 14px;
+    color: #a49d95;
+    position: absolute;
+    top: 6px;
+    left: 60px;
+}
+
+.normal-links .item .popup-container .nl-lines-box .item .go_internet {
+    width: 52px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background: #894a25;
+    border-radius: 20px;
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
+
+.normal-links .item .popup-container .nl-lines-box .item .urlText {
+    width: 100%;
+    font-size: 12px;
+    color: #5d5d5d;
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+}
+
+.normal-links .item .popup-container .re-ping {
+    font-size: 14px;
+    color: #fff;
+    background: #894a25;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.agreement {
+    position: relative;
+    color: #63411e;
+}
+
+.agreement a {
+    color: #63411e;
+    cursor: pointer;
+}
+
+/* 條款 */
+
+.terms {
+    position: fixed;
+    left: 50%;
+    top: 150px;
+    width: 800px;
+    margin-left: -400px;
+    height: 550px;
+    z-index: 4;
+    background: #fff;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: all 0.3s;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .9);
+}
+
+.terms.active {
+    transform: scale(1);
+}
+
+.terms .terms-titlt {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    background: #894a25;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.terms .text {
+    padding: 20px;
+    font-size: 14px;
+    height: 400px;
+    overflow: auto;
+}
+
+.terms .text .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.terms .termsbtnbox {
+    padding-left: 260px;
+    margin-top: 25px;
+}
+
+.terms .termsbtnbox .termsbtn {
+    float: left;
+    width: 120px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #894a25;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.terms .termsbtnbox .cancelbtn {
+    float: left;
+    width: 120px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #894a25;
+    color: #894a25;
+    border-radius: 10px;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.terms .termsbtnbox .termsbtn:hover {
+    opacity: 0.8;
+}
+
+.pai {
+    width: 100%;
+    height: 138px;
+    background: #17364a;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pai .browser-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 0px;
+}
+
+.pai .browser-list .item:not(:first-child) {
+    margin-left: 30px;
+}
+
+.pai .browser-list .item:hover {
+    animation-name: flip;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+.pai .text {
+    position: relative;
+    color: #fff;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pai .text:last-child {
+    margin-right: 0;
+}
+
+.pai .text>img {
+    margin-top: 5px;
+}
+
+.pai .text>img.normal, .pai .text:hover>img.active {
+    display: block;
+}
+
+.pai .text:hover>img.normal, .pai .text>img.active {
+    display: none;
+}
+
+.pai .divider {
+    width: 1px;
+    height: 53px;
+    margin: 0 30px;
+}
+
+.select {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    vertical-align: text-top;
+    background: url(../../images/reg/select_2.png) no-repeat;
+    background-size: cover;
+}
+
+.select.active {
+    background: url(../../images/reg/select.png) no-repeat;
+    background-size: cover;
+    border: none;
+}
+
+.line>a:hover, .down>a:hover {
+    color: #d23f2a;
+}
+
+input::-webkit-input-placeholder {
+    color: #999999 !important;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999999 !important;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999999 !important;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #999999 !important;
+}
+
+.page-footer-single {
+    background: transparent !important;
+}
+
+.page-footer-single .footer-copyright-row {
+    color: #9e9e9e !important;
+}

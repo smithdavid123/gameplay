@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/page/funds-apply-withdraw.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="member-slot">
+        <div class="main-container">
+            <div class="step-msg"></div>
+            <div class="panel-content">
+                <form class="form-horizontal" autocomplete="off">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">提现银行卡</label>
+                        <div class="col-sm-7">
+                            <div class="select-card"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">可提现金额</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">
+                                <span data-field="availableBalance">0.00</span> 元
+                                <a href="funds-apply-withdraw.html#" class="withdraw-all btn btn-primary" style="margin-left: 50px;">全部提款</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">提现金额</label>
+                        <div class="col-sm-3">
+                            <input name="amount" type="text" class="form-control" readonly
+                                onfocus="this.removeAttribute('readonly');">
+                        </div>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">
+                                单次提现金额<span data-field="minUnitAmount">0</span> ~ <span
+                                    data-field="maxUnitAmount">0</span>元
+                            </p>
+                        </div>
+                    </div>
+                    <div data-init="noFreeCount" class="form-group">
+                        <label class="col-sm-2 control-label">手续费</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">
+                                <span data-field="feeAmount" class="f-18">0.00</span>元
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">资金密码</label>
+                        <div class="col-sm-3">
+                            <input name="withdrawPassword" type="password" class="form-control" readonly
+                                onfocus="this.removeAttribute('readonly');">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3">
+                            <a data-command="apply" class="btn btn-primary" type="button">提交申请</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3" name="buttonRow" style="padding:15px;">
+                        </div>
+                    </div>
+                </form>
+                <form method="post" name="otcRemitForm" target="_black">
+                    <input name="text" type="hidden" />
+                </form>
+                <table class="table table-bordered" style="margin-top: 20px; background: #fff;">
+                    <tbody>
+                        <tr>
+                            <td width="25%" class="text-right">账户总余额</td>
+                            <td width="25%" class="text-left">
+                                <span data-field="totalBalance">0</span>元
+                            </td>
+                            <td width="25%" class="text-right">可提现金额</td>
+                            <td width="25%" class="text-left">
+                                <span data-field="availableBalance">0</span>元
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">彩票所需消费量</td>
+                            <td class="text-left">
+                                <span data-field="lotteryLimitAmount">0</span>元
+                            </td>
+                            <td class="text-right">百家乐所需消费量</td>
+                            <td class="text-left">
+                                <span data-field="baccaratLimitAmount">0</span>元
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">提现服务时间</td>
+                            <td class="text-left">
+                                <span data-field="serviceTime">24小时</span>
+                            </td>
+                            <td class="text-right">今日已提次数</td>
+                            <td class="text-left">
+                                <span data-field="dailyCount">0</span>次
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">每日免手续费次数</td>
+                            <td class="text-left">
+                                <span data-field="freeDailyCount">0</span>次
+                            </td>
+                            <td class="text-right">每日限制次数</td>
+                            <td class="text-left">
+                                <span data-field="maxDailyCount">0</span>次
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">今日已提金额</td>
+                            <td class="text-left">
+                                <span data-field="dailyAmount">0</span>元
+                            </td>
+                            <td class="text-right">每日限制金额</td>
+                            <td class="text-left">
+                                <span data-field="maxDailyAmount">0</span>元
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">手续费说明</td>
+                            <td colspan="3" class="text-left">
+                                计算公式：提款金额 * <span data-field="feeRate">0</span>%，手续费最多收取<span
+                                    data-field="maxFee">0</span>元
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = memberSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/funds-apply-withdraw.js"></script>
+
+</body>
+
+</html>

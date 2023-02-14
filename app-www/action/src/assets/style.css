@@ -1,0 +1,233 @@
+
+
+.clearfix:after{content: "\0020"; display: block; height: 0;clear: both; visibility: hidden; }
+.clearfix{zoom: 1;}
+.cr{color:#fff}
+.cr0{color:#303133}
+.cr1{color:#424242}
+.cr2{color:#606266}
+.cr3{color:#e0e0e0}
+.cr4{color:#ff5722}
+.cr5{color: #03A9F4}
+.cr6{color: #f5a606}
+.cr7{color:#ab47bc}
+.f12{font-size: 12px}
+.f14{font-size: 14px}
+.f16{font-size: 1.12em}
+.mr1{margin-right: 1em}
+.mt3{margin-top: 3px}
+.mt1{margin-top: 1em}
+.dib{display: inline-block}
+.tc{text-align: center}
+.fl{float: left}
+.fr{float: right}
+.mu-text-field-input{
+  border: 1px solid #e1e5e6;
+  border-radius: 3px;
+  text-indent: 5px;
+}
+ .mu-input-line , .mu-input-focus-line{
+   height: 0;
+ }
+
+.mu-table th{
+  height: 40px;
+}
+.mu-table th ,.mu-table td{
+  padding: 0px 5px;
+}
+.mu-elevation-1{
+  box-shadow: none;
+}
+.mu-dialog{
+  font-size: 14px;
+}
+.play-game .mu-dialog{
+  font-size: 14px;
+}
+.play-game .mu-item{
+  height: auto;
+}
+
+ .mu-item{
+  height: auto;
+}
+
+.mu-tab-wrapper{padding: 0px  }
+.mu-table tr{height: 40px}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .1);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index:1000;
+  background-color: #03A9F4;
+  box-shadow: none;
+}
+
+.bottom_nav .mu-bottom-nav-shift-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom_nav {
+  height: 3.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #424242;
+  background-color: #fff;
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.31), 0 4px 5px 0 rgba(0, 0, 0, 0.31), 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.mu-bottom-item-active{
+  color: #03A9F4;
+}
+
+.content {
+  overflow: auto;
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 51px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #f2f5f7;
+}
+
+.tab, .tabs {
+  position: fixed;
+  border:0;
+}
+.box-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .117647);
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.vueco-btn {
+  width: 100%;
+  bottom: 0;
+}
+.vux-number-selector svg {
+  fill: #03A9F4!important;
+  width: 13px;
+  height: 13px;
+}
+.vux-number-input {
+  float: left;
+  height: 28px!important;
+  font-size: 20px;
+  color: #666;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #ececec;
+  padding: 3px 0;
+  text-align: center;
+  border-radius: 1px;
+}
+.vux-number-selector {
+  background-color: #952b39 !important;
+  height: 23px !important;
+  float: left;
+  font-size: 16px!important;
+  line-height: 16px!important;
+  /* color: #fff!important; */
+  /* border: 1px solid #3cc51f!important; */
+}
+
+.play-game-compute .vux-number-round .vux-number-selector-sub svg , .play-game-compute .vux-number-round .vux-number-selector-plus svg{
+  top:-3px;
+  width: 15px;
+  height: 15px;
+}
+.vux-number-round .vux-number-selector-plus svg{
+  position: relative;
+}
+
+
+.mu-input__focus{
+  color: #fff;
+
+}
+.mu-table th {
+  font-size: 14px;
+  background: #7d8eec;
+  color: #fff;
+}
+.date-select .mu-text-field-input{
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.date-select .mu-demo-form .mu-text-field-input{
+  text-align: left;
+}
+.search-input.mu-input{
+  width: 100%;
+}
+.mu-text-field-input{
+  font-size: 0.85em;
+}
+.mu-carousel{
+  height:140px ;
+  border-radius: 10px;
+}
+.vux-tab-ink-bar-transition-forward {
+  transition: right 0.1s cubic-bezier(0.35, 0, 0.25, 1), left 0.1s cubic-bezier(0.35, 0, 0.25, 1) 0.05s !important;
+}
+.vux-tab-ink-bar-transition-backward {
+  transition: right 0.1s cubic-bezier(0.35, 0, 0.25, 1) 0.05s, left 0.1s cubic-bezier(0.35, 0, 0.25, 1) !important;
+}
+
+.mu-checkbox-checked{
+  color: #7d8eec;
+}
+.mu-option.is-selected .mu-item {
+  color: #7d8eec;
+}
+.mu-select{
+  background: #fff;
+  border: 1px solid #e1e5e6;
+  border-radius: 3px;
+  height: 38px;
+}
+.mu-select-action{
+  padding-right: 0;
+}
+  .mu-snackbar-center{
+    top: 33%;
+    padding: 15px 15px;
+    width: 90%!important;
+    margin: 0 auto;
+    background: #f8fafb;
+    color: #424242;
+    box-sizing: border-box;
+  }
+.mu-snackbar-message{
+  width: 85%;
+}
+.mu-snackbar-center .mu-icon-button{
+  color:#3895d3
+}

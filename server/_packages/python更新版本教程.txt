@@ -1,0 +1,78 @@
+﻿yum groupinstall "Development tools"
+2）安装编译Python需要的包包
+
+yum install zlib-devel
+yum install bzip2-devel
+yum install openssl-devel
+yum install ncurses-devel -y
+yum install sqlite-devel -y
+
+
+cd /opt
+wget --no-check-certificate https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tar.xz
+tar xf Python-2.7.9.tar.xz
+cd Python-2.7.9
+
+4）编译与安装Python 2.7.9
+yum install tkinter tcl-devel tk-devel -y
+
+vim Module/Setup.dist
+SSL相关四行注释去掉
+
+查看tk版本	rpm -qa | grep ^tk 
+_tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \  
+-L/usr/local/lib \  \
+-I/usr/local/include \  
+-ltk8.5 -ltcl8.5 \  
+-lX11 
+去掉注释、修改以上tk版本信息
+
+
+./configure --prefix=/usr/local/python2.7 --enable-shared
+make && make altinstall
+5）将python命令指向Python 2.7.9
+
+#ln -s /usr/local/bin/python2.7 /usr/local/bin/python
+ln -s /usr/bin/python2.7 /usr/local/bin/python
+
+ln -s /usr/local/python2.7/bin/python2.7 /usr/bin/python
+
+
+
+wget http://peak.telecommunity.com/dist/ez_setup.py
+运行 $ python ez_setup.py
+
+
+或
+
+rm /usr/bin/easy_install
+rm /usr/bin/pip
+
+ln -s /usr/local/python2.7/bin/pip /usr/bin/pip
+ln -s /usr/local/python2.7/bin/easy_install /usr/bin/easy_install
+
+
+
+unzip setuptools-33.1.1.zip                                                                   │
+cd setuptools-33.1.1                                                                          │
+python setup.py install
+
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+
+
+使用--enable-shared编译后运行Python Error
+
+cp /usr/local/python27/lib/libpython2.7.so.1.0 /usr/local/lib
+cd /usr/local/lib
+ln -s libpython2.7.so.1.0 libpython2.7.so
+
+在/etc/ld.so.conf中加入新行/usr/local/lib保存后，
+运行
+
+    /sbin/ldconfig
+
+    /sbin/ldconfig -v
+
+

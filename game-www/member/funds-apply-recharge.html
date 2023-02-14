@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心</title>
+    <!--BEGIN PLUGINS CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/layer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/layer/default.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/date-picker/css/date-picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!--BEGIN PAGE CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/page/funds-apply-recharge.css" />
+    <!--BEGIN JQUERY JS-->
+    <script type="text/javascript" src="../assets/plugins/jquery.js"></script>
+    <!--BEGIN TEMPLATE JS-->
+    <script type="text/javascript" src="../assets/js/template.js"></script>
+    <!--BEGIN INIT JS-->
+    <script type="text/javascript" src="../assets/js/init0.js"></script>
+    <script type="text/javascript" src="../assets/js/init2.js"></script>
+</head>
+
+<body>
+    <template id="member-slot">
+        <div class="main-container pad-large">
+            <div class="tabs">
+                <div class="tab">
+                    <div class="title">付款方式：</div>
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="content">
+                    <div data-name="thrid" class="item">
+                        <div class="recharge-form">
+                            <div class="step-list style4">
+                                <div class="item step1">1.选择银行并且输入金额</div>
+                                <div class="item step2">2.确认充值信息</div>
+                                <div class="item">3.登录网上银行汇款</div>
+                            </div>
+
+                            <div data-step="1" class="section">
+                                <!-- <div class="section-bank">选择银行：</div> -->
+                                <div class="bank-list"></div>
+                                <div class="form-box">
+                                    <div class="input-item">
+                                        <div class="text">充值金额：</div>
+                                        <div class="input">
+                                            <input name="amount" type="number" class="form-control input-lg"
+                                                value="108">
+                                        </div>
+                                        <div> 元</div>
+                                        <div class="help">（手续费：<span data-field="feeRate">0.0</span>%，单笔限额为<span
+                                                data-field="min">0</span> ~ <span data-field="max">0</span>元）
+                                        </div>
+                                    </div>
+                                    <div class="help-info">充值限时：请在15分钟内完成充值</div>
+                                    <div class="btn-gp">
+                                        <a data-command="next" class="btn large btn-primary">下一步</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-step="2" class="section">
+                                <form method="post" target="_black">
+                                    <input name="text" type="hidden" />
+                                </form>
+                                <div class="request-result">
+                                    <div class="msg">尊敬的客户您好，您的存款订单己经生成，请您在该页面继续完成存款。</div>
+                                    <div class="item-box">
+                                        <div class="item">
+                                            <div class="title">充值银行：</div>
+                                            <div class="bank-code b1"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title">充值金额：</div>
+                                            <div class="text"><span data-field="amount">0.00</span>元</div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title">&emsp;手续费：</div>
+                                            <div class="text"><span data-field="feeAmount">0.00</span>元
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title">到账金额：</div>
+                                            <div class="text"><span data-field="actualAmount">0.00</span>元
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title">订单编号：</div>
+                                            <div class="text"><span data-field="billno"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-gp">
+                                        <a data-command="back" class="btn large btn-back">返回重新选择</a>
+                                        <a data-command="pay" class="btn large btn-primary">进入第三方支付付款</a>
+                                        <a href="/game/lottery/play.html" class="btn large btn-warning">进入游戏</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-name="transfer" class="item">
+                        <div class="recharge-form">
+                            <div class="step-list style4">
+                                <div class="item step1">1.选择银行并且输入金额</div>
+                                <div class="item step2">2.确认充值信息</div>
+                                <div class="item">3.登录网上银行汇款</div>
+                            </div>
+                            <div data-step="1" class="section">
+                                <div class="form-box">
+                                    <div class="input-item">
+                                        <div class="text">充值金额：</div>
+                                        <div class="input">
+                                            <input name="amount" type="text" class="form-control input-lg" value="108">
+                                        </div>
+                                        <div class="help">（单笔存款限额为<span data-field="min">0</span> ~ <span
+                                                data-field="max">0</span>元）</div>
+                                    </div>
+                                    <div class="input-item postscript m-t-10">
+                                        <label style="margin-right:28px;">附言：</label>
+                                        <div class="input" style="width: 300px;">
+                                            <input type="text" class="form-control input-lg" placeholder="请输入账号、转账人姓名">
+                                        </div>
+                                    </div>
+                                    <div class="help-info">充值限时：请在15分钟内完成充值</div>
+                                    <!-- <div class="help-info highlight">充值限时：请在60分钟内完成充值</div> -->
+                                    <div class="btn-gp">
+                                        <a data-command="next" class="btn large btn-primary">下一步</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-step="2" class="section">
+                                <div class="request-result">
+                                    <div class="msg">尊敬的客户您好，您的存款订单己经生成，请您在该页面继续完成存款。</div>
+                                    <div class="item-box">
+                                        <div class="item">
+                                            <div class="title">订单编号：</div>
+                                            <div class="text"><input name="billno" id="yhk-bh" type="text"
+                                                    class="form-control" readonly></div>
+                                            <button class="copy-btn" class="copy-btn" data-clipboard-action="copy"
+                                                data-clipboard-target="#yhk-bh">复制编号</button>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title highlight">请在【转账说明】或【备注/附言】中务必填写本人【订单编号】<span
+                                                    data-prompt="alplay"></span></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title">充值金额：</div>
+                                            <div class="text"><input name="amount" id="yhk-je" type="text"
+                                                    class="form-control" readonly></div>
+                                            <button class="copy-btn" class="copy-btn" data-clipboard-action="copy"
+                                                data-clipboard-target="#yhk-je">复制金额</button>
+                                        </div>
+                                        <div class="item">
+                                            <div class="title highlight">充值金额必须与实际转账金额相符，否则不会自动到账</div>
+                                        </div>
+                                        <div data-visible="1" class="item">
+                                            <div class="title">&emsp;开户行：</div>
+                                            <div class="text"><input name="bankName" type="text" class="form-control"
+                                                    readonly></div>
+                                        </div>
+                                        <div data-visible="1" class="item">
+                                            <div class="title">&emsp;&emsp;支行：</div>
+                                            <div class="text"><input name="bankBranch" type="text" class="form-control"
+                                                    readonly></div>
+                                        </div>
+                                        <div data-visible="1" class="item">
+                                            <div class="title">收款姓名：</div>
+                                            <div class="text"><input name="bankCardName" type="text"
+                                                    class="form-control" readonly></div>
+                                        </div>
+                                        <div data-visible="1" class="item">
+                                            <div class="title">收款账号：</div>
+                                            <div class="text"><input id="yhk-zh" name="bankCardId" type="text"
+                                                    class="form-control" readonly></div>
+                                            <button class="copy-btn" class="copy-btn" data-clipboard-action="copy"
+                                                data-clipboard-target="#yhk-zh">复制账号</button>
+                                        </div>
+                                        <div data-visible="2" id='paycode' style="padding: 10px 0;"></div>
+                                        <div style="margin-bottom:20px;" class="item">
+                                            <div style="line-height: 32px" class="title highlight">
+                                                注意：平台收款账号会经常更换，卡号随时有可能停用，请勿保存。充值前请您务必认准平台实时发布的收款账号。若您仍然打款到已停用账号导致无法正常充值，自行承担损失。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-gp">
+                                        <a data-command="back" class="btn large btn-back">返回重新选择</a>
+                                        <a href="funds-recharge-record.html" class="btn large btn-primary">查看充值记录</a>
+                                        <a href="/game/lottery/play.html" class="btn large btn-warning">进入游戏</a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        document.body.innerHTML = memberSharedTpl();
+    </script>
+
+    <!--BEGIN PLUGINS JS-->
+    <script type="text/javascript" src="../assets/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../assets/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/js/date-picker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/date-picker/locales/date-picker.zh-CN.min.js"></script>
+    <!--BEGIN COMMON JS-->
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/service.js"></script>
+    <script type="text/javascript" src="../assets/js/global.js"></script>
+    <!--BEGIN PAGE JS-->
+    <script type="text/javascript" src="../assets/js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/funds-apply-recharge.js"></script>
+    <script type="text/javascript" src="js/clipboard.min.js"></script>
+
+    <script type="text/javascript">
+        var clipboard = new Clipboard('.copy-btn');
+
+        clipboard.on('success', function (e) {
+            console.log(e);
+        });
+
+        clipboard.on('error', function (e) {
+            console.log(e);
+        });
+    </script>
+</body>
+
+</html>

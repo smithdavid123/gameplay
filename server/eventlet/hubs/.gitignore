@@ -1,0 +1,8 @@
+/__init__.pyc
+/epolls.pyc
+/hub.pyc
+/kqueue.pyc
+/poll.pyc
+/pyevent.pyc
+/selects.pyc
+/timer.pyc

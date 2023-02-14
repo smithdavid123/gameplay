@@ -1,0 +1,202 @@
+/*placeholder*/
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #8a8a99 !important;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #8a8a99 !important;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #8a8a99 !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #8a8a99 !important;
+}
+
+// @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
+//     .login-container .el-input input {
+//         color: $cursor;
+//     }
+// }
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background-color: #F5F5F5;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+// scrollbar
+.scrollbar-wrapper {
+    overflow-x: hidden !important;
+}
+
+.el-scrollbar__wrap {
+    overflow-x: hidden !important;
+}
+
+.el-scrollbar__bar.is-horizontal {
+    display: none;
+}
+
+.el-scrollbar__bar.is-vertical {
+    right: 0px;
+}
+
+.el-scrollbar {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+// svg 默认样式
+.svg-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    overflow: hidden;
+    position: relative;
+    top: 3px;
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 链接样式
+.link-type,
+.link-type:focus {
+    color: $primary;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.ta {
+    text-align: center;
+}
+
+.vat {
+    vertical-align: top;
+}
+
+// 垂直水平居中
+.cc {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@for $i from 1 to 21 {
+    .fs#{$i} {
+        font-size: #{$i}px!important;
+    }
+    @if $i % 10==0 {
+        .m#{$i} {
+            margin: #{$i}px!important;
+        }
+        .p#{$i} {
+            padding: #{$i}px!important;
+        }
+    }
+    @if $i % 2==0 {
+        .ml#{$i} {
+            margin-left: #{$i}px!important;
+        }
+        .mr#{$i} {
+            margin-right: #{$i}px!important;
+        }
+        .mt#{$i} {
+            margin-top: #{$i}px!important;
+        }
+        .mb#{$i} {
+            margin-bottom: #{$i}px!important;
+        }
+        .pl#{$i} {
+            padding-left: #{$i}px!important;
+        }
+        .pr#{$i} {
+            padding-right: #{$i}px!important;
+        }
+        .pt#{$i} {
+            padding-top: #{$i}px!important;
+        }
+        .pb#{$i} {
+            padding-bottom: #{$i}px!important;
+        }
+    }
+}

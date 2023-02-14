@@ -1,0 +1,74 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    line-height: 64px;
+    background-color: #393d49;
+    border-bottom: 4px solid $primary !important;
+    color: #fff;
+    font-size: 16px;
+    z-index: 1999;
+    @include flex-base(space-between);
+    .header-left {
+        @include flex-base(left);
+        height: 100%;
+        span {
+            display: inline-block;
+            width: 160px;
+            height: 100%;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .menu-icon {
+            margin-right: 6px;
+            top: 0;
+        }
+    }
+    .header-right {
+        position: relative;
+        cursor: pointer;
+        padding-right: 20px;
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 16px;
+            vertical-align: middle;
+        }
+        .user-sub {
+            position: absolute;
+            z-index: 2000;
+            top: 62px;
+            right: 0;
+            width: 120px;
+            padding: 10px 0;
+            color: #525266;
+            background: #fff;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            text-align: center;
+            li {
+                line-height: 36px;
+                a {
+                    display: block;
+                    &:hover {
+                        color: $primary;
+                        background: #e5f2fc;
+                    }
+                }
+            }
+        }
+        .caret-icon {
+            transition: all .3s;
+        }
+        &:hover {
+            color: $primary;
+            .caret-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
